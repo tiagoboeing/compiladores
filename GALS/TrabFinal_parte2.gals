@@ -1,0 +1,62 @@
+#Options
+GenerateScanner = true
+GenerateParser = false
+Language = Java
+ScannerName = Lexico
+ScannerCaseSensitive = true
+ScannerTable = Compact
+Input = String
+#RegularDefinitions
+questao_a: ([a-z]|[A-Z][a-z0-9_])([a-z0-9_]|([A-Z][a-z0-9_]))*|[A-Z]
+
+questao_b: [1-9][0-9]*|0
+
+questao_c: ([1-9][0-9]*|0)\.([0-9]*[1-9]|0)
+
+questao_d: \”[^\”\n\\]*\”
+
+questao_e: \\[snt]
+
+questao_f: --[^\n]*
+
+questao_g: #\|[^#\|](((\|[^#\|])?(#+[^#\|])?.)[^\|#])*\|#
+#Tokens
+// identificador
+questao_a: {questao_a}
+questao_b: {questao_b}
+questao_c: {questao_c}
+questao_d: {questao_d}
+questao_e: {questao_e}
+questao_f: {questao_f}
+questao_g: {questao_g}
+
+// constante inteira
+
+
+// const real
+
+
+// const literal
+
+
+// const caracter
+
+
+// comentário de linha
+
+
+// comentário de bloco
+
+
+// palavras reservadas
+
+
+// símbolos especiais
+"+"
+"-"
+"*"
+"/"
+
+// caracteres de formatação
+:[\s\n\t]
+
