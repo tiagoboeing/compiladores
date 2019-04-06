@@ -21,6 +21,8 @@ public class DecomposerFactory<T, U> {
     private List<LexicalError> errorList;
     private List<Token> tokenList;
 
+    private List<Integer> breakList;
+
     DecomposerFactory(Lexico innerLexico) {
         this.innerLexico = Optional.of(innerLexico);
     }
@@ -44,6 +46,15 @@ public class DecomposerFactory<T, U> {
         this.errorList = new ArrayList<>();
         this.tokenList = new ArrayList<>();
 
+        String input = this.innerLexico.get().getInput();
+
+        this.breakList = new ArrayList<>();
+        int breakIndex = input.indexOf('\n');
+        while (breakIndex > -1) {
+            this.breakList.add(breakIndex);
+            breakIndex = input.indexOf('\n', breakIndex+1);
+        }
+
         Token token;
         while ((token = getNext(this.innerLexico.get())) != null)
             tokenList.add(token);
@@ -60,7 +71,19 @@ public class DecomposerFactory<T, U> {
 
     private Token getNext(Lexico lexico){
         try {
-            return lexico.nextToken();
+            Token token = lexico.nextToken();
+
+            if (token == null) {
+                return null;
+            }
+
+            int line = breakList.isEmpty()?1:breakList.indexOf(breakList.stream().filter((x) -> x >= token.getPosition()).findFirst().get())+1;
+            int column = line == 1?token.getPosition()+1:token.getPosition()-breakList.get(line-2);
+
+            token.setLine(line);
+            token.setColumn(column);
+
+            return token;
         } catch (LexicalError lr) {
             errorList.add(lr);
 

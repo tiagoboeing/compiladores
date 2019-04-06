@@ -133,4 +133,8 @@ public class Lexico implements Constants
         else
             return (char) -1;
     }
+
+    public String getInput() {
+        return this.input;
+    }
 }
