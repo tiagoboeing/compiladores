@@ -1,4 +1,4 @@
-package controller;
+package compilador.controller;
 
 public class LexicalError extends AnalysisError
 {
