@@ -2061,12 +2061,19 @@ public interface ScannerConstants
     int[] SPECIAL_CASES_VALUES =
             {  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
 
+    default LexicalError getError(int start, int state, String token) {
+
+        //TODO - Specific treatment.
+
+        return new LexicalError(SCANNER_ERROR[state], start, token.trim());
+    }
+
     String[] SCANNER_ERROR = {
-            "Caractere não esperado", //0
+            "Erro na linha %d - símbolo inválido (%s)", //0
             "",//1
-            "Erro na linha %i% - símbolo inválido (%t%)", //2
-            "Erro na linha %i% - constante string inválida", //3
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado", //4
+            "Erro na linha %d - símbolo inválido (%s)", //2
+            "Erro na linha %d - constante string inválida", //3
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado", //4
             "",//5
             "",//6
             "",//7
@@ -2083,30 +2090,30 @@ public interface ScannerConstants
             "",//18
             "",//19
             "",//20
-            "Erro na linha %i% - constante caracter inválida",//21
+            "Erro na linha %d - constante caracter inválida",//21
             "",//22
             "",//23
             "",//24
             "",//25
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado",//26
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado",//26
             "",//27
             "",//28
             "",//29
-            "Erro na linha %i% - constante real inválida",//30
+            "Erro na linha %d - constante real inválida",//30
             "",//31
             "",//32
             "",//33
             "",//34
-            "Erro na linha %i% - nome de token inválido (%t%)", //35
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado",//36
+            "Erro na linha %d - nome de token inválido (%s)", //35
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado",//36
             "",//37
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado",//38
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado",//39
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado",//40
-            "Erro na linha %i% - constante real inválida",//41
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado",//42
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado",//38
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado",//39
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado",//40
+            "Erro na linha %d - constante real inválida",//41
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado",//42
             "",//43
-            "Erro na linha %i% - comentário de bloco inválido ou não finalizado"//44
+            "Erro na linha %d - comentário de bloco inválido ou não finalizado"//44
     };
 
 
