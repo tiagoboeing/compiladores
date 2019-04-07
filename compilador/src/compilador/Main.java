@@ -19,7 +19,7 @@ public class Main {
 
         Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
         d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
-        d.getErrors().stream().map(Throwable::getMessage).forEach(System.out::println);
+        d.getErrors().stream().map(Object::toString).forEach(System.out::println);
 
     }
 

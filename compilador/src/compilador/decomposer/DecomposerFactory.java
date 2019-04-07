@@ -17,6 +17,7 @@ public class DecomposerFactory<T, U> {
     private Optional<Collector<Token, ?, T>> tokenCollector;
     private Optional<Boolean> pannicMode;
     private Optional<Collector<LexicalError, ?, U>> errorCollector;
+    private Optional<PositionCalc> positionCalc;
 
     private List<LexicalError> errorList;
     private List<Token> tokenList;
@@ -39,6 +40,11 @@ public class DecomposerFactory<T, U> {
 
     public DecomposerFactory setErrorCollector(Collector<LexicalError, ?, U> errorCollector) {
         this.errorCollector = Optional.of(errorCollector);
+        return this;
+    }
+
+    public DecomposerFactory setPositionCalc(PositionCalc positionCalc) {
+        this.positionCalc = Optional.of(positionCalc);
         return this;
     }
 
@@ -69,22 +75,17 @@ public class DecomposerFactory<T, U> {
 
     }
 
+    public List<Integer> getBreakList() {
+        return breakList;
+    }
+
     private Token getNext(Lexico lexico){
         try {
             Token token = lexico.nextToken();
-
-            if (token == null) {
-                return null;
-            }
-
-            int line = breakList.isEmpty()?1:breakList.indexOf(breakList.stream().filter((x) -> x >= token.getPosition()).findFirst().get())+1;
-            int column = line == 1?token.getPosition()+1:token.getPosition()-breakList.get(line-2);
-
-            token.setLine(line);
-            token.setColumn(column);
-
+            this.positionCalc.ifPresent((x) -> x.calc(this, token));
             return token;
         } catch (LexicalError lr) {
+            this.positionCalc.ifPresent((x) -> x.calc(this, lr));
             errorList.add(lr);
 
             if (this.pannicMode.get()) {

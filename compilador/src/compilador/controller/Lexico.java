@@ -55,8 +55,9 @@ public class Lexico implements Constants
                 }
             }
         }
-        if (endState < 0 || (endState != state && tokenForState(lastState) == -2))
+        if (endState < 0 || (endState != state && tokenForState(lastState) == -2)) {
             throw new LexicalError(SCANNER_ERROR[lastState], start);
+        }
 
         position = end;
 

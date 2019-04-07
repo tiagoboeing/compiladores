@@ -3,8 +3,7 @@ package compilador.Reader;
 import compilador.controller.Lexico;
 
 import java.io.*;
-import java.net.URI;
-import java.nio.file.Path;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class FileInput implements LexicoInput {
@@ -13,10 +12,10 @@ public class FileInput implements LexicoInput {
 
     @Override
     public Lexico getLexico() {
-        try (FileReader fileReader = new FileReader(this.file)) {
-            try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-                return new Lexico(bufferedReader.lines().map((x) -> x + "\n").reduce(String::concat).get());
-            }
+
+        try {
+            String input = new String(Files.readAllBytes(file.toPath()));
+            return new Lexico(input);
         } catch (IOException e) {
             e.printStackTrace();
         }

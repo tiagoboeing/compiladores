@@ -4,6 +4,9 @@ public class AnalysisError extends Exception
 {
     private int position;
 
+    private Integer line;
+    private Integer column;
+
     public AnalysisError(String msg, int position)
     {
         super(msg);
@@ -23,6 +26,25 @@ public class AnalysisError extends Exception
 
     public String toString()
     {
+        if (line != null) {
+            return super.toString() + ", @ " + line + ":" + column;
+        }
         return super.toString() + ", @ "+position;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line = line;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
     }
 }
