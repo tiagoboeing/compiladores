@@ -1,4 +1,4 @@
-package controller;package
+package controller;
 
 public class SemanticError extends AnalysisError
 {
