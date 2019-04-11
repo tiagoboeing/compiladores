@@ -21,7 +21,7 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
 
-        Lexico lexico = new FileInput("teste.2019").getLexico();
+        Lexico lexico = new FileInput("../teste.2019").getLexico();
 
         Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
         d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
@@ -37,6 +37,8 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Compilador 2019.1");
             primaryStage.setResizable(true);
+            primaryStage.setMinWidth(900);
+            primaryStage.setMinHeight(600);
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();
