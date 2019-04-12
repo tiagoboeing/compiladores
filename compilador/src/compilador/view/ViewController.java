@@ -55,6 +55,7 @@ public class ViewController {
         }
         this.linhasEditor.setText(linhas);
 
+
     }
 
     @FXML
@@ -95,11 +96,16 @@ public class ViewController {
 
     @FXML
     private void compilar(){
-        Lexico lexico = new FileInput("A:\\Java\\compiladores\\compilador\\teste.2019").getLexico();
+        Lexico lexico = new FileInput("C:\\Users\\tiago\\Desktop\\Java\\compiladores\\compilador\\teste.2019").getLexico();
 
         Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
         d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
         d.getErrors().stream().map(Throwable::getMessage).forEach(System.out::println);
+    }
+
+    @FXML
+    private void scrollEditor(){
+        
     }
 
     @FXML
