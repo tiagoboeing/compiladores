@@ -1,14 +1,11 @@
 package compilador.decomposer;
 
-import compilador.controller.LexicalError;
-import compilador.controller.Lexico;
-import compilador.controller.Token;
-
-import java.util.*;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class DefaultDecomposers {
-    public static Decomposer<Set<Token>, List<LexicalError>> basic(Lexico lexico) {
+    public static Decomposer<Set<DecomposedToken>, List<DecomposedError>> basic(DecomposerLexico lexico) {
         return Decomposer
                 .factory(lexico)
                 .setPannicMode(false)
@@ -18,8 +15,8 @@ public class DefaultDecomposers {
                 .get();
     }
 
-    public static Decomposer<Set<Token>, ?> panicMode(Lexico lexico) throws LexicalError {
-        Decomposer<Set<Token>, List<LexicalError>> decomposer = Decomposer
+    public static Decomposer<Set<DecomposedToken>, ?> panicMode(DecomposerLexico lexico) throws DecomposedError {
+        Decomposer<Set<DecomposedToken>, List<DecomposedError>> decomposer = Decomposer
                 .factory(lexico)
                 .setPannicMode(true)
                 .setTokenCollector(Collectors.toSet())

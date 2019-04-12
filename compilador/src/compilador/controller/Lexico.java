@@ -55,9 +55,8 @@ public class Lexico implements Constants
                 }
             }
         }
-        if (endState < 0 || (endState != state && tokenForState(lastState) == -2)) {
-            throw getError(start, (state>=0?state:lastState), this.input.substring(start, position));
-        }
+        if (endState < 0 || (endState != state && tokenForState(lastState) == -2))
+            throw new LexicalError(SCANNER_ERROR[lastState], start);
 
         position = end;
 
@@ -133,9 +132,5 @@ public class Lexico implements Constants
             return input.charAt(position++);
         else
             return (char) -1;
-    }
-
-    public String getInput() {
-        return this.input;
     }
 }

@@ -25,8 +25,8 @@ public class Decomposer<T, U> {
         return errors;
     }
 
-    public static <T, U> DecomposerFactory<T, U> factory(Lexico lexico){
-        return new DecomposerFactory<>(lexico);
+    public static <T, U> DecomposerFactory<T, U> factory(DecomposerLexico lexico){
+        return new DecomposerFactory<T, U>(lexico);
     }
 }
 

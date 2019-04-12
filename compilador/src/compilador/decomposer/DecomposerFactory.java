@@ -1,7 +1,6 @@
 package compilador.decomposer;
 
 import compilador.controller.LexicalError;
-import compilador.controller.Lexico;
 import compilador.controller.Token;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.stream.Collector;
 public class DecomposerFactory<T, U> {
 
 
-    private Optional<Lexico> innerLexico;
+    private Optional<DecomposerLexico> innerLexico;
     private Optional<Collector<Token, ?, T>> tokenCollector;
     private Optional<Boolean> pannicMode;
     private Optional<Collector<LexicalError, ?, U>> errorCollector;
@@ -24,7 +23,7 @@ public class DecomposerFactory<T, U> {
 
     private List<Integer> breakList;
 
-    DecomposerFactory(Lexico innerLexico) {
+    DecomposerFactory(DecomposerLexico innerLexico) {
         this.innerLexico = Optional.of(innerLexico);
     }
 
@@ -79,14 +78,15 @@ public class DecomposerFactory<T, U> {
         return breakList;
     }
 
-    private Token getNext(Lexico lexico){
+    private DecomposedToken getNext(DecomposerLexico lexico){
         try {
-            Token token = lexico.nextToken();
+            DecomposedToken token = DecomposedToken.get(lexico.nextToken());
             this.positionCalc.ifPresent((x) -> x.calc(this, token));
             return token;
         } catch (LexicalError lr) {
-            this.positionCalc.ifPresent((x) -> x.calc(this, lr));
-            errorList.add(lr);
+            DecomposedError dr = DecomposedError.get(lr);
+            this.positionCalc.ifPresent((x) -> x.calc(this, dr));
+            errorList.add(dr);
 
             if (this.pannicMode.get()) {
                 return null;
