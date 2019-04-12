@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/view/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/view/View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" afterDir="false" />
-    </list>
+    <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+            <state relative-caret-position="241">
+              <caret line="118" column="10" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
               <folding>
                 <element signature="e#648#649#0" expanded="true" />
                 <element signature="e#731#732#0" expanded="true" />
@@ -193,13 +190,18 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="compilador-2019-1" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555110228191" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555110441901" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -251,12 +253,12 @@
       <workItem from="1554946362352" duration="270000" />
       <workItem from="1554947677156" duration="3787000" />
       <workItem from="1555031194347" duration="9539000" />
-      <workItem from="1555105227887" duration="4503000" />
+      <workItem from="1555105227887" duration="4562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21748000" />
+    <option name="totallyTimeSpent" value="21807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -355,8 +357,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+        <state relative-caret-position="241">
+          <caret line="118" column="10" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
           <folding>
             <element signature="e#648#649#0" expanded="true" />
             <element signature="e#731#732#0" expanded="true" />
