@@ -19,6 +19,7 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class ViewController {
@@ -98,11 +99,11 @@ public class ViewController {
 
     @FXML
     private void compilar(){
-        Lexico lexico = new FileInput("C:\\Users\\tiago\\Desktop\\Java\\compiladores\\compilador\\teste.2019").getLexico();
+        Lexico lexico = new FileInput("..\\..\\teste.2019").getLexico();
 
         Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
-        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
-        d.getErrors().stream().map(Throwable::getMessage).forEach(System.out::println);
+        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
+        d.getErrors().stream().map(Throwable::getMessage).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
     }
 
     @FXML
