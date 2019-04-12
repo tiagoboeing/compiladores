@@ -14,7 +14,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -61,15 +63,15 @@ public class ViewController {
     @FXML
     private void keyShortcuts(KeyEvent event){
         if (this.keyNovo.match(event)) {
-            System.out.println("Ctrl+N pressed");
+            this.limpaTela();
             return;
         }
         if (this.keyAbrir.match(event)) {
-            System.out.println("Abrir");
+            this.selecionarArquivo();
             return;
         }
         if (this.keySalvar.match(event)) {
-            System.out.println("Salvar");
+            this.salvar();
             return;
         }
         if (this.keyCopiar.match(event)) {
@@ -104,8 +106,56 @@ public class ViewController {
     }
 
     @FXML
-    private void scrollEditor(){
-        
+    private File selecionarArquivo() {
+        FileChooser fileChooser = new FileChooser();
+
+        fileChooser.getExtensionFilters().add(new FileChooser
+                .ExtensionFilter(
+                "Todos os arquivos", "*"
+        ));
+
+        /*"*.JSON", "*.json",
+                "*.txt", "*.TXT",
+                "*.java"*/
+
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        File arquivo = fileChooser.showOpenDialog(null);
+
+        try {
+            if(arquivo != null) {
+                this.mensagens.setText("");
+                this.barraStatus.setText(arquivo.getAbsolutePath());
+                return arquivo;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @FXML
+    private void limpaTela(){
+        this.editor.setText("");
+        this.mensagens.setText("");
+        this.barraStatus.setText("");
+    }
+
+    @FXML
+    private void salvar(){
+        // TODO: arquivo pegar texto do TextArea editor
+        if(this.editor.getText().length() > 0) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("codigo-escrito", "*.txt"));
+            fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+            File file = fileChooser.showSaveDialog(null);
+
+            if(file != null) {
+                this.barraStatus.setText("ARQUIVO SALVO");
+            }
+        }else {
+            this.barraStatus.setText("Problema ao salvar!");
+        }
     }
 
     @FXML

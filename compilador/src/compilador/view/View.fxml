@@ -15,8 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compilador.view.ViewController">
+<GridPane onKeyPressed="#keyShortcuts" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compilador.view.ViewController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
    </columnConstraints>
@@ -30,7 +29,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="900.0" VBox.vgrow="NEVER">
                      <children>
-                        <Button fx:id="novo" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="115.0" text="novo [ctrl-n]">
+                        <Button fx:id="novo" contentDisplay="TOP" mnemonicParsing="false" onAction="#limpaTela" prefHeight="70.0" prefWidth="115.0" text="novo [ctrl-n]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -39,7 +38,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="abrir" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="112.0" text="abrir [ctrl-o]">
+                        <Button fx:id="abrir" contentDisplay="TOP" mnemonicParsing="false" onAction="#selecionarArquivo" prefHeight="70.0" prefWidth="112.0" text="abrir [ctrl-o]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -48,7 +47,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="salvar" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="112.0" text="salvar [ctrl-s]">
+                        <Button fx:id="salvar" contentDisplay="TOP" mnemonicParsing="false" onAction="#salvar" prefHeight="70.0" prefWidth="112.0" text="salvar [ctrl-s]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -133,7 +132,7 @@
                      <children>
                         <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="1.7976931348623157E308" minViewportHeight="100.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
-                              <TextArea fx:id="mensagens" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="900.0" promptText="Área de mensagens">
+                              <TextArea fx:id="mensagens" editable="false" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="900.0" promptText="Área de mensagens">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
