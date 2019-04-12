@@ -7,10 +7,14 @@ public class DecomposedError extends LexicalError implements Positionable {
     private int column;
     private int line;
 
-    public DecomposedError(String msg, int position) {
-        super(msg, position);
-    }
+    private DecomposerLexico lexico;
+    private int end;
 
+    public DecomposedError(String msg, int position, DecomposerLexico lexico) {
+        super(msg, position);
+        this.lexico = lexico;
+        this.end = lexico.getPostiont();
+    }
 
     @Override
     public void setColumn(int column) {
@@ -37,8 +41,15 @@ public class DecomposedError extends LexicalError implements Positionable {
         return this.getPosition();
     }
 
-    public static DecomposedError get(LexicalError lr) {
-        DecomposedError dr = new DecomposedError(lr.getMessage(), lr.getPosition());
+    @Override
+    public String getMessage() {
+        String simbolo = lexico.getInput().substring(this.getAbsolute(), this.end);
+
+        return String.format(super.getMessage(), getLine(), simbolo);
+    }
+
+    public static DecomposedError get(LexicalError lr, DecomposerLexico lexico) {
+        DecomposedError dr = new DecomposedError(lr.getMessage(), lr.getPosition(), lexico);
         dr.setStackTrace(lr.getStackTrace());
         return dr;
     }

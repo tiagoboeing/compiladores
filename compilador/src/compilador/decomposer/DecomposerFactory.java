@@ -84,7 +84,9 @@ public class DecomposerFactory<T, U> {
             this.positionCalc.ifPresent((x) -> x.calc(this, token));
             return token;
         } catch (LexicalError lr) {
-            DecomposedError dr = DecomposedError.get(lr);
+
+            DecomposedError dr = DecomposedError.get(lr, lexico);
+
             this.positionCalc.ifPresent((x) -> x.calc(this, dr));
             errorList.add(dr);
 
