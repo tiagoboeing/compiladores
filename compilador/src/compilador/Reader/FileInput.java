@@ -13,7 +13,6 @@ public class FileInput implements LexicoInput {
 
     @Override
     public DecomposerLexico getLexico() {
-
         try {
             String input = new String(Files.readAllBytes(file.toPath()));
             return new DecomposerLexico(input);

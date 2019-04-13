@@ -27,9 +27,9 @@
          <children>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="900.0" VBox.vgrow="NEVER">
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="900.0" prefHeight="70.0" VBox.vgrow="NEVER">
                      <children>
-                        <Button fx:id="novo" contentDisplay="TOP" mnemonicParsing="false" onAction="#limpaTela" prefHeight="70.0" prefWidth="115.0" text="novo [ctrl-n]">
+                        <Button fx:id="novo" contentDisplay="TOP" mnemonicParsing="false" onAction="#novoDocumento" prefHeight="70.0" prefWidth="115.0" text="novo [ctrl-n]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -38,7 +38,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="abrir" contentDisplay="TOP" mnemonicParsing="false" onAction="#selecionarArquivo" prefHeight="70.0" prefWidth="112.0" text="abrir [ctrl-o]">
+                        <Button fx:id="abrir" contentDisplay="TOP" mnemonicParsing="false" onAction="#abrirArquivo" prefHeight="70.0" prefWidth="112.0" text="abrir [ctrl-o]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -56,7 +56,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="copiar" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="112.0" text="copiar [ctrl-c]">
+                        <Button fx:id="copiar" contentDisplay="TOP" mnemonicParsing="false" onAction="#copiar" prefHeight="70.0" prefWidth="112.0" text="copiar [ctrl-c]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -65,7 +65,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="colar" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="112.0" text="colar [ctrl-v]">
+                        <Button fx:id="colar" contentDisplay="TOP" mnemonicParsing="false" onAction="#colar" prefHeight="70.0" prefWidth="112.0" text="colar [ctrl-v]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

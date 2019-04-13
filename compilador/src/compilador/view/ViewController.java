@@ -5,17 +5,16 @@ import compilador.controller.LexicalError;
 import compilador.controller.Lexico;
 import compilador.controller.Token;
 import compilador.decomposer.*;
+import compilador.utils.Files;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.input.*;
 import javafx.stage.FileChooser;
 
-import java.io.File;
+import java.awt.*;
+import java.io.*;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -24,14 +23,25 @@ import java.util.Set;
 public class ViewController {
 
     // shortcuts
-    static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
-    static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
-    static final KeyCombination keySalvar = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_ANY);
-    static final KeyCombination keyCopiar = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_ANY);
-    static final KeyCombination keyColar = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_ANY);
-    static final KeyCombination keyRecortar = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_ANY);
-    static final KeyCombination keyCompilar = new KeyCodeCombination(KeyCode.F9);
-    static final KeyCombination keyEquipe = new KeyCodeCombination(KeyCode.F1);
+    public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keySalvar = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keyCopiar = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keyColar = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keyRecortar = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keyCompilar = new KeyCodeCombination(KeyCode.F9);
+    public static final KeyCombination keyEquipe = new KeyCodeCombination(KeyCode.F1);
+
+    /* Extensões que o usuário pode selecionar
+     * Ex.:  {"*.JSON", "*.json", "*.txt", "*.TXT", "*.java"}
+     * {"*.*"} --> permite todos os tipos
+     */
+    static final String[] extensoesPermitidas = {"*.*"};
+    static final String extensaoSalvar = "*.txt";
+
+    // verifica se botão novo foi pressionado
+    static boolean arquivoSalvo = false;
+    static String caminhoArquivoSalvo;
 
     @FXML private Button novo;
     @FXML private Button abrir;
@@ -48,52 +58,28 @@ public class ViewController {
     @FXML private Label linhasEditor;
     @FXML private Label barraStatus;
 
-
-    @FXML private void rowCount(){
-        Integer qttRows = this.editor.getText().split("\n").length;
-        String linhas = "1";
-        for(int i = 2; i <= qttRows; i++){
-            linhas = i == 0 ? i+"" : linhas + "\n" + i;
+    @FXML
+    private void rowCount(){
+        if(this.editor.getText() != null && this.editor.getText() != ""){
+            Integer qttRows = this.editor.getText().split("\n").length;
+            String linhas = "1";
+            for(int i = 2; i <= qttRows; i++){
+                linhas = i == 0 ? i+"" : linhas + "\n" + i;
+            }
+            this.linhasEditor.setText(linhas);
         }
-        this.linhasEditor.setText(linhas);
-
-
     }
 
     @FXML
     private void keyShortcuts(KeyEvent event){
-        if (this.keyNovo.match(event)) {
-            this.limpaTela();
-            return;
-        }
-        if (this.keyAbrir.match(event)) {
-            this.selecionarArquivo();
-            return;
-        }
-        if (this.keySalvar.match(event)) {
-            this.salvar();
-            return;
-        }
-        if (this.keyCopiar.match(event)) {
-            System.out.println("Copiar");
-            return;
-        }
-        if (this.keyColar.match(event)) {
-            System.out.println("Colar");
-            return;
-        }
-        if (this.keyRecortar.match(event)) {
-            System.out.println("Recortar");
-            return;
-        }
-        if (this.keyCompilar.match(event)) {
-            this.compilar();
-            return;
-        }
-        if (this.keyEquipe.match(event)) {
-            this.mostraEquipe();
-            return;
-        }
+        if (this.keyNovo.match(event)) { this.limpaTela(); return; }
+        if (this.keyAbrir.match(event)) { this.abrirArquivo(); return; }
+        if (this.keySalvar.match(event)) { this.salvar(); return; }
+        if (this.keyCopiar.match(event)) { this.copiar(); return; }
+        if (this.keyColar.match(event)) { this.colar(); return; }
+        if (this.keyRecortar.match(event)) { System.out.println("Recortar"); return;  }
+        if (this.keyCompilar.match(event)) { this.compilar(); return; }
+        if (this.keyEquipe.match(event)) { this.mostraEquipe(); return; }
     }
 
     @FXML
@@ -114,60 +100,118 @@ public class ViewController {
     }
 
     @FXML
-    private File selecionarArquivo() {
-        FileChooser fileChooser = new FileChooser();
-
-        fileChooser.getExtensionFilters().add(new FileChooser
-                .ExtensionFilter(
-                "Todos os arquivos", "*"
-        ));
-
-        /*"*.JSON", "*.json",
-                "*.txt", "*.TXT",
-                "*.java"*/
-
-        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-        File arquivo = fileChooser.showOpenDialog(null);
-
+    private void abrirArquivo(){
+        File arquivo = Files.chooseFile(extensoesPermitidas);
         try {
-            if(arquivo != null) {
-                this.mensagens.setText("");
-                this.barraStatus.setText(arquivo.getAbsolutePath());
-                return arquivo;
+            if(arquivo != null){
+                FileReader arq = new FileReader(arquivo.getAbsolutePath());
+                BufferedReader lerArq = new BufferedReader(arq);
+
+                String conteudoArquivo = "";
+                String linha = lerArq.readLine();
+                while (linha != null) {
+//                conteudoArquivo = ("%s\n", linha);
+                    linha = lerArq.readLine();
+                }
+
+                this.editor.clear();
+                this.limpaBarraStatus();
+                this.conteudoEditor(linha);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e){
+            this.mensagemBarraStatus("OCORREU UM ERRO AO ABRIR O ARQUIVO");
         }
 
-        return null;
+
+//        this.mensagens.setText("");
+//        this.barraStatus.setText(arquivoSelecionado.getAbsolutePath());
     }
 
     @FXML
-    private void limpaTela(){
-        this.editor.setText("");
-        this.mensagens.setText("");
-        this.barraStatus.setText("");
+    private void novoDocumento(){
+        this.limpaTela();
     }
 
     @FXML
     private void salvar(){
-        // TODO: arquivo pegar texto do TextArea editor
-        if(this.editor.getText().length() > 0) {
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("codigo-escrito", "*.txt"));
-            fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-            File file = fileChooser.showSaveDialog(null);
+        if(this.editor.getText().length() > 0 && this.editor.getText() != null) {
+            if(!arquivoSalvo) {
+                String path = Files.selectPath("*.txt");
+                if(path != null){
+                    caminhoArquivoSalvo = path;
+                } else {
+                    return;
+                }
+            }
+//            if(caminhoArquivoSalvo != null)
+            if(Files.saveFile(this.editor.getText(), caminhoArquivoSalvo)) {
+                this.mensagens.clear();
+                this.mensagemBarraStatus(caminhoArquivoSalvo);
 
-            if(file != null) {
-                this.barraStatus.setText("ARQUIVO SALVO");
+                arquivoSalvo = true;
             }
         }else {
             this.barraStatus.setText("Problema ao salvar!");
+            arquivoSalvo = false;
         }
     }
 
     @FXML
     private void mostraEquipe(){
-        this.mensagens.setText("Gustavo Spies, Pedro Menzel, Tiago Boeing");
+        this.mostraMensagem("Gustavo Spies, Pedro Menzel, Tiago Boeing");
     }
+
+    private void limpaTela(){
+        this.editor.setText("");
+        this.mensagens.setText("");
+        this.barraStatus.setText("");
+        arquivoSalvo = false;
+    }
+
+    private void mensagemBarraStatus(String texto){
+        this.barraStatus.setText(texto);
+    }
+
+    private void limpaBarraStatus(){
+        this.barraStatus.setText("");
+    }
+
+    private void mostraMensagem(String texto){
+        this.mensagens.setText(texto);
+    }
+
+    private void conteudoEditor(String texto){
+        this.editor.setText(texto);
+    }
+
+    @FXML
+    private void copiar() {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        content.putString(this.editor.getSelectedText());
+    }
+
+    @FXML
+    private void colar(){
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        if(clipboard.getString() != null)
+            // cursor piscando
+            if(this.editor.getSelection().getStart() == this.editor.getSelection().getEnd()){
+
+            } else {
+                // apaga seleção atual
+                this.editor.positionCaret(this.editor.getSelection().getStart());
+                this.editor.appendText(clipboard.getString());
+
+
+                this.editor.deleteText(this.editor.getSelection().getStart(), this.editor.getSelection().getEnd());
+
+
+//                this.editor.setText(clipboard.getString());
+            }
+    }
+
+    @FXML
+    private void recortar(){}
+
 }
