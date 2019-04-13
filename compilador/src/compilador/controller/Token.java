@@ -6,9 +6,6 @@ public class Token
     private String lexeme;
     private int position;
 
-    private Integer line;
-    private Integer column;
-
     public Token(int id, String lexeme, int position)
     {
         this.id = id;
@@ -33,24 +30,6 @@ public class Token
 
     public String toString()
     {
-        if (line != null)
-            return id+" ( "+lexeme+" ) @ "+line+":"+column;
         return id+" ( "+lexeme+" ) @ "+position;
     };
-
-    public int getLine() {
-        return line;
-    }
-
-    public void setLine(int line) {
-        this.line = line;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
 }

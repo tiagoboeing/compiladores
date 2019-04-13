@@ -1,8 +1,5 @@
 package compilador.decomposer;
 
-import compilador.controller.LexicalError;
-import compilador.controller.Token;
-
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -29,7 +26,7 @@ public enum PositionCalc {
         }
 
         @Override
-        public void calc(DecomposerFactory decFac, Token token) {
+        public void calc(DecomposerFactory decFac, DecomposedToken token) {
             if (token != null) {
                 int absPos = token.getPosition();
                 calculateRealPosition(absPos, token::setLine, token::setColumn, decFac.getBreakList());
@@ -37,7 +34,7 @@ public enum PositionCalc {
         }
 
         @Override
-        public void calc(DecomposerFactory decFac, LexicalError error) {
+        public void calc(DecomposerFactory decFac, DecomposedError error) {
             if (error != null) {
                 int absPos = error.getPosition();
                 calculateRealPosition(absPos, error::setLine, error::setColumn, decFac.getBreakList());
@@ -46,6 +43,6 @@ public enum PositionCalc {
 
     };
 
-    public abstract void calc(DecomposerFactory decFac, Token token);
-    public abstract void calc(DecomposerFactory decFac, LexicalError error);
+    public abstract void calc(DecomposerFactory decFac, DecomposedToken token);
+    public abstract void calc(DecomposerFactory decFac, DecomposedError error);
 }

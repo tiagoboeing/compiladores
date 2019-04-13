@@ -1,8 +1,9 @@
 package compilador.Reader;
 
-import compilador.controller.Lexico;
+import compilador.decomposer.DecomposerLexico;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -11,11 +12,10 @@ public class FileInput implements LexicoInput {
     private File file;
 
     @Override
-    public Lexico getLexico() {
-
+    public DecomposerLexico getLexico() {
         try {
             String input = new String(Files.readAllBytes(file.toPath()));
-            return new Lexico(input);
+            return new DecomposerLexico(input);
         } catch (IOException e) {
             e.printStackTrace();
         }

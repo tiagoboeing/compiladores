@@ -1,0 +1,11 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.app{
+    -fx-background: #fff !important;
+}
+.sidebar{
+    -fx-background: #fff;
+}
+
+.text-area .scroll-bar:vertical:disabled {
+    -fx-opacity: 0;
+}
