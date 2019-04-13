@@ -4,8 +4,7 @@ import compilador.Reader.FileInput;
 import compilador.controller.LexicalError;
 import compilador.controller.Lexico;
 import compilador.controller.Token;
-import compilador.decomposer.Decomposer;
-import compilador.decomposer.DefaultDecomposers;
+import compilador.decomposer.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -99,11 +98,19 @@ public class ViewController {
 
     @FXML
     private void compilar(){
-        Lexico lexico = new FileInput("..\\..\\teste.2019").getLexico();
 
-        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
-        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
-        d.getErrors().stream().map(Throwable::getMessage).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
+        Lexico lexico = new FileInput("teste.2019").getLexico();
+
+//        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic("");
+//        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
+//        d.getErrors().stream().map(Throwable::getMessage).forEach(System.out::println);
+//
+
+//        Lexico lexico = new FileInput(this.selecionarArquivo().getAbsolutePath()).getLexico();
+//
+//        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
+//        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
+//        d.getErrors().stream().map(Throwable::getMessage).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
     }
 
     @FXML
