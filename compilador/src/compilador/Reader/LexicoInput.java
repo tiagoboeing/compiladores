@@ -1,7 +1,7 @@
 package compilador.Reader;
 
-import compilador.controller.Lexico;
+import compilador.decomposer.DecomposerLexico;
 
 public interface LexicoInput {
-    public Lexico getLexico();
+    public DecomposerLexico getLexico();
 }
