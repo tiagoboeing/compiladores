@@ -74,7 +74,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="recortar" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="112.0" text="recortar [ctrl-x]">
+                        <Button fx:id="recortar" contentDisplay="TOP" mnemonicParsing="false" onAction="#recortar" prefHeight="70.0" prefWidth="112.0" text="recortar [ctrl-x]">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

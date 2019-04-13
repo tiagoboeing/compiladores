@@ -58,7 +58,6 @@ public class ViewController {
     @FXML private Label linhasEditor;
     @FXML private Label barraStatus;
 
-
     @FXML
     private void rowCount(){
         if(this.editor.getText() != null && this.editor.getText() != ""){
@@ -69,6 +68,8 @@ public class ViewController {
             }
             this.linhasEditor.setText(linhas);
         }
+
+        this.editor.
     }
 
     @FXML
@@ -85,6 +86,7 @@ public class ViewController {
 
     @FXML
     private void compilar(){
+
 
         Lexico lexico = new FileInput("teste.2019").getLexico();
 
@@ -133,7 +135,7 @@ public class ViewController {
                     return;
                 }
             }
-//            if(caminhoArquivoSalvo != null)
+
             if(Files.saveFile(this.editor.getText(), caminhoArquivoSalvo)) {
                 this.mensagens.clear();
                 this.mensagemBarraStatus(caminhoArquivoSalvo);
@@ -149,29 +151,6 @@ public class ViewController {
     @FXML
     private void mostraEquipe(){
         this.mostraMensagem("Gustavo Spies, Pedro Menzel, Tiago Boeing");
-    }
-
-    private void limpaTela(){
-        this.editor.setText("");
-        this.mensagens.setText("");
-        this.barraStatus.setText("");
-        arquivoSalvo = false;
-    }
-
-    private void mensagemBarraStatus(String texto){
-        this.barraStatus.setText(texto);
-    }
-
-    private void limpaBarraStatus(){
-        this.barraStatus.setText("");
-    }
-
-    private void mostraMensagem(String texto){
-        this.mensagens.setText(texto);
-    }
-
-    private void conteudoEditor(String texto){
-        this.editor.setText(texto);
     }
 
     @FXML
@@ -190,6 +169,46 @@ public class ViewController {
     }
 
     @FXML
-    private void recortar(){}
+    private void recortar(){
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        content.putString(this.editor.getSelectedText());
+        clipboard.setContent(content);
+
+        if(clipboard.getString() != null)
+            this.editor.replaceSelection("");
+    }
+
+    private void limpaTela(){
+        this.limpaEditor();
+        this.limpaMensagens();
+        this.limpaBarraStatus();
+        caminhoArquivoSalvo = "";
+        arquivoSalvo = false;
+    }
+
+    private void mensagemBarraStatus(String texto){
+        this.barraStatus.setText(texto);
+    }
+
+    private void limpaBarraStatus(){
+        this.barraStatus.setText("");
+    }
+
+    private void limpaMensagens(){
+        this.mensagens.setText("");
+    }
+
+    private void limpaEditor(){
+        this.editor.setText("");
+    }
+
+    private void mostraMensagem(String texto){
+        this.mensagens.setText(texto);
+    }
+
+    private void conteudoEditor(String texto){
+        this.editor.setText(texto);
+    }
 
 }
