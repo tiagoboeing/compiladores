@@ -58,6 +58,7 @@ public class ViewController {
     @FXML private Label linhasEditor;
     @FXML private Label barraStatus;
 
+
     @FXML
     private void rowCount(){
         if(this.editor.getText() != null && this.editor.getText() != ""){
@@ -102,29 +103,18 @@ public class ViewController {
     @FXML
     private void abrirArquivo(){
         File arquivo = Files.chooseFile(extensoesPermitidas);
-        try {
-            if(arquivo != null){
-                FileReader arq = new FileReader(arquivo.getAbsolutePath());
-                BufferedReader lerArq = new BufferedReader(arq);
+        String conteudoArquivo = Files.readFile(arquivo);
 
-                String conteudoArquivo = "";
-                String linha = lerArq.readLine();
-                while (linha != null) {
-//                conteudoArquivo = ("%s\n", linha);
-                    linha = lerArq.readLine();
-                }
+        if(conteudoArquivo != null){
+            this.editor.clear();
+            this.barraStatus.setText(arquivo.getAbsolutePath());
+            this.conteudoEditor(conteudoArquivo);
 
-                this.editor.clear();
-                this.limpaBarraStatus();
-                this.conteudoEditor(linha);
-            }
-        } catch (Exception e){
+            caminhoArquivoSalvo = arquivo.getAbsolutePath();
+            arquivoSalvo = true;
+        } else {
             this.mensagemBarraStatus("OCORREU UM ERRO AO ABRIR O ARQUIVO");
         }
-
-
-//        this.mensagens.setText("");
-//        this.barraStatus.setText(arquivoSelecionado.getAbsolutePath());
     }
 
     @FXML
@@ -151,7 +141,7 @@ public class ViewController {
                 arquivoSalvo = true;
             }
         }else {
-            this.barraStatus.setText("Problema ao salvar!");
+            this.barraStatus.setText("ERRO AO SALVAR!");
             arquivoSalvo = false;
         }
     }
@@ -189,26 +179,14 @@ public class ViewController {
         Clipboard clipboard = Clipboard.getSystemClipboard();
         ClipboardContent content = new ClipboardContent();
         content.putString(this.editor.getSelectedText());
+        clipboard.setContent(content);
     }
 
     @FXML
     private void colar(){
         Clipboard clipboard = Clipboard.getSystemClipboard();
         if(clipboard.getString() != null)
-            // cursor piscando
-            if(this.editor.getSelection().getStart() == this.editor.getSelection().getEnd()){
-
-            } else {
-                // apaga seleção atual
-                this.editor.positionCaret(this.editor.getSelection().getStart());
-                this.editor.appendText(clipboard.getString());
-
-
-                this.editor.deleteText(this.editor.getSelection().getStart(), this.editor.getSelection().getEnd());
-
-
-//                this.editor.setText(clipboard.getString());
-            }
+            this.editor.replaceSelection(clipboard.getString());
     }
 
     @FXML
