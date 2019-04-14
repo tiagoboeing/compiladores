@@ -58,6 +58,8 @@ public class ViewController {
     @FXML private Label linhasEditor;
     @FXML private Label barraStatus;
 
+    @FXML private ScrollPane scroll;
+
     @FXML
     private void rowCount(){
         if(this.editor.getText() != null && this.editor.getText() != ""){
@@ -68,8 +70,6 @@ public class ViewController {
             }
             this.linhasEditor.setText(linhas);
         }
-
-        this.editor.
     }
 
     @FXML
@@ -86,9 +86,11 @@ public class ViewController {
 
     @FXML
     private void compilar(){
-
-
-        Lexico lexico = new FileInput("teste.2019").getLexico();
+        if(caminhoArquivoSalvo != null){
+            Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
+            DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
+            Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
+        }
 
 //        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic("");
 //        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
@@ -115,7 +117,9 @@ public class ViewController {
             caminhoArquivoSalvo = arquivo.getAbsolutePath();
             arquivoSalvo = true;
         } else {
-            this.mensagemBarraStatus("OCORREU UM ERRO AO ABRIR O ARQUIVO");
+            if(this.barraStatus.getText() != caminhoArquivoSalvo) {
+                this.mensagemBarraStatus("OCORREU UM ERRO AO ABRIR O ARQUIVO");
+            }
         }
     }
 
@@ -183,7 +187,7 @@ public class ViewController {
         this.limpaEditor();
         this.limpaMensagens();
         this.limpaBarraStatus();
-        caminhoArquivoSalvo = "";
+        caminhoArquivoSalvo = null;
         arquivoSalvo = false;
     }
 
