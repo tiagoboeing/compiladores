@@ -58,6 +58,8 @@ public class ViewController {
     @FXML private Label linhasEditor;
     @FXML private Label barraStatus;
 
+    @FXML private ScrollPane scroll;
+
     @FXML
     private void rowCount(){
         if(this.editor.getText() != null && this.editor.getText() != ""){
@@ -84,8 +86,11 @@ public class ViewController {
 
     @FXML
     private void compilar(){
-
-        Lexico lexico = new FileInput("teste.2019").getLexico();
+        if(caminhoArquivoSalvo != null){
+            Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
+            DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
+            Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
+        }
 
 //        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic("");
 //        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
@@ -102,29 +107,20 @@ public class ViewController {
     @FXML
     private void abrirArquivo(){
         File arquivo = Files.chooseFile(extensoesPermitidas);
-        try {
-            if(arquivo != null){
-                FileReader arq = new FileReader(arquivo.getAbsolutePath());
-                BufferedReader lerArq = new BufferedReader(arq);
+        String conteudoArquivo = Files.readFile(arquivo);
 
-                String conteudoArquivo = "";
-                String linha = lerArq.readLine();
-                while (linha != null) {
-//                conteudoArquivo = ("%s\n", linha);
-                    linha = lerArq.readLine();
-                }
+        if(conteudoArquivo != null){
+            this.editor.clear();
+            this.barraStatus.setText(arquivo.getAbsolutePath());
+            this.conteudoEditor(conteudoArquivo);
 
-                this.editor.clear();
-                this.limpaBarraStatus();
-                this.conteudoEditor(linha);
+            caminhoArquivoSalvo = arquivo.getAbsolutePath();
+            arquivoSalvo = true;
+        } else {
+            if(this.barraStatus.getText() != caminhoArquivoSalvo) {
+                this.mensagemBarraStatus("OCORREU UM ERRO AO ABRIR O ARQUIVO");
             }
-        } catch (Exception e){
-            this.mensagemBarraStatus("OCORREU UM ERRO AO ABRIR O ARQUIVO");
         }
-
-
-//        this.mensagens.setText("");
-//        this.barraStatus.setText(arquivoSelecionado.getAbsolutePath());
     }
 
     @FXML
@@ -143,7 +139,7 @@ public class ViewController {
                     return;
                 }
             }
-//            if(caminhoArquivoSalvo != null)
+
             if(Files.saveFile(this.editor.getText(), caminhoArquivoSalvo)) {
                 this.mensagens.clear();
                 this.mensagemBarraStatus(caminhoArquivoSalvo);
@@ -151,7 +147,7 @@ public class ViewController {
                 arquivoSalvo = true;
             }
         }else {
-            this.barraStatus.setText("Problema ao salvar!");
+            this.barraStatus.setText("ERRO AO SALVAR!");
             arquivoSalvo = false;
         }
     }
@@ -161,10 +157,37 @@ public class ViewController {
         this.mostraMensagem("Gustavo Spies, Pedro Menzel, Tiago Boeing");
     }
 
+    @FXML
+    private void copiar() {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        content.putString(this.editor.getSelectedText());
+        clipboard.setContent(content);
+    }
+
+    @FXML
+    private void colar(){
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        if(clipboard.getString() != null)
+            this.editor.replaceSelection(clipboard.getString());
+    }
+
+    @FXML
+    private void recortar(){
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        content.putString(this.editor.getSelectedText());
+        clipboard.setContent(content);
+
+        if(clipboard.getString() != null)
+            this.editor.replaceSelection("");
+    }
+
     private void limpaTela(){
-        this.editor.setText("");
-        this.mensagens.setText("");
-        this.barraStatus.setText("");
+        this.limpaEditor();
+        this.limpaMensagens();
+        this.limpaBarraStatus();
+        caminhoArquivoSalvo = null;
         arquivoSalvo = false;
     }
 
@@ -176,6 +199,14 @@ public class ViewController {
         this.barraStatus.setText("");
     }
 
+    private void limpaMensagens(){
+        this.mensagens.setText("");
+    }
+
+    private void limpaEditor(){
+        this.editor.setText("");
+    }
+
     private void mostraMensagem(String texto){
         this.mensagens.setText(texto);
     }
@@ -183,35 +214,5 @@ public class ViewController {
     private void conteudoEditor(String texto){
         this.editor.setText(texto);
     }
-
-    @FXML
-    private void copiar() {
-        Clipboard clipboard = Clipboard.getSystemClipboard();
-        ClipboardContent content = new ClipboardContent();
-        content.putString(this.editor.getSelectedText());
-    }
-
-    @FXML
-    private void colar(){
-        Clipboard clipboard = Clipboard.getSystemClipboard();
-        if(clipboard.getString() != null)
-            // cursor piscando
-            if(this.editor.getSelection().getStart() == this.editor.getSelection().getEnd()){
-
-            } else {
-                // apaga seleção atual
-                this.editor.positionCaret(this.editor.getSelection().getStart());
-                this.editor.appendText(clipboard.getString());
-
-
-                this.editor.deleteText(this.editor.getSelection().getStart(), this.editor.getSelection().getEnd());
-
-
-//                this.editor.setText(clipboard.getString());
-            }
-    }
-
-    @FXML
-    private void recortar(){}
 
 }
