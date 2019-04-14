@@ -2,7 +2,9 @@
   <artifact type="jar" name="compiladores:jar">
     <output-path>$PROJECT_DIR$/compilador/out/artifacts/compiladores_jar</output-path>
     <root id="archive" name="compiladores.jar">
-      <element id="module-output" name="compiladores" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
     </root>
   </artifact>
 </component>

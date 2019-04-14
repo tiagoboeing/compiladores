@@ -87,21 +87,26 @@ public class ViewController {
     @FXML
     private void compilar(){
         if(caminhoArquivoSalvo != null){
-            Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
-            DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
-            Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
+
+            /* TODO: Chamar léxico */
+//            Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
+//            DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
+//            Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
+
+
+            /* TODO:
+            * Capturar resposta e logar na área de mensagens
+            * Mensagens a serem exibidas, conferir wiki:
+            * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
+            */
+            this.mensagens.appendText(""); // adiciona texto na área de mensagens
         }
 
-//        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic("");
-//        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).forEach(System.out::println);
-//        d.getErrors().stream().map(Throwable::getMessage).forEach(System.out::println);
-//
-
-//        Lexico lexico = new FileInput(this.selecionarArquivo().getAbsolutePath()).getLexico();
-//
-//        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
-//        d.getTokens().stream().sorted(Comparator.comparingInt(Token::getPosition)).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
-//        d.getErrors().stream().map(Throwable::getMessage).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
+        /* Exemplo de implementação anterior ao refactory com exibição na área de mensagens
+        Lexico lexico = new FileInput(this.selecionarArquivo().getAbsolutePath()).getLexico();
+        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
+        d.getErrors().stream().map(Throwable::getMessage).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
+        */
     }
 
     @FXML
