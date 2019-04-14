@@ -22,6 +22,10 @@ import java.util.Set;
 
 public class ViewController {
 
+    /* FIXME:
+    * Textarea e contagem de linhas do editor não influenciam o scroll do SrollPane
+    */
+
     // shortcuts
     public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
