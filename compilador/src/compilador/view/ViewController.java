@@ -22,6 +22,9 @@ import java.util.Set;
 
 public class ViewController {
 
+
+    public final String COMPILADO = "Programa compilado com sucesso";
+
     /* FIXME:
     * Textarea e contagem de linhas do editor não influenciam o scroll do SrollPane
     */
@@ -90,20 +93,30 @@ public class ViewController {
 
     @FXML
     private void compilar(){
+        this.limpaMensagens();
         if(caminhoArquivoSalvo != null){
 
-            /* TODO: Chamar léxico */
-//            Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
-//            DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
-//            Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
+            this.salvar();
 
+            /* TODO: Chamar léxico */
+            //Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
+            DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
+            Decomposer<Set<DecomposedToken>, List<DecomposedError>> d = DefaultDecomposers.basic(dl);
+
+            boolean compiled = d.getErrors().isEmpty();
+            if (!compiled) {
+                d.getTokens().stream().map(Objects::toString).map(x->x+"\n").forEach(this.mensagens::appendText);
+                this.mensagens.appendText(COMPILADO);
+            } else {
+                this.mensagens.appendText(d.getErrors().get(0).getMessage());
+            }
 
             /* TODO:
             * Capturar resposta e logar na área de mensagens
             * Mensagens a serem exibidas, conferir wiki:
             * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
             */
-            this.mensagens.appendText(""); // adiciona texto na área de mensagens
+            //this.mensagens.appendText(d.); // adiciona texto na área de mensagens
         }
 
         /* Exemplo de implementação anterior ao refactory com exibição na área de mensagens
