@@ -89,4 +89,17 @@ public class Files {
         }
         return null;
     }
+
+    public static String createCacheFile(String conteudo){
+        try {
+            File file = new File(System.getProperty("java.io.tmpdir")+"/codigo-compilador.txt");
+            FileWriter w = new FileWriter(file, false);
+            w.append(conteudo);
+            w.close();
+            return file.getAbsolutePath();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

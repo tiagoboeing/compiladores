@@ -26,8 +26,8 @@ public class ViewController {
     public final String COMPILADO = "Programa compilado com sucesso";
 
     /* FIXME:
-    * Textarea e contagem de linhas do editor não influenciam o scroll do SrollPane
-    */
+     * Textarea e contagem de linhas do editor não influenciam o scroll do SrollPane
+     */
 
     // shortcuts
     public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
@@ -94,10 +94,13 @@ public class ViewController {
     @FXML
     private void compilar(){
         this.limpaMensagens();
-        if(caminhoArquivoSalvo != null){
 
-            this.salvar();
+        if(!arquivoSalvo || caminhoArquivoSalvo.isEmpty()){
+            this.mensagens.appendText("É necessário salvar o arquivo antes de compilar!");
+            return;
+        }
 
+        if(!caminhoArquivoSalvo.isEmpty() && arquivoSalvo){
             /* TODO: Chamar léxico */
             //Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
             DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
@@ -112,18 +115,10 @@ public class ViewController {
             }
 
             /* TODO:
-            * Capturar resposta e logar na área de mensagens
-            * Mensagens a serem exibidas, conferir wiki:
-            * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
+             * Erros necessitam tratamento conforme descrição:
+             * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
             */
-            //this.mensagens.appendText(d.); // adiciona texto na área de mensagens
         }
-
-        /* Exemplo de implementação anterior ao refactory com exibição na área de mensagens
-        Lexico lexico = new FileInput(this.selecionarArquivo().getAbsolutePath()).getLexico();
-        Decomposer<Set<Token>, List<LexicalError>> d = DefaultDecomposers.basic(lexico);
-        d.getErrors().stream().map(Throwable::getMessage).map(Objects::toString).map(text -> text + "\n").forEach(this.mensagens::appendText);
-        */
     }
 
     @FXML
