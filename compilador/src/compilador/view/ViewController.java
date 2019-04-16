@@ -101,23 +101,21 @@ public class ViewController {
         }
 
         if(!caminhoArquivoSalvo.isEmpty() && arquivoSalvo){
-            /* TODO: Chamar léxico */
-            //Lexico lexico = new FileInput(caminhoArquivoSalvo).getLexico();
-            DecomposerLexico dl = new DecomposerLexico(caminhoArquivoSalvo);
+            DecomposerLexico dl = new DecomposerLexico(this.editor.getText());
             Decomposer<Set<DecomposedToken>, List<DecomposedError>> d = DefaultDecomposers.basic(dl);
 
             boolean compiled = d.getErrors().isEmpty();
-            if (!compiled) {
+            if (compiled) {
                 d.getTokens().stream().map(Objects::toString).map(x->x+"\n").forEach(this.mensagens::appendText);
                 this.mensagens.appendText(COMPILADO);
             } else {
                 this.mensagens.appendText(d.getErrors().get(0).getMessage());
             }
 
-            /* TODO:
-             * Erros necessitam tratamento conforme descrição:
+            /*
+             * Especificação de tratamento dos erros:
              * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
-            */
+             */
         }
     }
 
