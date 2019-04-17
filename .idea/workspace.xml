@@ -7,7 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/compiladores_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/compiladores_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/AnalysisError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/LexicalError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/Lexico.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/ScannerConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/SemanticError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/SyntaticError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/out/production/compilador/controller/Token.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,97 +30,29 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/compiladores$Compiladores.ic" NAME="Compiladores Coverage Results" MODIFIED="1555373892143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1892757970">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="CSS" value="1" />
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="30" />
-          <entry key="PLAIN_TEXT" value="5" />
-          <entry key="XML" value="5" />
-          <entry key="YAML" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="71" />
-          <entry key="JAVA" value="8003" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-985716617">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1090" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1090" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="2019" value="1" />
-          <entry key="java" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="5" />
-          <entry key="PLAIN_TEXT" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
+            <state relative-caret-position="92">
+              <caret line="101" selection-start-line="101" selection-end-line="101" />
               <folding>
                 <element signature="method#abrirArquivo#0;class#ViewController#0" />
-                <element signature="e#5915#5916#0" expanded="true" />
-                <element signature="e#5947#5948#0" expanded="true" />
-                <element signature="e#6645#6646#0" expanded="true" />
-                <element signature="e#6725#6726#0" expanded="true" />
                 <element signature="method#copiar#0;class#ViewController#0" />
                 <element signature="method#colar#0;class#ViewController#0" />
                 <element signature="method#recortar#0;class#ViewController#0" />
                 <element signature="method#limpaTela#0;class#ViewController#0" />
-                <element signature="e#7801#7802#0" expanded="true" />
-                <element signature="e#7848#7849#0" expanded="true" />
-                <element signature="e#7886#7887#0" expanded="true" />
-                <element signature="e#7930#7931#0" expanded="true" />
-                <element signature="e#7966#7967#0" expanded="true" />
-                <element signature="e#8008#8009#0" expanded="true" />
-                <element signature="e#8041#8042#0" expanded="true" />
-                <element signature="e#8080#8081#0" expanded="true" />
-                <element signature="e#8128#8129#0" expanded="true" />
-                <element signature="e#8173#8174#0" expanded="true" />
-                <element signature="e#8221#8222#0" expanded="true" />
-                <element signature="e#8263#8264#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -116,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compilador/teste.2019">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="360">
               <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
             </state>
           </provider>
@@ -125,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerLexico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state relative-caret-position="80">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
               <folding>
                 <element signature="e#159#160#0" expanded="true" />
                 <element signature="e#187#188#0" expanded="true" />
@@ -138,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/Lexico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="2360">
               <caret line="130" column="24" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="24" />
             </state>
           </provider>
@@ -147,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/utils/Files.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="760">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="method#chooseFile#0;class#Files#0" />
                 <element signature="method#selectPath#0;class#Files#0" />
@@ -197,6 +141,7 @@
         <option value="$PROJECT_DIR$/compilador/src/compilador/decomposer/DefaultDecomposers.java" />
         <option value="$PROJECT_DIR$/compilador/src/compilador/utils/Files.java" />
         <option value="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -252,6 +197,27 @@
               <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
               <item name="compiladores" type="462c0819:PsiDirectoryNode" />
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiladores" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiladores" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="compiladores_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiladores" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -291,7 +257,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="compilador-2019-1" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555370083392" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555517033428" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -337,6 +303,9 @@
       </method>
     </configuration>
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="" />
@@ -365,7 +334,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15520945" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15685225" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -373,7 +342,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23463687" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23392461" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40893856" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -383,6 +352,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.2122905" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Structure" order="2" weight="0.26040268" />
@@ -398,9 +368,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -467,9 +434,6 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DefaultDecomposers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -518,13 +482,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/com/sun/glass/ui/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="936" selection-start-line="936" selection-end-line="936" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/com/sun/glass/ui/View.java" />
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/View.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -533,10 +491,49 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="method#abrirArquivo#0;class#ViewController#0" />
+            <element signature="method#copiar#0;class#ViewController#0" />
+            <element signature="method#colar#0;class#ViewController#0" />
+            <element signature="method#recortar#0;class#ViewController#0" />
+            <element signature="method#limpaTela#0;class#ViewController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/teste.2019">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerLexico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding>
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/Lexico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2360">
+          <caret line="130" column="24" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/utils/Files.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="760">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="method#chooseFile#0;class#Files#0" />
             <element signature="method#selectPath#0;class#Files#0" />
@@ -545,58 +542,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/Lexico.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="130" column="24" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerLexico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding>
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/teste.2019">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
-          <folding>
-            <element signature="method#abrirArquivo#0;class#ViewController#0" />
-            <element signature="e#5915#5916#0" expanded="true" />
-            <element signature="e#5947#5948#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
-            <element signature="e#6725#6726#0" expanded="true" />
-            <element signature="method#copiar#0;class#ViewController#0" />
-            <element signature="method#colar#0;class#ViewController#0" />
-            <element signature="method#recortar#0;class#ViewController#0" />
-            <element signature="method#limpaTela#0;class#ViewController#0" />
-            <element signature="e#7801#7802#0" expanded="true" />
-            <element signature="e#7848#7849#0" expanded="true" />
-            <element signature="e#7886#7887#0" expanded="true" />
-            <element signature="e#7930#7931#0" expanded="true" />
-            <element signature="e#7966#7967#0" expanded="true" />
-            <element signature="e#8008#8009#0" expanded="true" />
-            <element signature="e#8041#8042#0" expanded="true" />
-            <element signature="e#8080#8081#0" expanded="true" />
-            <element signature="e#8128#8129#0" expanded="true" />
-            <element signature="e#8173#8174#0" expanded="true" />
-            <element signature="e#8221#8222#0" expanded="true" />
-            <element signature="e#8263#8264#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="20">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
