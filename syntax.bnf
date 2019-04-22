@@ -1,55 +1,55 @@
-<forma geral do programa> ::= main <declaração main> <módulo> begin <corpo> end
+<forma_geral_do_programa> ::= main <declaracao_main> <modulo> begin <corpo> end
 
-<declaração main> ::= <lista declaração> | î
+<declaracao_main> ::= <lista_declaracao> | ε
 
-<lista declaração> ::= <declaração> | <lista declaração> <declaração>
+<lista_declaracao> ::= <declaracao> | <lista_declaracao> <declaracao>
 
-<módulo> ::= <lista módulo> | î
+<modulo> ::= <lista_modulo> | ε
 
-<lista módulo> ::= <forma geral> | <forma geral> <lista módulo>
+<lista_modulo> ::= <forma_geral> | <forma_geral> <lista_modulo>
 
-<declaração> ::= foward module <tipo do módulo> identificador ( <parâmetros formais> )
+<declaracao> ::= foward module <tipo_do_modulo> identificador ( <parametros_formais> )
 
-<tipo do módulo> ::= int | float | bool | char | string | void
+<tipo_do_modulo> ::= int | float | bool | char | string | void
 
-<parametros formais> ::= î | <lista parametro>
+<parametros_formais> ::= ε | <lista_parametro>
 
-<lista parametro> ::= <parametro> | <parametro> ; <lista parametro>
+<lista_parametro> ::= <parametro> | <parametro> ; <lista_parametro>
 
-<tipo> ::= <tipo do módulo>
+<tipo> ::= <tipo_do_modulo>
 
-<lista de identificadores> ::= identificador | identificador, <lista de identificadores>
+<lista_de_identificadores> ::= identificador | identificador, <lista_de_identificadores>
 
-<parametro> ::= <tipo> : <lista de identificadores>
+<parametro> ::= <tipo> : <lista_de_identificadores>
 
-<forma geral> ::= module identificador begin <corpo> end
+<forma_geral> ::= module identificador begin <corpo> end
 
-<corpo> ::= <declaração de variáveis> <lista de comandos>
+<corpo> ::= <declaracao_de_variaveis> <lista_de_comandos>
 
-<declaração de variáveis> ::= î | <lista de variáveis>
+<declaracao_de_variaveis> ::= ε | <lista_de_variaveis>
 
-<lista de comandos> ::= <comando> . | <comando> <lista de comandos> .
+<lista_de_comandos> ::= <comando> . | <comando> <lista_de_comandos> .
 
-<lista de variáveis> ::= <variavel> | <variavel> <lista de variaveis>
+<lista_de_variaveis> ::= <variavel> | <variavel> <lista_de_variaveis>
 
-<variavel> ::= <tipo> <lista de identificadores> ;
+<variavel> ::= <tipo> <lista_de_identificadores> ;
 
-<comando> ::= <atribuição> | <entrada> | <saida> | <selecao> | <repetição> | <retorno>
+<comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno>
 
-<atribuição> ::= identificador <operador de atribuição> <expressão>
+<atribuicao> ::= identificador <operador_de_atribuicao> <expressao>
 
-<operador de atribuição> ::= = | += | -=
+<operador_de_atribuicao> ::= = | += | -=
 
-<entrada> ::= read ( <lista de identificador> )
+<entrada> ::= read ( <lista_de_identificador> )
 
-<saida> ::= write ( <lista de expressões> )
+<saida> ::= write ( <lista_de_expressoes> )
 
-<lista de expressões> ::= <expressão> | <expressão> , <lista de expressões>
+<lista_de_expressoes> ::= <expressao> | <expressao> , <lista_de_expressoes>
 
-<seleção> ::= ( <expressão> ) ifTrueDo <lista de comandos> <else> end
+<selecao> ::= ( <expressao> ) ifTrueDo <lista_de_comandos> <else> end
 
-<else> ::= ifFalseDo <lista de comandos> | î
+<else> ::= ifFalseDo <lista_de_comandos> | ε
 
-<repetição> ::= whileTrueDo <lista de comandos> end | whileFalseDo <lista de comandos> end
+<repeticao> ::= whileTrueDo <lista_de_comandos> end | whileFalseDo <lista_de_comandos> end
 
-<retorno> ::= ^ <expressão>
+<retorno> ::= ^ <expressao>
