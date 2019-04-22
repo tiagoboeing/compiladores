@@ -1,0 +1,55 @@
+<forma geral do programa> ::= main <declaração main> <módulo> begin <corpo> end
+
+<declaração main> ::= <lista declaração> | î
+
+<lista declaração> ::= <declaração> | <lista declaração> <declaração>
+
+<módulo> ::= <lista módulo> | î
+
+<lista módulo> ::= <forma geral> | <forma geral> <lista módulo>
+
+<declaração> ::= foward module <tipo do módulo> identificador ( <parâmetros formais> )
+
+<tipo do módulo> ::= int | float | bool | char | string | void
+
+<parametros formais> ::= î | <lista parametro>
+
+<lista parametro> ::= <parametro> | <parametro> ; <lista parametro>
+
+<tipo> ::= <tipo do módulo>
+
+<lista de identificadores> ::= identificador | identificador, <lista de identificadores>
+
+<parametro> ::= <tipo> : <lista de identificadores>
+
+<forma geral> ::= module identificador begin <corpo> end
+
+<corpo> ::= <declaração de variáveis> <lista de comandos>
+
+<declaração de variáveis> ::= î | <lista de variáveis>
+
+<lista de comandos> ::= <comando> . | <comando> <lista de comandos> .
+
+<lista de variáveis> ::= <variavel> | <variavel> <lista de variaveis>
+
+<variavel> ::= <tipo> <lista de identificadores> ;
+
+<comando> ::= <atribuição> | <entrada> | <saida> | <selecao> | <repetição> | <retorno>
+
+<atribuição> ::= identificador <operador de atribuição> <expressão>
+
+<operador de atribuição> ::= = | += | -=
+
+<entrada> ::= read ( <lista de identificador> )
+
+<saida> ::= write ( <lista de expressões> )
+
+<lista de expressões> ::= <expressão> | <expressão> , <lista de expressões>
+
+<seleção> ::= ( <expressão> ) ifTrueDo <lista de comandos> <else> end
+
+<else> ::= ifFalseDo <lista de comandos> | î
+
+<repetição> ::= whileTrueDo <lista de comandos> end | whileFalseDo <lista de comandos> end
+
+<retorno> ::= ^ <expressão>
