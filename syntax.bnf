@@ -1,6 +1,8 @@
 <forma_geral_do_programa> ::= main <declaracao_main> <modulo> begin <corpo> end
 
-<declaracao_main> ::= <lista_declaracao> | ε <lista_declaracao> ::= <declaracao> <lista_declaracao1> <lista_declaracao1> ::= ε | <declaracao> <lista_declaracao1>#eliminar a recursão a direita
+<declaracao_main> ::= <lista_declaracao> | ε
+<lista_declaracao> ::= <declaracao> <lista_declaracao1>
+<lista_declaracao1> ::= ε | <declaracao> <lista_declaracao1>#eliminar a recursão a direita
 
 <modulo> ::= <lista_modulo> | ε
 <lista_modulo> ::= <forma_geral> | <forma_geral> <lista_modulo>
