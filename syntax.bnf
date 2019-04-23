@@ -31,7 +31,7 @@
 <atribuicao> ::= identificador <operador_de_atribuicao> <expressao>
 <operador_de_atribuicao> ::= = | += | -=
 
-<entrada> ::= read ( <lista_de_identificador> )
+<entrada> ::= read ( <lista_de_identificadores> )
 
 <saida> ::= write ( <lista_de_expressoes> )
 <lista_de_expressoes> ::= <expressao> | <expressao> , <lista_de_expressoes>
