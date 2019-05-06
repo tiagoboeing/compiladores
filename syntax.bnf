@@ -11,14 +11,14 @@
 
 <tipo_modulo> ::= int | float | bool | char | string | void;
 
-<tipo> ::= int | float | <float> | bool | char | string;
+<tipo> ::= int | float | float | bool | char | string;
 
 <parametros_formais> ::= î | <lista_parametro>;
 <lista_parametro> ::= <parametro> | <parametro> ";" <lista_parametro>;
 
-<lista_de_identificadores> ::= id | id"," <lista_de_identificadores>;
+<lista_de_identificadores> ::= id | id "," <lista_de_identificadores>;
 
-<parametro> ::= <tipo> : <lista_de_identificadores>;
+<parametro> ::= <tipo> ":" <lista_de_identificadores>;
 
 <forma_geral> ::= module id begin <corpo> end;
 
@@ -26,9 +26,9 @@
 
 <declaracao_de_variaveis> ::= î | <lista_de_variaveis>;
 <lista_de_variaveis> ::= <variavel> | <variavel> <lista_de_variaveis>;
-<variavel> ::= <tipo> : <lista_de_identificadores>;
+<variavel> ::= <tipo> ":" <lista_de_identificadores>;
 
-<lista_de_comandos> ::= <comando> . | <comando> <lista_de_comandos> .;
+<lista_de_comandos> ::= <comando> "." | <comando> <lista_de_comandos> ".";
 <comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno>;
 
 <atribuicao> ::= id <operador_de_atribuicao> <expressao>;
@@ -37,11 +37,11 @@
 <entrada> ::= read "(" <lista_de_identificadores> ")";
 
 <saida> ::= write "(" <lista_de_expressoes> ")";
-<lista_de_expressoes> ::= <expressao> | <expressao> , <lista_de_expressoes>;
+<lista_de_expressoes> ::= <expressao> | <expressao> "," <lista_de_expressoes>;
 
 <selecao> ::= "(" <expressao> ")" ifTrueDo <lista_de_comandos> <else> end;
 <else> ::= ifFalseDo <lista_de_comandos> | î;
 
 <repeticao> ::= <expressao> whileTrueDo <lista_de_comandos> end | <expressao> whileFalseDo <lista_de_comandos> end;
 
-<retorno> ::= ^ <expressao>;
+<retorno> ::= "^" <expressao>;
