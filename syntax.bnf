@@ -16,7 +16,7 @@
 <parametros_formais> ::= î | <lista_parametro>;
 <lista_parametro> ::= <parametro> | <parametro> ";" <lista_parametro>;
 
-<lista_de_identificadores> ::= id | id, <lista_de_identificadores>;
+<lista_de_identificadores> ::= id | id"," <lista_de_identificadores>;
 
 <parametro> ::= <tipo> : <lista_de_identificadores>;
 
@@ -32,14 +32,14 @@
 <comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno>;
 
 <atribuicao> ::= id <operador_de_atribuicao> <expressao>;
-<operador_de_atribuicao> ::= = | += | -=;
+<operador_de_atribuicao> ::= "=" | "+=" | "-=";
 
-<entrada> ::= read ( <lista_de_identificadores> );
+<entrada> ::= read "(" <lista_de_identificadores> ")";
 
-<saida> ::= write ( <lista_de_expressoes> );
+<saida> ::= write "(" <lista_de_expressoes> ")";
 <lista_de_expressoes> ::= <expressao> | <expressao> , <lista_de_expressoes>;
 
-<selecao> ::= ( <expressao> ) ifTrueDo <lista_de_comandos> <else> end;
+<selecao> ::= "(" <expressao> ")" ifTrueDo <lista_de_comandos> <else> end;
 <else> ::= ifFalseDo <lista_de_comandos> | î;
 
 <repeticao> ::= <expressao> whileTrueDo <lista_de_comandos> end | <expressao> whileFalseDo <lista_de_comandos> end;
