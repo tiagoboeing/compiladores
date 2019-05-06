@@ -1,7 +1,6 @@
 package compilador.decomposer;
 
 import compilador.controller.LexicalError;
-import compilador.controller.Lexico;
 import compilador.controller.Token;
 
 import java.util.ArrayList;
@@ -13,15 +12,18 @@ import java.util.stream.Collector;
 public class DecomposerFactory<T, U> {
 
 
-    private Optional<Lexico> innerLexico;
+    private Optional<DecomposerLexico> innerLexico;
     private Optional<Collector<Token, ?, T>> tokenCollector;
     private Optional<Boolean> pannicMode;
     private Optional<Collector<LexicalError, ?, U>> errorCollector;
+    private Optional<PositionCalc> positionCalc;
 
     private List<LexicalError> errorList;
     private List<Token> tokenList;
 
-    DecomposerFactory(Lexico innerLexico) {
+    private List<Integer> breakList;
+
+    DecomposerFactory(DecomposerLexico innerLexico) {
         this.innerLexico = Optional.of(innerLexico);
     }
 
@@ -40,9 +42,23 @@ public class DecomposerFactory<T, U> {
         return this;
     }
 
+    public DecomposerFactory setPositionCalc(PositionCalc positionCalc) {
+        this.positionCalc = Optional.of(positionCalc);
+        return this;
+    }
+
     public Decomposer<T,U> get() {
         this.errorList = new ArrayList<>();
         this.tokenList = new ArrayList<>();
+
+        String input = this.innerLexico.get().getInput();
+
+        this.breakList = new ArrayList<>();
+        int breakIndex = input.indexOf('\n');
+        while (breakIndex > -1) {
+            this.breakList.add(breakIndex);
+            breakIndex = input.indexOf('\n', breakIndex+1);
+        }
 
         Token token;
         while ((token = getNext(this.innerLexico.get())) != null)
@@ -58,11 +74,21 @@ public class DecomposerFactory<T, U> {
 
     }
 
-    private Token getNext(Lexico lexico){
+    public List<Integer> getBreakList() {
+        return breakList;
+    }
+
+    private DecomposedToken getNext(DecomposerLexico lexico){
         try {
-            return lexico.nextToken();
+            DecomposedToken token = DecomposedToken.get(lexico.nextToken());
+            this.positionCalc.ifPresent((x) -> x.calc(this, token));
+            return token;
         } catch (LexicalError lr) {
-            errorList.add(lr);
+
+            DecomposedError dr = DecomposedError.get(lr, lexico);
+
+            this.positionCalc.ifPresent((x) -> x.calc(this, dr));
+            errorList.add(dr);
 
             if (this.pannicMode.get()) {
                 return null;

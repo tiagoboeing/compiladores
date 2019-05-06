@@ -1,9 +1,8 @@
 package compilador.controller;
 
-public class Lexico implements Constants
-{
-    private int position;
-    private String input;
+public class Lexico implements Constants {
+    protected int position;
+    protected String input;
 
     public Lexico()
     {
