@@ -26,7 +26,7 @@
 
 <declaracao_de_variaveis> ::= î | <lista_de_variaveis>;
 <lista_de_variaveis> ::= <variavel> | <variavel> <lista_de_variaveis>;
-<variavel> ::= <tipo> ":" <lista_de_identificadores>;
+<variavel> ::= <tipo> ":" <lista_de_identificadores> ".";
 
 <lista_de_comandos> ::= <comando> "." | <comando> <lista_de_comandos> ".";
 <comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno>;
