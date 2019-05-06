@@ -1,11 +1,14 @@
 #Options
 GenerateScanner = true
-GenerateParser = false
+GenerateParser = true
 Language = Java
 ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
 ScannerCaseSensitive = true
 ScannerTable = Compact
-Input = String
+Input = Stream
+Parser = LL
 #RegularDefinitions
 questao_a: ([a-z]|[A-Z][a-z0-9_])([a-z0-9_]|([A-Z][a-z0-9_]))*|[A-Z]
 
@@ -41,11 +44,11 @@ const_literal: {questao_d}
 const_caracter: {questao_e}
 
 
-// comentário de linha
+// comentï¿½rio de linha
 comentario_linha: {questao_f}
 
 
-// comentário de bloco
+// comentï¿½rio de bloco
 comentario_bloco: {questao_g}
 
 
@@ -72,8 +75,9 @@ void = id: "void"
 whileFalseDo = id: "whileFalseDo"
 whileTrueDo = id: "whileTrueDo"
 write = id: "write"
+foward = id: "foward"
 
-// símbolos especiais
+// sï¿½mbolos especiais
 "("
 ")"
 "=="
@@ -95,6 +99,86 @@ write = id: "write"
 "-="
 "^"
 
-// caracteres de formatação
+// caracteres de formataï¿½ï¿½o
 :[\s\n\t]
+
+#NonTerminals
+<retorno>
+<repeticao>
+<else>
+<selecao>
+<lista_de_expressoes>
+<saida>
+<entrada>
+<operador_de_atribuicao>
+<atribuicao>
+<comando>
+<lista_de_comandos>
+<variavel>
+<lista_de_variaveis>
+<declaracao_de_variaveis>
+<corpo>
+<forma_geral>
+<parametro>
+<lista_de_identificadores>
+<lista_parametro>
+<parametros_formais>
+<tipo>
+<tipo_modulo>
+<declaracao>
+<lista_modulo>
+<modulo>
+<lista_declaracao1>
+<lista_declaracao>
+<declaracao_main>
+<forma_geral_do_programa>
+<expressao>
+#Grammar
+<forma_geral_do_programa> ::= main <declaracao_main> <modulo> begin <corpo> end;
+
+<declaracao_main> ::= <lista_declaracao> | Ã®;
+<lista_declaracao> ::= <declaracao> <lista_declaracao1>;
+<lista_declaracao1> ::= Ã® | <declaracao> <lista_declaracao1>;
+
+<modulo> ::= <lista_modulo> | Ã®;
+<lista_modulo> ::= <forma_geral> | <forma_geral> <lista_modulo>;
+
+<declaracao> ::= foward module <tipo_modulo> id "(" <parametros_formais> ")";
+
+<tipo_modulo> ::= int | float | bool | char | string | void;
+
+<tipo> ::= int | float | <float> | bool | char | string;
+
+<parametros_formais> ::= Ã® | <lista_parametro>;
+<lista_parametro> ::= <parametro> | <parametro> ";" <lista_parametro>;
+
+<lista_de_identificadores> ::= id | id"," <lista_de_identificadores>;
+
+<parametro> ::= <tipo> : <lista_de_identificadores>;
+
+<forma_geral> ::= module id begin <corpo> end;
+
+<corpo> ::= <declaracao_de_variaveis> <lista_de_comandos>;
+
+<declaracao_de_variaveis> ::= Ã® | <lista_de_variaveis>;
+<lista_de_variaveis> ::= <variavel> | <variavel> <lista_de_variaveis>;
+<variavel> ::= <tipo> : <lista_de_identificadores>;
+
+<lista_de_comandos> ::= <comando> . | <comando> <lista_de_comandos> .;
+<comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno>;
+
+<atribuicao> ::= id <operador_de_atribuicao> <expressao>;
+<operador_de_atribuicao> ::= "=" | "+=" | "-=";
+
+<entrada> ::= read "(" <lista_de_identificadores> ")";
+
+<saida> ::= write "(" <lista_de_expressoes> ")";
+<lista_de_expressoes> ::= <expressao> | <expressao> , <lista_de_expressoes>;
+
+<selecao> ::= "(" <expressao> ")" ifTrueDo <lista_de_comandos> <else> end;
+<else> ::= ifFalseDo <lista_de_comandos> | Ã®;
+
+<repeticao> ::= <expressao> whileTrueDo <lista_de_comandos> end | <expressao> whileFalseDo <lista_de_comandos> end;
+
+<retorno> ::= ^ <expressao>;
 
