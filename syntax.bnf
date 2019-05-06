@@ -11,7 +11,7 @@
 
 <tipo_modulo> ::= int | float | bool | char | string | void;
 
-<tipo> ::= int | float | float | bool | char | string;
+<tipo> ::= int | float | bool | char | string;
 
 <parametros_formais> ::= î | <lista_parametro>;
 <lista_parametro> ::= <parametro> | <parametro> ";" <lista_parametro>;
