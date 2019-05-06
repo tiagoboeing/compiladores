@@ -1,0 +1,47 @@
+<forma_geral_do_programa> ::= main <declaracao_main> <modulo> begin <corpo> end;
+
+<declaracao_main> ::= <lista_declaracao> | î;
+<lista_declaracao> ::= <declaracao> <lista_declaracao1>;
+<lista_declaracao1> ::= î | <declaracao> <lista_declaracao1>;
+
+<modulo> ::= <lista_modulo> | î;
+<lista_modulo> ::= <forma_geral> | <forma_geral> <lista_modulo>;
+
+<declaracao> ::= foward module <tipo_modulo> id "(" <parametros_formais> ")";
+
+<tipo_modulo> ::= int | float | bool | char | string | void;
+
+<tipo> ::= int | float | bool | char | string;
+
+<parametros_formais> ::= î | <lista_parametro>;
+<lista_parametro> ::= <parametro> | <parametro> ";" <lista_parametro>;
+
+<lista_de_identificadores> ::= id | id "," <lista_de_identificadores>;
+
+<parametro> ::= <tipo> ":" <lista_de_identificadores>;
+
+<forma_geral> ::= module id begin <corpo> end;
+
+<corpo> ::= <declaracao_de_variaveis> <lista_de_comandos>;
+
+<declaracao_de_variaveis> ::= î | <lista_de_variaveis>;
+<lista_de_variaveis> ::= <variavel> | <variavel> <lista_de_variaveis>;
+<variavel> ::= <tipo> ":" <lista_de_identificadores> ".";
+
+<lista_de_comandos> ::= <comando> "." | <comando> <lista_de_comandos> ".";
+<comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno>;
+
+<atribuicao> ::= id <operador_de_atribuicao> <expressao>;
+<operador_de_atribuicao> ::= "=" | "+=" | "-=";
+
+<entrada> ::= read "(" <lista_de_identificadores> ")";
+
+<saida> ::= write "(" <lista_de_expressoes> ")";
+<lista_de_expressoes> ::= <expressao> | <expressao> "," <lista_de_expressoes>;
+
+<selecao> ::= "(" <expressao> ")" ifTrueDo <lista_de_comandos> <else> end;
+<else> ::= ifFalseDo <lista_de_comandos> | î;
+
+<repeticao> ::= "(" <expressao> ")" whileTrueDo <lista_de_comandos> end | "(" <expressao> ")" whileFalseDo <lista_de_comandos> end;
+
+<retorno> ::= "^" <expressao>;
