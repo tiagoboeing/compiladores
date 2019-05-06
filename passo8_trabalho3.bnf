@@ -1,0 +1,16 @@
+<expressao> ::= <expressao> and <elemento> | <expressao> or <elemento> | <elemento>
+<elemento> ::= <relacional> | true | false | not <elemento>
+<relacional> ::= <aritmetica> <operador_relacional> <aritmetica> | <aritmetica>
+<operador_relacional> ::= == | != | < | <= | > | >=
+<aritmetica> ::= <aritmetica> + <termo> | <aritmetica> - <termo> | <termo>
+<termo> ::= <termo> * <fator> | <termo> / <fator> | <fator>
+<fator> ::= identificador | 
+            identificador ( )
+            identificador ( <lista_expressoes> ) |
+            cte_inteira |
+            cte_real |
+            cte_caracter |
+            cte_string |
+            ( <expressao> ) |
+            + <fator>
+            - <fator>
