@@ -42,6 +42,6 @@
 <selecao> ::= "(" <expressao> ")" ifTrueDo <lista_de_comandos> <else> end;
 <else> ::= ifFalseDo <lista_de_comandos> | î;
 
-<repeticao> ::= <expressao> whileTrueDo <lista_de_comandos> end | <expressao> whileFalseDo <lista_de_comandos> end;
+<repeticao> ::= "(" <expressao> ")" whileTrueDo <lista_de_comandos> end | "(" <expressao> ")" whileFalseDo <lista_de_comandos> end;
 
 <retorno> ::= "^" <expressao>;
