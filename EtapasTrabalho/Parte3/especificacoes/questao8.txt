@@ -1,0 +1,7 @@
+// questão 8 - trabalho 3
+<expressao> ::= <expressao> and <elemento> | <expressao> or <elemento> | <elemento> ;
+<elemento> ::= <relacional> | true | false | not <elemento> ;
+<relacional> ::= <aritmetica> <operador_relacional> <aritmetica> | <aritmetica> ;
+<operador_relacional> ::= "==" | "!=" | "<" | "<=" | ">" | ">=" ;
+<aritmetica> ::= <aritmetica> "+" <termo> | <aritmetica> "-" <termo> | <termo> ;
+<termo> ::= <termo> "*" <fator> | <termo> "/" <fator> | <fator> ; 

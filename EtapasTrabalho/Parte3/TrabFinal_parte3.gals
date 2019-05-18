@@ -1,0 +1,275 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+ScannerCaseSensitive = true
+ScannerTable = Compact
+Input = Stream
+Parser = LL
+#RegularDefinitions
+questao_a: ([a-z]|[A-Z][a-z0-9_])([a-z0-9_]|([A-Z][a-z0-9_]))*|[A-Z]
+
+questao_b: [1-9][0-9]*|0
+
+questao_c: ([1-9][0-9]*|0)\.([0-9]*[1-9]|0)
+
+questao_d: \"[^\"\n\\]*\"
+
+questao_e: \\[snt]
+
+questao_f: \-\-[^\n]*
+
+questao_g: #\|[^#\|](((\|[^#\|])?(#+[^#\|])?.)[^\|#])*\|#
+
+#Tokens
+// identificador
+id: {questao_a}
+
+// constante inteira
+const_inteira: {questao_b}
+
+
+// const real
+const_real: {questao_c}
+
+
+// const literal
+const_literal: {questao_d}
+
+
+// const caracter
+const_caracter: {questao_e}
+
+
+// comentï¿½rio de linha
+comentario_linha: {questao_f}
+
+
+// comentï¿½rio de bloco
+comentario_bloco: {questao_g}
+
+
+// palavras reservadas
+and = id : "and"
+begin = id : "begin"
+bool = id : "bool"
+char = id: "char"
+end = id: "end"
+false = id: "false"
+float = id: "float"
+forward = id: "forward"
+ifFalseDo = id: "ifFalseDo"
+ifTrueDo = id: "ifTrueDo"
+int = id: "int"
+main = id: "main"
+module = id: "module"
+not = id: "not"
+or = id: "or"
+read = id: "read"
+string = id: "string"
+true = id: "true"
+void = id: "void"
+whileFalseDo = id: "whileFalseDo"
+whileTrueDo = id: "whileTrueDo"
+write = id: "write"
+foward = id: "foward"
+
+// sï¿½mbolos especiais
+"("
+")"
+"=="
+"!="
+"<"
+"<="
+">"
+">="
+"+"
+"-"
+"*"
+"/"
+","
+"."
+";"
+":"
+"="
+"+="
+"-="
+"^"
+
+// caracteres de formataï¿½ï¿½o
+:[\s\n\t]
+
+#NonTerminals
+<forma_geral_do_programa>
+<declaracao_main>
+<lista_declaracao>
+<lista_declaracao1>
+<modulo>
+<lista_modulo>
+<lista_modulo1>
+<declaracao>
+<tipo_modulo>
+<tipo>
+<parametros_formais>
+<lista_parametro>
+<lista_parametro1>
+<lista_de_identificadores>
+<lista_de_identificadores1>
+<parametro>
+<forma_geral>
+<corpo>
+<declaracao_de_variaveis>
+<lista_de_variaveis>
+<lista_de_variaveis1>
+<variavel>
+<lista_de_comandos>
+<lista_de_comandos1>
+<comando>
+<atribuicao>
+<operador_de_atribuicao>
+<entradas>
+<saida>
+<lista_de_expressoes>
+<lista_de_expressoes1>
+<selecao>
+<else>
+<repeticao>
+<repeticao1>
+<retorno>
+
+//questao3
+<expressao>
+
+<elemento>
+<relacional>
+#Grammar
+<forma_geral_do_programa> ::= main <declaracao_main> <modulo> begin <corpo> end ;
+<forma_geral_do_programa> ::= main <declaracao_main> <modulo> begin <corpo> end ;
+
+<declaracao_main> ::= <lista_declaracao> | î ;
+<lista_declaracao> ::= <declaracao> <lista_declaracao1> ;
+<lista_declaracao1> ::= î | <declaracao> <lista_declaracao1> ;
+
+<modulo> ::= <lista_modulo> | î ;
+<lista_modulo1> ::= î | <lista_modulo> ;
+<lista_modulo> ::= <forma_geral> <lista_modulo1> ;
+
+<declaracao> ::= foward module <tipo_modulo> id "(" <parametros_formais> ")" ;
+
+<tipo_modulo> ::= int | float | bool | char | string | void ;
+
+<tipo> ::= int | float | bool | char | string ;
+
+<parametros_formais> ::= î | <lista_parametro> ;
+<lista_parametro> ::= <parametro> <lista_parametro1> ;
+<lista_parametro1> ::= î | ";" <lista_parametro> ;
+
+<lista_de_identificadores> ::= id <lista_de_identificadores1> ;
+<lista_de_identificadores1> ::= î | "," <lista_de_identificadores> ;
+
+<parametro> ::= <tipo> ":" <lista_de_identificadores> ;
+
+<forma_geral> ::= module id begin <corpo> end ;
+
+<corpo> ::= <declaracao_de_variaveis> <lista_de_comandos> ;
+
+<declaracao_de_variaveis> ::= î | <lista_de_variaveis> ;
+<lista_de_variaveis> ::= <variavel><lista_de_variaveis1> ;
+<lista_de_variaveis1> ::= î | <lista_de_variaveis> ;
+<variavel> ::= <tipo> ":" <lista_de_identificadores> "." ;
+
+<lista_de_comandos> ::= <comando> <lista_de_comandos1> ;
+<lista_de_comandos1> ::= "." | <lista_de_comandos> "." ;
+<comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno> ;
+
+<atribuicao> ::= id <operador_de_atribuicao> <expressao> ;
+<operador_de_atribuicao> ::= "=" | "+=" | "-=" ;
+
+<entrada> ::= read "(" <lista_de_identificadores> ")" ;
+
+<saida> ::= write "(" <lista_de_expressoes> ")" ;
+<lista_de_expressoes> ::= <expressao> <lista_de_expressoes1> ;
+<lista_de_expressoes1> ::= î | "," <lista_de_expressoes> ;
+
+<selecao> ::= "(" <expressao> ")" ifTrueDo <lista_de_comandos> <else> end ;
+<else> ::= ifFalseDo <lista_de_comandos> | î ;
+
+<repeticao> ::= "(" <expressao> ")" <repeticao1> ;
+<repeticao1> ::= whileTrueDo <lista_de_comandos> end | whileFalseDo <lista_de_comandos> end ;
+
+<retorno> ::= "^" <expressao> ;
+
+<declaracao_main> ::= <lista_declaracao> | î ;
+<lista_declaracao> ::= <declaracao> <lista_declaracao1> ;
+<lista_declaracao1> ::= î | <declaracao> <lista_declaracao1> ;
+
+<modulo> ::= <lista_modulo> | î ;
+<lista_modulo> ::= <forma_geral> <lista_modulo1> ;
+<lista_modulo1> ::= î | <lista_modulo> ;
+
+<declaracao> ::= foward module <tipo_modulo> id "(" <parametros_formais> ")" ;
+
+<tipo_modulo> ::= int | float | bool | char | string | void ;
+
+<tipo> ::= int | float | bool | char | string ;
+
+<parametros_formais> ::= î | <lista_parametro> ;
+<lista_parametro> ::= <parametro> <lista_parametro1> ;
+<lista_parametro1> ::= î | ";" <lista_parametro> ;
+
+<lista_de_identificadores> ::= id <lista_de_identificadores1> ;
+<lista_de_identificadores1> ::= î | "," <lista_de_identificadores> ;
+
+<parametro> ::= <tipo> ":" <lista_de_identificadores> ;
+
+<forma_geral> ::= module id begin <corpo> end ;
+
+<corpo> ::= <declaracao_de_variaveis> <lista_de_comandos> ;
+
+<declaracao_de_variaveis> ::= î | <lista_de_variaveis> ;
+<lista_de_variaveis> ::= <variavel><lista_de_variaveis1> ;
+<lista_de_variaveis1> ::= î | <lista_de_variaveis> ;
+<variavel> ::= <tipo> ":" <lista_de_identificadores> "." ;
+
+<lista_de_comandos> ::= <comando> <lista_de_comandos1> ;
+<lista_de_comandos1> ::= "." | <lista_de_comandos> "." ;
+<comando> ::= <atribuicao> | <entrada> | <saida> | <selecao> | <repeticao> | <retorno> ;
+
+<atribuicao> ::= id <operador_de_atribuicao> <expressao> ;
+<operador_de_atribuicao> ::= "=" | "+=" | "-=" ;
+
+<entrada> ::= read "(" <lista_de_identificadores> ")" ;
+
+<saida> ::= write "(" <lista_de_expressoes> ")" ;
+<lista_de_expressoes> ::= <expressao> <lista_de_expressoes1> ;
+<lista_de_expressoes1> ::= î | "," <lista_de_expressoes> ;
+
+<selecao> ::= "(" <expressao> ")" ifTrueDo <lista_de_comandos> <else> end ;
+<else> ::= ifFalseDo <lista_de_comandos> | î ;
+
+<repeticao> ::= "(" <expressao> ")" <repeticao1> ;
+<repeticao1> ::= whileTrueDo <lista_de_comandos> end | whileFalseDo <lista_de_comandos> end ;
+
+<retorno> ::= "^" <expressao> ;
+
+// questao 8 - trabalho 3
+<expressao> ::= <expressao> and <elemento> | <expressao> or <elemento> | <elemento>
+<elemento> ::= <relacional> | true | false | not <elemento>
+<relacional> ::= <aritmetica> <operador_relacional> <aritmetica> | <aritmetica>
+<operador_relacional> ::= == | != | < | <= | > | >=
+<aritmetica> ::= <aritmetica> + <termo> | <aritmetica> - <termo> | <termo>
+<termo> ::= <termo> * <fator> | <termo> / <fator> | <fator>
+<fator> ::= identificador | 
+            identificador ( )
+            identificador ( <lista_expressoes> ) |
+            cte_inteira |
+            cte_real |
+            cte_caracter |
+            cte_string |
+            ( <expressao> ) |
+            + <fator>
+            - <fator>
+

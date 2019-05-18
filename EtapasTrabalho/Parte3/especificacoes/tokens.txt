@@ -1,0 +1,76 @@
+// identificador
+id: {questao_a}
+
+// constante inteira
+const_inteira: {questao_b}
+
+
+// const real
+const_real: {questao_c}
+
+
+// const literal
+const_literal: {questao_d}
+
+
+// const caracter
+const_caracter: {questao_e}
+
+
+// comentï¿½rio de linha
+comentario_linha: {questao_f}
+
+
+// comentï¿½rio de bloco
+comentario_bloco: {questao_g}
+
+
+// palavras reservadas
+and = id : "and"
+begin = id : "begin"
+bool = id : "bool"
+char = id: "char"
+end = id: "end"
+false = id: "false"
+float = id: "float"
+forward = id: "forward"
+ifFalseDo = id: "ifFalseDo"
+ifTrueDo = id: "ifTrueDo"
+int = id: "int"
+main = id: "main"
+module = id: "module"
+not = id: "not"
+or = id: "or"
+read = id: "read"
+string = id: "string"
+true = id: "true"
+void = id: "void"
+whileFalseDo = id: "whileFalseDo"
+whileTrueDo = id: "whileTrueDo"
+write = id: "write"
+foward = id: "foward"
+
+// sï¿½mbolos especiais
+"("
+")"
+"=="
+"!="
+"<"
+"<="
+">"
+">="
+"+"
+"-"
+"*"
+"/"
+","
+"."
+";"
+":"
+"="
+"+="
+"-="
+"^"
+
+// caracteres de formataï¿½ï¿½o
+:[\s\n\t]
