@@ -5,3 +5,61 @@
 <operador_relacional> ::= "==" | "!=" | "<" | "<=" | ">" | ">=" ;
 <aritmetica> ::= <aritmetica> "+" <termo> | <aritmetica> "-" <termo> | <termo> ;
 <termo> ::= <termo> "*" <fator> | <termo> "/" <fator> | <fator> ; 
+<fator> ::= identificador | 
+            identificador "(" ")" |
+            identificador "(" <lista_expressoes> ")" |
+            cte_inteira |
+            cte_real |
+            cte_caracter |
+            cte_string |
+            "(" <expressao> ")" |
+            "+" <fator> |
+            "-" <fator> ;
+
+// recursão à esquerda
+// questão 8 - trabalho 3
+<expressao> ::=  <elemento> <expressao1> ;
+<expressao1> ::= and <expressao> | or <expressao> | î;
+<elemento> ::= <relacional> | true | false | not <elemento> ;
+<relacional> ::= <aritmetica> <operador_relacional> <aritmetica> | <aritmetica> ;
+<operador_relacional> ::= "==" | "!=" | "<" | "<=" | ">" | ">=" ;
+<aritmetica> ::=  <termo> <aritmetica1> ;
+<aritmetica1> ::= "+" <aritmetica> | "-" <aritmetica> | î ;
+<termo> ::=  <fator> <termo1> ;
+<termo1> ::= "*" <termo> | "/" <termo> | î;
+<fator> ::= identificador | 
+            identificador "(" ")" |
+            identificador "(" <lista_expressoes> ")" |
+            cte_inteira |
+            cte_real |
+            cte_caracter |
+            cte_string |
+            "(" <expressao> ")" |
+            "+" <fator> |
+            "-" <fator> ;
+
+// não determinismo
+<expressao> ::=  <elemento> <expressao1> ;
+<expressao1> ::= and <expressao> | or <expressao> | î ;
+<elemento> ::= <relacional> | true | false | not <elemento> ;
+<relacional> ::= <aritmetica> <relacional1> ;
+<relacional1> ::= <operador_relacional> <aritmetica> | î ;
+<operador_relacional> ::= "==" | "!=" | "<" | "<=" | ">" | ">=" ;
+<aritmetica> ::=  <termo> <aritmetica1> ;
+<aritmetica1> ::= "+" <aritmetica> | "-" <aritmetica> | î ;
+<termo> ::=  <fator> <termo1> ;
+<termo1> ::= "*" <termo> | "/" <termo> | î;
+<fator> ::= identificador <fator1> |
+            cte_inteira |
+            cte_real |
+            cte_caracter |
+            cte_string |
+            "(" <expressao> ")" |
+            "+" <fator> |
+            "-" <fator> ;
+<fator1> ::= î | 
+             "(" <fator2>;
+<fator2> ::= ")" | <lista_de_expressoes> ")" ;
+
+// símbolos inúteis
+NÃO HÁ INÚTEIS
