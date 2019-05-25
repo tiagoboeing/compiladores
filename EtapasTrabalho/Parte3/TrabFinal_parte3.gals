@@ -22,8 +22,6 @@ questao_e: \\[snt]
 
 questao_f: \-\-[^\n]*
 
-questao_g: #\|[^#\|](((\|[^#\|])?(#+[^#\|])?.)[^\|#])*\|#
-
 #Tokens
 // identificador
 id: {questao_a}
@@ -42,14 +40,6 @@ const_literal: {questao_d}
 
 // const caracter
 const_caracter: {questao_e}
-
-
-// coment�rio de linha
-comentario_linha: {questao_f}
-
-
-// coment�rio de bloco
-comentario_bloco: {questao_g}
 
 
 // palavras reservadas
@@ -130,14 +120,12 @@ foward = id: "foward"
 <comando>
 <atribuicao>
 <operador_de_atribuicao>
-<entradas>
 <saida>
 <lista_de_expressoes>
 <lista_de_expressoes1>
 <selecao>
 <else>
 <repeticao>
-<repeticao1>
 <retorno>
 
 //questao3
