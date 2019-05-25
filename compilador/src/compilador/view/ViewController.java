@@ -1,9 +1,5 @@
 package compilador.view;
 
-import compilador.Reader.FileInput;
-import compilador.controller.LexicalError;
-import compilador.controller.Lexico;
-import compilador.controller.Token;
 import compilador.decomposer.*;
 import compilador.utils.Files;
 import javafx.fxml.FXML;
@@ -11,19 +7,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.*;
-import javafx.stage.FileChooser;
 
 import java.awt.*;
 import java.io.*;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ViewController {
 
-
     public final String COMPILADO = "Programa compilado com sucesso";
+    public final String formatChars = "(\\t+|\\s+|\\n+)|(.+)";
 
     /* FIXME:
      * Textarea e contagem de linhas do editor não influenciam o scroll do SrollPane
@@ -98,24 +94,36 @@ public class ViewController {
         if(!arquivoSalvo || caminhoArquivoSalvo.isEmpty()){
             this.mensagens.appendText("É necessário salvar o arquivo antes de compilar!");
             return;
-        }
+        } else {
+            // verifica se possui código válido para compilar
+            Boolean onlyTabs = this.editor.getText().matches("");
+            Boolean onlySpaces = this.editor.getText().matches("");
+            Boolean onlyNewLine = this.editor.getText().matches("");
+            Boolean editorEmpty = this.editor.getText().isEmpty() | this.editor.getText().equalsIgnoreCase("") | this.editor.getText() == null;
 
-        if(!caminhoArquivoSalvo.isEmpty() && arquivoSalvo){
-            DecomposerLexico dl = new DecomposerLexico(this.editor.getText());
-            Decomposer<Set<DecomposedToken>, List<DecomposedError>> d = DefaultDecomposers.basic(dl);
+            if(this.editorCodeValid(this.editor.getText(), formatChars)){
+                DecomposerLexico dl = new DecomposerLexico(this.editor.getText());
+                Decomposer<Set<DecomposedToken>, List<DecomposedError>> d = DefaultDecomposers.basic(dl);
 
-            boolean compiled = d.getErrors().isEmpty();
-            if (compiled) {
-                d.getTokens().stream().map(Objects::toString).map(x->x+"\n").forEach(this.mensagens::appendText);
-                this.mensagens.appendText(COMPILADO);
+                boolean compiled = d.getErrors().isEmpty();
+                if (compiled) {
+                    d.getTokens().stream()
+                            .map(Objects::toString)
+                            .map(x -> x + "\n")
+                            .forEach(this.mensagens::appendText);
+
+                    this.mensagens.appendText(COMPILADO);
+                } else {
+                    this.mensagens.appendText(d.getErrors().get(0).getMessage());
+                }
+                /*
+                 * Especificação de tratamento dos erros:
+                 * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
+                */
             } else {
-                this.mensagens.appendText(d.getErrors().get(0).getMessage());
+                this.mensagens.setText("Nenhum programa para compilar na área reservada para mensagens");
             }
 
-            /*
-             * Especificação de tratamento dos erros:
-             * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
-             */
         }
     }
 
@@ -136,6 +144,21 @@ public class ViewController {
                 this.mensagemBarraStatus("OCORREU UM ERRO AO ABRIR O ARQUIVO");
             }
         }
+    }
+
+    private Boolean editorCodeValid(String textoEditor, String regex){
+        Integer countChars = 0;
+
+        final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+        final Matcher matcher = pattern.matcher(textoEditor);
+
+        while (matcher.find()) {
+            if(matcher.group(2) != null && !matcher.group(2).isEmpty()){
+                countChars++;
+                break;
+            }
+        }
+        return countChars > 0;
     }
 
     @FXML
@@ -169,7 +192,7 @@ public class ViewController {
 
     @FXML
     private void mostraEquipe(){
-        this.mostraMensagem("Gustavo Spies, Pedro Menzel, Tiago Boeing");
+        this.mostraMensagem("Gustavo Spiess, Tiago Boeing");
     }
 
     @FXML
