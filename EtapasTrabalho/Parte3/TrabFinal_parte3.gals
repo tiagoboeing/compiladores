@@ -18,6 +18,8 @@ questao_c: ([1-9][0-9]*|0)\.([0-9]*[1-9]|0)
 
 questao_d: \"[^\"\n\\]*\"
 
+questao_e: \\[snt]
+
 #Tokens
 // identificador
 id: {questao_a}
@@ -30,7 +32,6 @@ const_real: {questao_c}
 
 // const literal
 const_literal: {questao_d}
-
 
 // const caracter
 const_caracter: {questao_e}
