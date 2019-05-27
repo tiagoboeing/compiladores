@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiladores.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiladores.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,31 +27,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="107" column="59" lean-forward="true" selection-start-line="107" selection-start-column="59" selection-end-line="107" selection-end-column="59" />
+            <state relative-caret-position="650">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
               <folding>
-                <element signature="method#abrirArquivo#0;class#ViewController#0" />
-                <element signature="e#6618#6619#0" expanded="true" />
-                <element signature="e#6650#6651#0" expanded="true" />
-                <element signature="method#salvar#0;class#ViewController#0" />
-                <element signature="e#7426#7427#0" expanded="true" />
-                <element signature="e#7493#7494#0" expanded="true" />
-                <element signature="method#copiar#0;class#ViewController#0" />
-                <element signature="method#colar#0;class#ViewController#0" />
-                <element signature="method#recortar#0;class#ViewController#0" />
-                <element signature="method#limpaTela#0;class#ViewController#0" />
-                <element signature="e#8569#8570#0" expanded="true" />
-                <element signature="e#8616#8617#0" expanded="true" />
-                <element signature="e#8654#8655#0" expanded="true" />
-                <element signature="e#8698#8699#0" expanded="true" />
-                <element signature="e#8734#8735#0" expanded="true" />
-                <element signature="e#8776#8777#0" expanded="true" />
-                <element signature="e#8809#8810#0" expanded="true" />
-                <element signature="e#8848#8849#0" expanded="true" />
-                <element signature="e#8896#8897#0" expanded="true" />
-                <element signature="e#8941#8942#0" expanded="true" />
-                <element signature="e#8989#8990#0" expanded="true" />
-                <element signature="e#9031#9032#0" expanded="true" />
+                <element signature="e#5272#5906#0" />
+                <element signature="e#6452#7178#0" />
+                <element signature="e#7295#7552#0" />
+                <element signature="e#7558#7764#0" />
+                <element signature="e#7770#8117#0" />
+                <element signature="e#8123#8312#0" />
               </folding>
             </state>
           </provider>
@@ -277,14 +258,15 @@
       <workItem from="1555268789382" duration="1895000" />
       <workItem from="1555368922142" duration="1138000" />
       <workItem from="1558808694234" duration="14787000" />
+      <workItem from="1558993482912" duration="1141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67974000" />
+    <option name="totallyTimeSpent" value="69115000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.17023554" />
@@ -293,10 +275,9 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25255972" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40841866" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -306,6 +287,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.21160409" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Structure" order="2" weight="0.2601713" />
@@ -468,13 +450,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/Set.java" />
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/Token.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -505,31 +481,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="107" column="59" lean-forward="true" selection-start-line="107" selection-start-column="59" selection-end-line="107" selection-end-column="59" />
+        <state relative-caret-position="650">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
           <folding>
-            <element signature="method#abrirArquivo#0;class#ViewController#0" />
-            <element signature="e#6618#6619#0" expanded="true" />
-            <element signature="e#6650#6651#0" expanded="true" />
-            <element signature="method#salvar#0;class#ViewController#0" />
-            <element signature="e#7426#7427#0" expanded="true" />
-            <element signature="e#7493#7494#0" expanded="true" />
-            <element signature="method#copiar#0;class#ViewController#0" />
-            <element signature="method#colar#0;class#ViewController#0" />
-            <element signature="method#recortar#0;class#ViewController#0" />
-            <element signature="method#limpaTela#0;class#ViewController#0" />
-            <element signature="e#8569#8570#0" expanded="true" />
-            <element signature="e#8616#8617#0" expanded="true" />
-            <element signature="e#8654#8655#0" expanded="true" />
-            <element signature="e#8698#8699#0" expanded="true" />
-            <element signature="e#8734#8735#0" expanded="true" />
-            <element signature="e#8776#8777#0" expanded="true" />
-            <element signature="e#8809#8810#0" expanded="true" />
-            <element signature="e#8848#8849#0" expanded="true" />
-            <element signature="e#8896#8897#0" expanded="true" />
-            <element signature="e#8941#8942#0" expanded="true" />
-            <element signature="e#8989#8990#0" expanded="true" />
-            <element signature="e#9031#9032#0" expanded="true" />
+            <element signature="e#5272#5906#0" />
+            <element signature="e#6452#7178#0" />
+            <element signature="e#7295#7552#0" />
+            <element signature="e#7558#7764#0" />
+            <element signature="e#7770#8117#0" />
+            <element signature="e#8123#8312#0" />
           </folding>
         </state>
       </provider>
