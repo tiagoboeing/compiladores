@@ -1,5 +1,3 @@
-package compilador.controller;
-
 public class Lexico implements Constants
 {
     private int position;

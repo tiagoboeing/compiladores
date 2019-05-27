@@ -1,6 +1,6 @@
 package compilador.view;
 
-import compilador.decomposer.*;
+//import compilador.decomposer.*;
 import compilador.utils.Files;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -102,20 +102,20 @@ public class ViewController {
             Boolean editorEmpty = this.editor.getText().isEmpty() | this.editor.getText().equalsIgnoreCase("") | this.editor.getText() == null;
 
             if(this.editorCodeValid(this.editor.getText(), formatChars)){
-                DecomposerLexico dl = new DecomposerLexico(this.editor.getText());
-                Decomposer<Set<DecomposedToken>, List<DecomposedError>> d = DefaultDecomposers.basic(dl);
-
-                boolean compiled = d.getErrors().isEmpty();
-                if (compiled) {
-                    d.getTokens().stream()
-                            .map(Objects::toString)
-                            .map(x -> x + "\n")
-                            .forEach(this.mensagens::appendText);
-
-                    this.mensagens.appendText(COMPILADO);
-                } else {
-                    this.mensagens.appendText(d.getErrors().get(0).getMessage());
-                }
+//                DecomposerLexico dl = new DecomposerLexico(this.editor.getText());
+//                Decomposer<Set<DecomposedToken>, List<DecomposedError>> d = DefaultDecomposers.basic(dl);
+//
+//                boolean compiled = d.getErrors().isEmpty();
+//                if (compiled) {
+//                    d.getTokens().stream()
+//                            .map(Objects::toString)
+//                            .map(x -> x + "\n")
+//                            .forEach(this.mensagens::appendText);
+//
+//                    this.mensagens.appendText(COMPILADO);
+//                } else {
+//                    this.mensagens.appendText(d.getErrors().get(0).getMessage());
+//                }
                 /*
                  * Especificação de tratamento dos erros:
                  * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
