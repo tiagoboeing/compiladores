@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bea71a55-6355-4ca5-ac23-9a8a8821d6e3" name="Default Changelist" comment="" />
+    <list default="true" id="bea71a55-6355-4ca5-ac23-9a8a8821d6e3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/compiladores.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiladores.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/AnalysisError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/LexicalError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/Lexico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/ParserConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/ScannerConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/SemanticError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/Semantico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/Sintatico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/SyntaticError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/AnalisadorSintático/java/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/Parte3/Tabela de Analise LL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../EtapasTrabalho/Parte3/Tabela de Analise LL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/Parte3/Tabela de Analise LL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../EtapasTrabalho/Parte3/Tabela de Analise LL.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EtapasTrabalho/Parte3/TrabFinal_parte3.gals" beforeDir="false" afterPath="$PROJECT_DIR$/../EtapasTrabalho/Parte3/TrabFinal_parte3.gals" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/AnalysisError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/LexicalError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/Lexico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/ScannerConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/SemanticError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/SyntaticError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GALS/codigo_gerado/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compilador/controller/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/controller/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compilador/controller/ScannerConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/controller/ScannerConstants.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,64 +51,8 @@
     <expand />
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-299126035">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="2019" value="1" />
-          <entry key="class" value="2" />
-          <entry key="css" value="1" />
-          <entry key="form" value="5" />
-          <entry key="fxml" value="2" />
-          <entry key="java" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="2" />
-          <entry key="CSS" value="1" />
-          <entry key="GUI_DESIGNER_FORM" value="5" />
-          <entry key="JAVA" value="21" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="578" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="578" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="27" column="87" lean-forward="true" selection-start-line="27" selection-start-column="87" selection-end-line="27" selection-end-column="87" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/compilador/view/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,20 +62,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/compilador/view/View.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/compilador/controller/ParserConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2772">
-              <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+            <state relative-caret-position="359">
+              <caret line="224" column="18" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compilador/view/View.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2646">
+              <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/compilador/view/view.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state relative-caret-position="126">
               <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
             </state>
           </provider>
@@ -138,14 +120,9 @@
         <option value="$PROJECT_DIR$/src/compilador/view/view.css" />
         <option value="$PROJECT_DIR$/src/compilador/view/View.java" />
         <option value="$PROJECT_DIR$/src/compilador/Main.java" />
+        <option value="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="45" />
@@ -183,13 +160,12 @@
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -206,9 +182,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="right" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -273,6 +251,9 @@
       <item itemvalue="Application.CompiladorMain" />
     </list>
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bea71a55-6355-4ca5-ac23-9a8a8821d6e3" name="Default Changelist" comment="" />
@@ -284,23 +265,25 @@
       <workItem from="1554762785897" duration="2370000" />
       <workItem from="1554940127596" duration="2798000" />
       <workItem from="1555025576470" duration="311000" />
+      <workItem from="1559355438404" duration="359000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6746000" />
+    <option name="totallyTimeSpent" value="7105000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16845638" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17077088" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22978723" />
@@ -313,6 +296,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.24680851" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -327,25 +311,13 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.class" />
     <entry file="file://$PROJECT_DIR$/src/decomposer/DecomposerFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/decomposer/DefaultDecomposers.java" />
     <entry file="file://$PROJECT_DIR$/src/decomposer/Decomposer.java" />
-    <entry file="file://$PROJECT_DIR$/teste.2019">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/compilador/decomposer/DecomposerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-704">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compilador/decomposer/DecomposerFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/compilador/controller/ScannerConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-352">
@@ -384,26 +356,32 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/compilador/view/Main.form" />
-    <entry file="file://$PROJECT_DIR$/src/compilador/Reader/FileInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compilador/Reader/FileInput.java" />
     <entry file="file://$PROJECT_DIR$/src/compilador/view/MainView.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/application/Application.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/application/Application.java" />
+    <entry file="file://$PROJECT_DIR$/src/compilador/view/View.java" />
+    <entry file="file://$PROJECT_DIR$/src/compilador/view/View.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
+        <state relative-caret-position="2646">
+          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compilador/view/view.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/view/View.java" />
+    <entry file="file://$PROJECT_DIR$/teste.2019">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="87" lean-forward="true" selection-start-line="27" selection-start-column="87" selection-end-line="27" selection-end-column="87" />
+        <state relative-caret-position="200">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -417,18 +395,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/view/View.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/compilador/controller/ParserConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/view/view.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="359">
+          <caret line="224" column="18" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
         </state>
       </provider>
     </entry>
