@@ -2,13 +2,16 @@ package compilador.controller;
 
 public class LexicalError extends AnalysisError
 {
-    public LexicalError(String msg, int position)
+    String lex;
+
+    public LexicalError(String msg, int position, String lex)
 	 {
         super(msg, position);
+
+        this.lex = lex;
     }
 
-    public LexicalError(String msg)
-    {
-        super(msg);
+    public String getLex() {
+        return lex;
     }
 }
