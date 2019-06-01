@@ -7,23 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/EtapasTrabalho/Parte3/TrabFinal_parte3.gals" beforeDir="false" afterPath="$PROJECT_DIR$/EtapasTrabalho/Parte3/TrabFinal_parte3.gals" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/Reader/FileInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/Reader/FileInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/LexicalError.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/LexicalError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/Lexico.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/Lexico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/SemanticError.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/SemanticError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/SyntaticError.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/SyntaticError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposedError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposedToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/Decomposer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerLexico.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/DefaultDecomposers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/PositionCalc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/decomposer/Positionable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/ParserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/ParserConstants.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,30 +25,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-              <folding>
-                <element signature="e#5272#5906#0" />
-                <element signature="e#6452#7178#0" />
-                <element signature="e#7295#7552#0" />
-                <element signature="e#7558#7764#0" />
-                <element signature="e#7770#8117#0" />
-                <element signature="e#8123#8312#0" />
-              </folding>
+            <state relative-caret-position="-11837">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/Reader/FileInput.java">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ParserConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="13" selection-start-line="13" selection-start-column="2" selection-end-line="22" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="416">
+              <caret line="264" column="41" selection-start-line="264" selection-start-column="41" selection-end-line="264" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -91,6 +65,7 @@
       <find>input</find>
       <find>salvar</find>
       <find>abrir</find>
+      <find>express</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,6 +86,7 @@
         <option value="$PROJECT_DIR$/compilador/src/compilador/controller/AnalysisError.java" />
         <option value="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" />
         <option value="$PROJECT_DIR$/compilador/src/compilador/Reader/FileInput.java" />
+        <option value="$PROJECT_DIR$/compilador/src/compilador/controller/ParserConstants.java" />
       </list>
     </option>
   </component>
@@ -127,22 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="compiladores" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="compiladores" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="compiladores" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="compiladores" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="compilador" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,6 +134,14 @@
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiladores" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -181,6 +149,22 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="compiladores" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="compiladores" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="compiladores" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="compiladores" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="compilador" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,17 +249,18 @@
       <workItem from="1555368922142" duration="1138000" />
       <workItem from="1558808694234" duration="14787000" />
       <workItem from="1558993482912" duration="1878000" />
+      <workItem from="1559350167036" duration="3516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69852000" />
+    <option name="totallyTimeSpent" value="73368000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20067114" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20342612" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -347,31 +332,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/Positionable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposedError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/Positionable.java" />
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposedError.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DefaultDecomposers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="7" column="96" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DefaultDecomposers.java" />
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -382,13 +346,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/Reader/LexicoInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/Reader/LexicoInput.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/com/sun/glass/ui/View.java" />
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/View.fxml">
       <provider selected="true" editor-type-id="text-editor">
@@ -405,17 +363,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerLexico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding>
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerLexico.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -450,27 +398,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="30" column="46" lean-forward="true" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/Decomposer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposedToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposerFactory.java" />
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/Decomposer.java" />
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/decomposer/DecomposedToken.java" />
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -485,28 +415,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/Reader/FileInput.java" />
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding>
-            <element signature="e#5272#5906#0" />
-            <element signature="e#6452#7178#0" />
-            <element signature="e#7295#7552#0" />
-            <element signature="e#7558#7764#0" />
-            <element signature="e#7770#8117#0" />
-            <element signature="e#8123#8312#0" />
-          </folding>
+        <state relative-caret-position="21">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/Reader/FileInput.java">
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="13" selection-start-line="13" selection-start-column="2" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-11837">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ParserConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="264" column="41" selection-start-line="264" selection-start-column="41" selection-end-line="264" selection-end-column="41" />
         </state>
       </provider>
     </entry>
