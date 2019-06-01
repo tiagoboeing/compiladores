@@ -44,7 +44,7 @@ char = id: "char"
 end = id: "end"
 false = id: "false"
 float = id: "float"
-foward = id: "foward"
+forward = id: "forward"
 ifFalseDo = id: "ifFalseDo"
 ifTrueDo = id: "ifTrueDo"
 int = id: "int"
@@ -149,7 +149,7 @@ write = id: "write"
 <lista_modulo1> ::= î | <lista_modulo> ;
 <lista_modulo> ::= <forma_geral> <lista_modulo1> ;
 
-<declaracao> ::= foward module <tipo_modulo> id "(" <parametros_formais> ")" ;
+<declaracao> ::= forward module <tipo_modulo> id "(" <parametros_formais> ")" ;
 
 <tipo_modulo> ::= int | float | bool | char | string | void ;
 
