@@ -1,20 +1,22 @@
 package compilador.view;
 
 //import compilador.decomposer.*;
+import compilador.brocker.Parser;
+import compilador.brocker.factorys.FileParserFactory;
+import compilador.brocker.factorys.TextParserFactory;
+import compilador.brocker.parsers.ParseException;
 import compilador.utils.Files;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.input.*;
 
 import java.awt.*;
-import java.io.*;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class ViewController {
 
@@ -91,39 +93,36 @@ public class ViewController {
     private void compilar(){
         this.limpaMensagens();
 
-        if(!arquivoSalvo || caminhoArquivoSalvo.isEmpty()){
-            this.mensagens.appendText("É necessário salvar o arquivo antes de compilar!");
-            return;
-        } else {
-            // verifica se possui código válido para compilar
-            Boolean onlyTabs = this.editor.getText().matches("");
-            Boolean onlySpaces = this.editor.getText().matches("");
-            Boolean onlyNewLine = this.editor.getText().matches("");
-            Boolean editorEmpty = this.editor.getText().isEmpty() | this.editor.getText().equalsIgnoreCase("") | this.editor.getText() == null;
+        Parser parser = null;
 
-            if(this.editorCodeValid(this.editor.getText(), formatChars)){
-//                DecomposerLexico dl = new DecomposerLexico(this.editor.getText());
-//                Decomposer<Set<DecomposedToken>, List<DecomposedError>> d = DefaultDecomposers.basic(dl);
-//
-//                boolean compiled = d.getErrors().isEmpty();
-//                if (compiled) {
-//                    d.getTokens().stream()
-//                            .map(Objects::toString)
-//                            .map(x -> x + "\n")
-//                            .forEach(this.mensagens::appendText);
-//
-//                    this.mensagens.appendText(COMPILADO);
-//                } else {
-//                    this.mensagens.appendText(d.getErrors().get(0).getMessage());
-//                }
-                /*
-                 * Especificação de tratamento dos erros:
-                 * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
-                */
+        try {
+            if(!arquivoSalvo || caminhoArquivoSalvo.isEmpty()){
+                if (this.editor.getText().isEmpty())
+                    throw new ViewException("Não há código para ser compilado, verifique se o arquivo está corretamente salvo.");
+                parser = TextParserFactory.get(this.editor.getText()).getParser();
             } else {
-                this.mensagens.setText("Nenhum programa para compilar na área reservada para mensagens");
+                Path path = Paths.get(caminhoArquivoSalvo);
+                File file = path.toFile();
+                if (!file.exists())
+                    throw new ViewException("O arquivo " + caminhoArquivoSalvo + " não é acessível para compilação");
+                parser = FileParserFactory.get(Paths.get(caminhoArquivoSalvo).toFile()).getParser();
             }
 
+            parser.parse();
+        } catch (ParseException pe) {
+            this.mensagens.setText(pe.getParseMsg());
+        } catch (ViewException ve) {
+            this.mensagens.setText(ve.getMessage());
+        } catch (Exception e) {
+            this.mensagens.setText(
+                    "Um erro inesperado ocorreu." +
+                    "\n\n" +
+                    e.getMessage() +
+                    "\n\n"+
+                    Arrays.asList(e.getStackTrace()).
+                            stream().
+                            map(StackTraceElement::toString).
+                            collect(Collectors.joining("\n")));
         }
     }
 
