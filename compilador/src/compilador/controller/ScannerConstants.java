@@ -520,12 +520,10 @@ public interface ScannerConstants
 
     String[] SCANNER_ERROR =
     {
-        "Caractere n�o esperado",
+        "Erro na linha %d - símbolo inválido (%s)",//"Caractere não esperado",
         "",
-        "Erro identificando \"!=\"",
-        "Erro identificando const_literal",
-        "",
-        "",
+        "Erro na linha %d - símbolo inválido (%s)", //"Erro identificando \"!=\"",
+        "Erro na linha %d - constante string inválida", //"Erro identificando const_literal",
         "",
         "",
         "",
@@ -540,21 +538,23 @@ public interface ScannerConstants
         "",
         "",
         "",
-        "Erro identificando const_caracter",
+        "",
+        "",
+        "Erro na linha %d - constante caracter inválida",//"Erro identificando const_caracter",
         "",
         "",
         "",
         "",
         "",
         "",
-        "Erro identificando const_real",
+        "Erro na linha %d - constante real inválida",//"Erro identificando const_real",
         "",
         "",
         "",
         "",
-        "Erro identificando id",
+        "Erro na linha %d - nome de token inválido (%s)",//"Erro identificando id",
         "",
-        "Erro identificando const_real"
+        "Erro na linha %d - constante real inválida",//"Erro identificando const_real"
     };
 
 }
