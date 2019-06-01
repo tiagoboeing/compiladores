@@ -28,8 +28,8 @@ public class BaseParser implements Parser {
             this.sintatico.parse(this.lexico, this.semantico);
         } catch (LexicalError le) {
             throw getException(le.getPosition(), le.getMessage(), le.getLex());
-        } catch (SyntaticError se) {
-            throw getException(se.getPosition(), se.getMessage());
+        } catch (SyntaticError si) {
+            throw getException(si.getPosition(), si.getMessage(), si.getLex());
         } catch (SemanticError se) {
             throw getException(se.getPosition(), se.getMessage());
         }
