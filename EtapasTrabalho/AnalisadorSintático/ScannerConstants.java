@@ -1,5 +1,3 @@
-package compilador.controller;
-
 public interface ScannerConstants
 {
     int[] SCANNER_TABLE_INDEXES = 
@@ -520,12 +518,10 @@ public interface ScannerConstants
 
     String[] SCANNER_ERROR =
     {
-        "Erro na linha %d - símbolo inválido (%s)",//"Caractere não esperado",
+        "Caractere n�o esperado",
         "",
-        "Erro na linha %d - símbolo inválido (%s)", //"Erro identificando \"!=\"",
-        "Erro na linha %d - constante string inválida", //"Erro identificando const_literal",
-        "",
-        "",
+        "Erro identificando \"!=\"",
+        "Erro identificando const_literal",
         "",
         "",
         "",
@@ -540,21 +536,23 @@ public interface ScannerConstants
         "",
         "",
         "",
-        "Erro na linha %d - constante caracter inválida",//"Erro identificando const_caracter",
+        "",
+        "",
+        "Erro identificando const_caracter",
         "",
         "",
         "",
         "",
         "",
         "",
-        "Erro na linha %d - constante real inválida",//"Erro identificando const_real",
+        "Erro identificando const_real",
         "",
         "",
         "",
         "",
-        "Erro na linha %d - nome de token inválido (%s)",//"Erro identificando id",
+        "Erro identificando id",
         "",
-        "Erro na linha %d - constante real inválida",//"Erro identificando const_real"
+        "Erro identificando const_real"
     };
 
 }
