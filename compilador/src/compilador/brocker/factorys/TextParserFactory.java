@@ -1,6 +1,7 @@
 package compilador.brocker.factorys;
 
 import compilador.brocker.PositionCalc;
+import compilador.brocker.parsers.ParseException;
 
 import java.io.Reader;
 import java.io.StringReader;
@@ -14,7 +15,7 @@ public class TextParserFactory extends BaseFactory {
 
     public static TextParserFactory get(String input) {
         if (input == null || input.isEmpty()) {
-            throw new NullPointerException();
+            throw ParseException.get(0, 0, "Código fonte não informado.");
         }
 
 

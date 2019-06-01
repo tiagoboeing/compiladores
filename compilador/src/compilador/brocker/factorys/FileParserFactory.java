@@ -1,6 +1,7 @@
 package compilador.brocker.factorys;
 
 import compilador.brocker.PositionCalc;
+import compilador.brocker.parsers.ParseException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -13,10 +14,10 @@ public class FileParserFactory extends BaseFactory {
         super(reader, lineEndings);
     }
 
-    public static FileParserFactory get(File file) throws IOException, NullPointerException {
+    public static FileParserFactory get(File file) throws IOException {
 
         if (file == null) {
-            throw new NullPointerException();
+            throw ParseException.get(0, 0, "Arquivo não informado");
         }
 
 

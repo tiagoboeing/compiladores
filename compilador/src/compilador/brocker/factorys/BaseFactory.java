@@ -4,6 +4,7 @@ import compilador.brocker.Parser;
 import compilador.brocker.ParserFactory;
 import compilador.brocker.PositionCalc;
 import compilador.brocker.parsers.BaseParser;
+import compilador.brocker.parsers.ParseException;
 import compilador.controller.Lexico;
 import compilador.controller.Semantico;
 import compilador.controller.Sintatico;
@@ -25,11 +26,11 @@ public class BaseFactory implements ParserFactory {
     public Parser getParser() throws NullPointerException {
 
         if (this.reader == null) {
-            throw new NullPointerException("Fonte não encontrado");
+            throw ParseException.get(0, 0, "Fonte não encontrado");
         }
 
         if (this.lineEndings == null) {
-            throw new NullPointerException("Lista de posições indisponível");
+            throw ParseException.get(0, 0, "Lista de posições indisponível");
         }
 
         Sintatico sintatico = new Sintatico();
