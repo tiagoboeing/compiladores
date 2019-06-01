@@ -1,0 +1,20 @@
+main
+foward module int test()
+begin
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    write(1).
+    ~
+end;
