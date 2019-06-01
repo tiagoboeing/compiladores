@@ -1,15 +1,15 @@
 package compilador.utils;
 
-import javafx.stage.FileChooser;
+/*import javafx.stage.FileChooser;*/
 
 import java.io.*;
 
 public class Files {
-
-    /* Caixa de seleção de arquivo nativa do sistema
+/*
+    *//* Caixa de seleção de arquivo nativa do sistema
      * @param extensões permitidas
      * @return File
-     */
+     *//*
     public static File chooseFile(String[] extensoesPermitidas) {
         FileChooser fileChooser = new FileChooser();
 
@@ -32,12 +32,12 @@ public class Files {
         return null;
     }
 
-    /*
+    *//*
      * Salva arquivo com um conteúdo a ser informado
      * @param conteudo texto a ser inserido no arquivo
      * @param caminho local/pasta com extensão onde o arquivo será salvo
      * return boolean - arquivo salvo
-     */
+     *//*
     public static Boolean saveFile(String conteudo, String caminho){
         try {
             File file = new File(caminho);
@@ -52,11 +52,11 @@ public class Files {
     }
 
 
-    /*
+    *//*
      * Abre caixa de diálogo para selecionar local a ser salvo
      * @param extensao - tipos ao qual o arquivo será salvo
      * return String - caminho escolhido
-     */
+     *//*
     public static String selectPath(String extensao){
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("codigo-compilador", extensao));
@@ -64,11 +64,11 @@ public class Files {
         return fileChooser.showSaveDialog(null).getAbsolutePath();
     }
 
-    /*
+    *//*
      * Lê conteúdo de um arquivo
      * @param File - arquivo
      * @return String - conteúdo do arquivo
-     */
+     *//*
     public static String readFile(File arquivo){
         try {
             if(arquivo != null){
@@ -101,5 +101,5 @@ public class Files {
             e.printStackTrace();
             return null;
         }
-    }
+    }*/
 }

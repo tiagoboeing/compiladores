@@ -2,11 +2,11 @@ package compilador.view;
 
 //import compilador.decomposer.*;
 import compilador.utils.Files;
-import javafx.fxml.FXML;
+/*import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.*;
+import javafx.scene.input.*;*/
 
 import java.awt.*;
 import java.io.*;
@@ -26,6 +26,7 @@ public class ViewController {
      */
 
     // shortcuts
+/*
     public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keySalvar = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_ANY);
@@ -34,6 +35,7 @@ public class ViewController {
     public static final KeyCombination keyRecortar = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keyCompilar = new KeyCodeCombination(KeyCode.F9);
     public static final KeyCombination keyEquipe = new KeyCodeCombination(KeyCode.F1);
+*/
 
     /* Extensões que o usuário pode selecionar
      * Ex.:  {"*.JSON", "*.json", "*.txt", "*.TXT", "*.java"}
@@ -46,7 +48,7 @@ public class ViewController {
     static boolean arquivoSalvo = false;
     static String caminhoArquivoSalvo;
 
-    @FXML private Button novo;
+   /* @FXML private Button novo;
     @FXML private Button abrir;
     @FXML private Button salvar;
     @FXML private Button copiar;
@@ -116,10 +118,10 @@ public class ViewController {
 //                } else {
 //                    this.mensagens.appendText(d.getErrors().get(0).getMessage());
 //                }
-                /*
+                *//*
                  * Especificação de tratamento dos erros:
                  * https://github.com/tiagoboeing/compiladores/wiki/Parte-2---Implementa%C3%A7%C3%A3o-do-analisador-l%C3%A9xico
-                */
+                *//*
             } else {
                 this.mensagens.setText("Nenhum programa para compilar na área reservada para mensagens");
             }
@@ -251,6 +253,6 @@ public class ViewController {
 
     private void conteudoEditor(String texto){
         this.editor.setText(texto);
-    }
+    }*/
 
 }
