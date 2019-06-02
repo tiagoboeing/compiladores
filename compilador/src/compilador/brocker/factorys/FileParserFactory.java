@@ -20,7 +20,6 @@ public class FileParserFactory extends BaseFactory {
             throw ParseException.get(0, 0, "Arquivo não informado");
         }
 
-
         BufferedReader bufferedReader = Files.newBufferedReader(file.toPath());
         String input = bufferedReader.lines().collect(Collectors.joining("\n"));
 

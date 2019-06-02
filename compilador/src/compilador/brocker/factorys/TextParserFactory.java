@@ -18,9 +18,7 @@ public class TextParserFactory extends BaseFactory {
             throw ParseException.get(0, 0, "Código fonte não informado.");
         }
 
-
         List<Integer> lineEndings = PositionCalc.getLineEndings(input);
-
         Reader reader = new StringReader(input);
 
         return new TextParserFactory(reader, lineEndings);
