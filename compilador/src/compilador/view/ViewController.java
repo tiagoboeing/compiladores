@@ -8,8 +8,8 @@ import compilador.brocker.parsers.ParseException;
 import compilador.utils.Files;
 import javafx.fxml.FXML;
 import javafx.scene.input.*;
+import javafx.scene.control.*;
 
-import java.awt.*;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -100,15 +100,23 @@ public class ViewController {
                 if (this.editor.getText().isEmpty())
                     throw new ViewException("Não há código para ser compilado, verifique se o arquivo está corretamente salvo.");
                 parser = TextParserFactory.get(this.editor.getText()).getParser();
-            } else {
+            } else if(this.editorCodeValid(this.editor.getText(), formatChars)) {
+
+                // Salva arquivo automaticamente antes de compilar
+                this.autoSave();
+
                 Path path = Paths.get(caminhoArquivoSalvo);
                 File file = path.toFile();
                 if (!file.exists())
                     throw new ViewException("O arquivo " + caminhoArquivoSalvo + " não é acessível para compilação");
                 parser = FileParserFactory.get(Paths.get(caminhoArquivoSalvo).toFile()).getParser();
+
+                parser.parse();
+            } else {
+                throw new ViewException("Nenhum programa para compilar na área reservada para mensagens");
             }
 
-            parser.parse();
+
         } catch (ParseException pe) {
             this.mensagens.setText(pe.getParseMsg());
         } catch (ViewException ve) {
@@ -185,6 +193,16 @@ public class ViewController {
             }
         }else {
             this.barraStatus.setText("ERRO AO SALVAR!");
+            arquivoSalvo = false;
+        }
+    }
+
+    private void autoSave(){
+        if(Files.saveFile(this.editor.getText(), caminhoArquivoSalvo)) {
+            this.mensagemBarraStatus(caminhoArquivoSalvo);
+            arquivoSalvo = true;
+        } else {
+            this.barraStatus.setText("ERRO AO SALVAR ARQUIVO DURANTE COMPILAÇÃO!");
             arquivoSalvo = false;
         }
     }
