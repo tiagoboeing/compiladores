@@ -79,14 +79,14 @@ public class ViewController {
 
     @FXML
     private void keyShortcuts(KeyEvent event){
-        if (this.keyNovo.match(event)) { this.limpaTela(); return; }
-        if (this.keyAbrir.match(event)) { this.abrirArquivo(); return; }
-        if (this.keySalvar.match(event)) { this.salvar(); return; }
-        if (this.keyCopiar.match(event)) { this.copiar(); return; }
-        if (this.keyColar.match(event)) { this.colar(); return; }
-        if (this.keyRecortar.match(event)) { System.out.println("Recortar"); return;  }
-        if (this.keyCompilar.match(event)) { this.compilar(); return; }
-        if (this.keyEquipe.match(event)) { this.mostraEquipe(); return; }
+        if (keyNovo.match(event)) { this.limpaTela(); return; }
+        if (keyAbrir.match(event)) { this.abrirArquivo(); return; }
+        if (keySalvar.match(event)) { this.salvar(); return; }
+        if (keyCopiar.match(event)) { this.copiar(); return; }
+        if (keyColar.match(event)) { this.colar(); return; }
+        if (keyRecortar.match(event)) { this.recortar(); return;  }
+        if (keyCompilar.match(event)) { this.compilar(); return; }
+        if (keyEquipe.match(event)) { this.mostraEquipe(); }
     }
 
     @FXML
@@ -99,11 +99,12 @@ public class ViewController {
             if(!arquivoSalvo || caminhoArquivoSalvo.isEmpty()){
                 if (this.editor.getText().isEmpty())
                     throw new ViewException("Não há código para ser compilado, verifique se o arquivo está corretamente salvo.");
-                parser = TextParserFactory.get(this.editor.getText()).getParser();
+                else
+                    throw new ViewException("Salve o arquivo antes de compilar");
             } else if(this.editorCodeValid(this.editor.getText(), formatChars)) {
+                parser = TextParserFactory.get(this.editor.getText()).getParser();
 
-                // Salva arquivo automaticamente antes de compilar
-                this.autoSave();
+                this.autoSave(); // Salva arquivo automaticamente antes de compilar
 
                 Path path = Paths.get(caminhoArquivoSalvo);
                 File file = path.toFile();
@@ -115,7 +116,6 @@ public class ViewController {
             } else {
                 throw new ViewException("Nenhum programa para compilar na área reservada para mensagens");
             }
-
 
         } catch (ParseException pe) {
             this.mensagens.setText(pe.getParseMsg());
