@@ -131,6 +131,10 @@ public class ViewController {
                             stream().
                             map(StackTraceElement::toString).
                             collect(Collectors.joining("\n")));
+        } finally {
+            if(this.mensagens.getText().equalsIgnoreCase("")) {
+                this.mensagens.setText(COMPILADO);
+            }
         }
     }
 
