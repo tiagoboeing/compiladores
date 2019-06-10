@@ -1,6 +1,7 @@
 package compilador.brocker;
 
 import compilador.brocker.parsers.ParseException;
+import compilador.controller.Semantico;
 
 public interface Parser {
 //    public Sintatico getsintatico();

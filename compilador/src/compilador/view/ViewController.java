@@ -27,6 +27,9 @@ public class ViewController {
      * Textarea e contagem de linhas do editor não influenciam o scroll do SrollPane
      */
 
+    //  endereço ilasm.exe
+    //  C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+
     // shortcuts
     public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
