@@ -132,7 +132,7 @@ public class ViewController {
                             map(StackTraceElement::toString).
                             collect(Collectors.joining("\n")));
         } finally {
-            if(this.mensagens.getText().equalsIgnoreCase("")) {
+            if(this.mensagens.getText().isEmpty()) {
                 this.mensagens.setText(COMPILADO);
             }
         }

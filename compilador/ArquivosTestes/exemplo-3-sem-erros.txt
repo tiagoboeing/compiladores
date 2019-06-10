@@ -2,6 +2,6 @@ main
 begin
 	write("Digite um valor para lado:").
 	read(lado).
-	area = lado * lado.
+	area = lado + lado.
 	write(area).
 end
