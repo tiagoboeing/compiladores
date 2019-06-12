@@ -31,9 +31,9 @@ public class ViewController {
     //  C:\Windows\Microsoft.NET\Framework64\v4.0.30319
 
     // shortcuts
-    public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
-    public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
-    public static final KeyCombination keySalvar = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_DOWN);
+    public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN);
+    public static final KeyCombination keySalvar = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN);
     public static final KeyCombination keyCopiar = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keyColar = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keyRecortar = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_ANY);
@@ -67,6 +67,10 @@ public class ViewController {
     @FXML private Label barraStatus;
 
     @FXML private ScrollPane scroll;
+
+    public void ViewController() {
+        this.editor.setScrollLeft(2.0);
+    }
 
     @FXML
     private void rowCount(){

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bea71a55-6355-4ca5-ac23-9a8a8821d6e3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/compilador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/compilador/view/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/view/View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compilador/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/view/ViewController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,32 +30,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/compilador/view/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
-              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+              <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2688#2689#0" expanded="true" />
+                <element signature="e#2734#2735#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/compilador/controller/Semantico.java">
+        <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="552">
+              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,6 +74,7 @@
       <find>não informado</find>
       <find>sucesso</find>
       <find>compilado</find>
+      <find>shortc</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Java\compiladores\compilador</dir>
@@ -102,10 +98,10 @@
         <option value="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" />
         <option value="$PROJECT_DIR$/src/compilador/controller/Constants.java" />
         <option value="$PROJECT_DIR$/src/compilador/brocker/Parser.java" />
-        <option value="$PROJECT_DIR$/src/compilador/view/ViewController.java" />
         <option value="$PROJECT_DIR$/src/compilador/brocker/parsers/BaseParser.java" />
         <option value="$PROJECT_DIR$/src/compilador/controller/Semantico.java" />
         <option value="$PROJECT_DIR$/src/compilador/Main.java" />
+        <option value="$PROJECT_DIR$/src/compilador/view/ViewController.java" />
       </list>
     </option>
   </component>
@@ -254,12 +250,12 @@
       <workItem from="1559598780685" duration="842000" />
       <workItem from="1560204005825" duration="3967000" />
       <workItem from="1560303480149" duration="376000" />
-      <workItem from="1560303976357" duration="1498000" />
+      <workItem from="1560303976357" duration="2421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30213000" />
+    <option name="totallyTimeSpent" value="31136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -503,19 +499,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/view/ViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        <state relative-caret-position="552">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/compilador/view/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2688#2689#0" expanded="true" />
+            <element signature="e#2734#2735#0" expanded="true" />
           </folding>
         </state>
       </provider>
