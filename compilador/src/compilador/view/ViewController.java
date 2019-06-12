@@ -27,9 +27,6 @@ public class ViewController {
      * Textarea e contagem de linhas do editor não influenciam o scroll do SrollPane
      */
 
-    //  endereço ilasm.exe
-    //  C:\Windows\Microsoft.NET\Framework64\v4.0.30319
-
     // shortcuts
     public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_DOWN);
     public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN);
@@ -39,6 +36,8 @@ public class ViewController {
     public static final KeyCombination keyRecortar = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_ANY);
     public static final KeyCombination keyCompilar = new KeyCodeCombination(KeyCode.F9);
     public static final KeyCombination keyEquipe = new KeyCodeCombination(KeyCode.F1);
+
+    static final String ilasm = "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\ilasm.exe";
 
     /* Extensões que o usuário pode selecionar
      * Ex.:  {"*.JSON", "*.json", "*.txt", "*.TXT", "*.java"}
