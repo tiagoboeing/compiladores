@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bea71a55-6355-4ca5-ac23-9a8a8821d6e3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosTestes/exemplo-3-sem-erros.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosTestes/exemplo-3-sem-erros.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compilador/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/view/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,24 +31,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/compilador/view/ViewController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="134" column="52" lean-forward="true" selection-start-line="134" selection-start-column="52" selection-end-line="134" selection-end-column="52" />
+            <state relative-caret-position="360">
+              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
               <folding>
-                <element signature="e#9187#9188#0" expanded="true" />
-                <element signature="e#9229#9230#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compilador/controller/Sintatico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1936">
+              <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+              <folding>
+                <element signature="e#576#577#0" expanded="true" />
+                <element signature="e#625#626#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compilador/controller/ScannerConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1110">
+              <caret line="558" selection-start-line="558" selection-end-line="558" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/compilador/controller/ParserConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="257" column="60" selection-start-line="257" selection-start-column="51" selection-end-line="257" selection-end-column="60" />
+            <state relative-caret-position="259">
+              <caret line="168" column="27" lean-forward="true" selection-start-line="168" selection-start-column="27" selection-end-line="168" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -72,6 +93,9 @@
       <find>não informado</find>
       <find>sucesso</find>
       <find>compilado</find>
+      <find>parse</find>
+      <find>fi</find>
+      <find>fim de arquivo</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Java\compiladores\compilador</dir>
@@ -90,11 +114,11 @@
         <option value="$PROJECT_DIR$/src/compilador/view/view.css" />
         <option value="$PROJECT_DIR$/src/compilador/view/View.java" />
         <option value="$PROJECT_DIR$/src/compilador/Main.java" />
-        <option value="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" />
         <option value="$PROJECT_DIR$/src/compilador/brocker/Parser.java" />
         <option value="$PROJECT_DIR$/src/compilador/brocker/factorys/FileParserFactory.java" />
         <option value="$PROJECT_DIR$/src/compilador/brocker/factorys/TextParserFactory.java" />
         <option value="$PROJECT_DIR$/src/compilador/view/ViewController.java" />
+        <option value="$PROJECT_DIR$/src/compilador/controller/ParserConstants.java" />
       </list>
     </option>
   </component>
@@ -111,6 +135,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="compilador" type="58d84e3e:PackageViewProjectNode" />
+              <item name="compilador" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="compilador" type="58d84e3e:PackageViewProjectNode" />
+              <item name="compilador" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -134,6 +175,13 @@
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="brocker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compilador" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -147,23 +195,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="compilador" type="58d84e3e:PackageViewProjectNode" />
-              <item name="compilador" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="compilador" type="58d84e3e:PackageViewProjectNode" />
-              <item name="compilador" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,7 +208,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24504693" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -238,13 +269,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20883000" />
+    <option name="totallyTimeSpent" value="21170000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17516778" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18361884" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -252,7 +283,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946466" visible="true" weight="0.19117647" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946466" visible="true" weight="0.2764505" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3447099" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -317,13 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/controller/ScannerConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="558" lean-forward="true" selection-start-line="558" selection-end-line="558" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/Node.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/Scene.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/event/Event.java" />
@@ -358,12 +382,12 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/control/Button.java" />
     <entry file="file://$PROJECT_DIR$/src/compilador/view/View.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="794">
           <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/nio/file/Paths.java" />
     <entry file="file://$PROJECT_DIR$/src/compilador/brocker/parsers/ParseException.java">
@@ -442,9 +466,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/compilador/brocker/parsers/BaseParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compilador/view/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/compilador/controller/Sintatico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="1936">
           <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
           <folding>
             <element signature="e#576#577#0" expanded="true" />
@@ -453,38 +501,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/brocker/parsers/BaseParser.java">
+    <entry file="file://$PROJECT_DIR$/src/compilador/controller/ScannerConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1110">
+          <caret line="558" selection-start-line="558" selection-end-line="558" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/compilador/controller/ParserConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="257" column="60" selection-start-line="257" selection-start-column="51" selection-end-line="257" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compilador/view/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="134" column="52" lean-forward="true" selection-start-line="134" selection-start-column="52" selection-end-line="134" selection-end-column="52" />
-          <folding>
-            <element signature="e#9187#9188#0" expanded="true" />
-            <element signature="e#9229#9230#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="259">
+          <caret line="168" column="27" lean-forward="true" selection-start-line="168" selection-start-column="27" selection-end-line="168" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -494,10 +521,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>compilador:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.24504693" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -545,7 +574,6 @@
             <option name="proportions">
               <list>
                 <option value="0.24504693" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
