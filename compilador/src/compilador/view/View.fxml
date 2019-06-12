@@ -117,7 +117,7 @@
                               </Label>
                               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <TextArea fx:id="editor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="872.0" onKeyPressed="#rowCount" onKeyReleased="#rowCount" onKeyTyped="#rowCount" pickOnBounds="false" promptText="Seu código aqui" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <TextArea fx:id="editor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="872.0" onKeyPressed="#rowCount" onKeyReleased="#rowCount" onKeyTyped="#rowCount" pickOnBounds="false" prefWidth="872.0" promptText="Seu código aqui" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>

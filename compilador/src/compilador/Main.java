@@ -22,7 +22,7 @@ public class Main extends Application {
             primaryStage.setTitle("Compilador 2019.1");
             primaryStage.setResizable(true);
             primaryStage.setMinWidth(900);
-            primaryStage.setMinHeight(600);
+            primaryStage.setMinHeight(650);
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();
