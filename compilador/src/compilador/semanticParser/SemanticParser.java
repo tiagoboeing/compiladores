@@ -49,7 +49,7 @@ public class SemanticParser extends Semantico {
     }
 
     public String getCode() {
-        return code.toString()  ;
+        return code.toString();
     }
 
     public StringJoiner addCode(CharSequence charSequence) {

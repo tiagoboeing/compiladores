@@ -6,9 +6,17 @@ import compilador.brocker.factorys.FileParserFactory;
 import compilador.brocker.factorys.TextParserFactory;
 import compilador.brocker.parsers.ParseException;
 import compilador.utils.Files;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.*;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -49,6 +57,9 @@ public class ViewController {
     // verifica se botão novo foi pressionado
     static boolean arquivoSalvo = false;
     static String caminhoArquivoSalvo;
+
+    // guarda código gerado
+    static String codigoGerado;
 
     @FXML private Button novo;
     @FXML private Button abrir;
@@ -119,6 +130,8 @@ public class ViewController {
                 parser = FileParserFactory.get(Paths.get(caminhoArquivoSalvo).toFile()).getParser();
 
                 parser.parse();
+
+                codigoGerado = parser.getCode();
             } else {
                 throw new ViewException("Nenhum programa para compilar na área reservada para mensagens");
             }
@@ -278,6 +291,28 @@ public class ViewController {
 
     private void conteudoEditor(String texto){
         this.editor.setText(texto);
+    }
+
+    @FXML
+    public void verCodigoGerado(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CodigoGerado.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Código gerado");
+            stage.initStyle(StageStyle.UTILITY);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+            stage.setResizable(true);
+            stage.show();
+
+            CodigoGeradoController gerado = loader.getController();
+            gerado.clear();
+            gerado.setConteudo(codigoGerado);
+        } catch(Exception e) {
+            System.out.println("Problema ao abrir a janela");
+        }
     }
 
 }

@@ -8,6 +8,8 @@ public interface Parser {
 //    public Lexico getSinLexico();
 //    public Semantico getSemantico();
 
+    public String getCode();
+
     public void parse() throws ParseException;
 
 }

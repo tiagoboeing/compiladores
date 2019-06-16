@@ -37,6 +37,10 @@ public class BaseParser implements Parser {
         System.out.println(this.semantico.getCode());
     }
 
+    public String getCode(){
+        return this.semantico.getCode();
+    }
+
     private ParseException getException(int absPos, String msg) {
         int col = calcColumn.apply(absPos);
         int lin = calcLine.apply(absPos);
