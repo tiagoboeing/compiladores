@@ -1,7 +1,4 @@
 main
 begin
-	write("Digite um valor para lado:").
-	read(lado).
-	area = lado + lado.
-	write(area).
+	write(10*3).
 end
