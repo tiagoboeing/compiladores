@@ -11,7 +11,10 @@ public class SemanticParser extends Semantico {
 
     private Stack<SemanticTypes> stack = new Stack();
     private StringJoiner code = new StringJoiner("\n");
-    private AtomicReference<RelationalTypes> relational;
+    private AtomicReference<RelationalTypes> relational = new AtomicReference<>();
+    private AtomicReference<SemanticTypes> variableType = new AtomicReference<>();
+    private List<String> idList = new ArrayList<>();
+    private Map<String, SemanticTypes> idMap = new HashMap<>();
 
     private static List<SemanticAction> actionList;
     static {
@@ -20,6 +23,7 @@ public class SemanticParser extends Semantico {
         actionList.addAll(Arrays.asList(InterfaceActions.values()));
         actionList.addAll(Arrays.asList(HeadersActions.values()));
         actionList.addAll(Arrays.asList(NumericActions.values()));
+        actionList.addAll(Arrays.asList(VariableActions.values()));
     }
 
     private static SemanticAction getAction(int actionId) {
@@ -74,5 +78,41 @@ public class SemanticParser extends Semantico {
 
     public void setRelational(RelationalTypes relationalTypes) {
         relational.set(relationalTypes);
+    }
+
+    public SemanticTypes getVariable() {
+        return variableType.get();
+    }
+
+    public void setVariableType(SemanticTypes semanticTypes) {
+        variableType.set(semanticTypes);
+    }
+
+    public void addIdList(String s) {
+        idList.add(s);
+    }
+
+    public void clearIdList() {
+        idList.clear();
+    }
+
+    public Iterable<String> idListIterable() {
+        return idList;
+    }
+
+    public String idListPop() {
+        return idList.remove(0);
+    }
+
+    public boolean idMapContains(String id) {
+        return idMap.containsKey(id);
+    }
+
+    public SemanticTypes idMapGet(String id) {
+        return idMap.get(id);
+    }
+
+    public SemanticTypes idMapPut(String s, SemanticTypes semanticTypes) {
+        return idMap.put(s, semanticTypes);
     }
 }
