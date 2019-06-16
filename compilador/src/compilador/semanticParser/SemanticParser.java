@@ -17,6 +17,7 @@ public class SemanticParser extends Semantico {
         actionList.addAll(Arrays.asList(BooleanActions.values()));
         actionList.addAll(Arrays.asList(InterfaceActions.values()));
         actionList.addAll(Arrays.asList(HeadersActions.values()));
+        actionList.addAll(Arrays.asList(NumericActions.values()));
     }
 
     private static SemanticAction getAction(int actionId) {
