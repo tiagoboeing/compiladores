@@ -5,7 +5,7 @@ import java.util.Arrays;
 public enum RelationalTypes {
     cgt(">"),
     clt("<"),
-    ceq("=");
+    ceq("==");
 
     private final String sign;
 

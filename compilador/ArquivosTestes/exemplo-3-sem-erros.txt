@@ -1,4 +1,10 @@
 main
 begin
 	write(1>2).
+	write(1<2).
+	write(2>1).
+	write(2<1).
+	write(2==1).
+	write(2==2).
+	write(2!=2).
 end
