@@ -91,6 +91,7 @@ write = id: "write"
 "+="
 "-="
 "^"
+":="
 
 // caracteres de formataîîo
 :[\s\n\t]
@@ -194,7 +195,7 @@ write = id: "write"
 <repeticao> ::= whileTrueDo <lista_de_comandos> end | whileFalseDo <lista_de_comandos> end ;
 
 <atribuicao> ::= id #32 <operador_de_atribuicao> <expressao> #34;
-<operador_de_atribuicao> ::= "=" | "+=" | "-=" ;
+<operador_de_atribuicao> ::= ":=" | "+=" | "-=" ;
 
 <entrada> ::= read "(" <lista_de_identificadores> #35 ")" ;
 

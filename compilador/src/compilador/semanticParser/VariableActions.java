@@ -7,7 +7,7 @@ public enum VariableActions implements SemanticAction {
     DECLARE_TYPE(30) {
 
         private static final String INT = "int";
-        private static final String REAL = "real";
+        private static final String REAL = "float";
 
         @Override
         public void execute(SemanticParser parser, Token token) {
@@ -70,7 +70,7 @@ public enum VariableActions implements SemanticAction {
                 parser.addCode("conv.i8");
             }
 
-            parser.addCode("setloc " + lexeme);
+            parser.addCode("stloc " + lexeme);
         }
     },
     READ(35) {
