@@ -8,6 +8,7 @@ import compilador.brocker.parsers.ParseException;
 import compilador.controller.Lexico;
 import compilador.controller.Semantico;
 import compilador.controller.Sintatico;
+import compilador.semanticParser.SemanticParser;
 
 import java.io.Reader;
 import java.util.List;
@@ -34,7 +35,7 @@ public class BaseFactory implements ParserFactory {
         }
 
         Sintatico sintatico = new Sintatico();
-        Semantico semantico = new Semantico();
+        Semantico semantico = new SemanticParser();
 
         Lexico lexico = new Lexico();
         lexico.setInput(this.reader);
