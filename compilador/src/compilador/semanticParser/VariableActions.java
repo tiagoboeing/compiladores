@@ -81,7 +81,7 @@ public enum VariableActions implements SemanticAction {
                     throw new SemanticError("Variável " + lexeme + " não declarada", token.getPosition());
                 }
                 SemanticTypes t1 = parser.idMapGet(lexeme);
-                parser.addCode("call string [mscorlib]System.console::ReadLine()");
+                parser.addCode("call string [mscorlib]System.Console::ReadLine()");
                 parser.addCode("call " + t1.name() + " [mscorlib]System." + t1.getInputType() + "::Parse(string)");
                 parser.addCode("stloc " + lexeme);
             }

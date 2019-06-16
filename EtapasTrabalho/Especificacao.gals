@@ -20,6 +20,9 @@ questao_d: \"[^\"\n\\]*\"
 
 questao_e: \\[snt]
 
+questao_f: \-\-[^\n]*
+
+questao_g: #\|[^#\|](((\|[^#\|])?(#+[^#\|])?)[^\|#])*\|#
 #Tokens
 // identificador
 id: {questao_a}
@@ -35,6 +38,13 @@ const_literal: {questao_d}
 
 // const caracter
 const_caracter: {questao_e}
+
+// comentario de linha
+comentario_linha: !{questao_f}
+
+// comentario de bloco
+comentario_bloco: !{questao_g}
+
 
 // palavras reservadas
 and = id : "and"
@@ -159,19 +169,19 @@ write = id: "write"
 <lista_parametro> ::= <parametro> <lista_parametro1> ;
 <lista_parametro1> ::= î | ";" <lista_parametro> ;
 
-<lista_de_identificadores> ::= id <lista_de_identificadores1> ;
+<lista_de_identificadores> ::= id #32 <lista_de_identificadores1>;
 <lista_de_identificadores1> ::= î | "," <lista_de_identificadores> ;
 
-<parametro> ::= <tipo> ":" <lista_de_identificadores> ;
+<parametro> ::= <tipo> ":" <lista_de_identificadores> #31;
 
 <forma_geral> ::= module id begin <corpo> end ;
 
 <corpo> ::= <declaracao_de_variaveis> <lista_de_comandos> ;
 
 <declaracao_de_variaveis> ::= î | <lista_de_variaveis> ;
-<lista_de_variaveis> ::= <variavel><lista_de_variaveis1> ;
+<lista_de_variaveis> ::= <variavel> <lista_de_variaveis1> ;
 <lista_de_variaveis1> ::= î | <lista_de_variaveis> ;
-<variavel> ::= <tipo> ":" <lista_de_identificadores> "." ;
+<variavel> ::= <tipo> #30 ":" <lista_de_identificadores> "." #31;
 
 <lista_de_comandos> ::= <comando> "." <lista_de_comandos1> ;
 <lista_de_comandos1> ::= <lista_de_comandos> | î ;
@@ -183,10 +193,10 @@ write = id: "write"
 
 <repeticao> ::= whileTrueDo <lista_de_comandos> end | whileFalseDo <lista_de_comandos> end ;
 
-<atribuicao> ::= id <operador_de_atribuicao> <expressao> ;
+<atribuicao> ::= id #32 <operador_de_atribuicao> <expressao> #34;
 <operador_de_atribuicao> ::= "=" | "+=" | "-=" ;
 
-<entrada> ::= read "(" <lista_de_identificadores> ")" ;
+<entrada> ::= read "(" <lista_de_identificadores> #35 ")" ;
 
 <saida> ::= write "(" <lista_de_expressoes> ")" ;
 <lista_de_expressoes> ::= <expressao> #14 <lista_de_expressoes1> ;
@@ -195,7 +205,7 @@ write = id: "write"
 <retorno> ::= "^" <expressao> ;
 
 
-// questîo 8 - trabalho 3;
+// questao 8 - trabalho 3;
 <expressao> ::=  <elemento> <expressao1> ;
 <expressao1> ::= and <elemento> #18 <expressao1> | or <elemento> #19 <expressao1> | î ;
 <elemento> ::= <relacional> | true #11 | false #12 | not <elemento> #13 ;
@@ -214,6 +224,6 @@ write = id: "write"
             "(" <expressao> ")" |
             "+" <fator> #7 |
             "-" <fator> #8 ;
-<fator1> ::= î | "(" <fator2> ;
+<fator1> ::= î #33 | "(" <fator2> ;
 <fator2> ::= ")" | <lista_de_expressoes> ")" ;
 
