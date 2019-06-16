@@ -5,11 +5,13 @@ import compilador.controller.Semantico;
 import compilador.controller.Token;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class SemanticParser extends Semantico {
 
     private Stack<SemanticTypes> stack = new Stack();
     private StringJoiner code = new StringJoiner("\n");
+    private AtomicReference<RelationalTypes> relational;
 
     private static List<SemanticAction> actionList;
     static {
@@ -66,7 +68,11 @@ public class SemanticParser extends Semantico {
         return stack.peek();
     }
 
-    public boolean emptyStack() {
-        return stack.empty();
+    public RelationalTypes getRelational() {
+        return relational.get();
+    }
+
+    public void setRelational(RelationalTypes relationalTypes) {
+        relational.set(relationalTypes);
     }
 }

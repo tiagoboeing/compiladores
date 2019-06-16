@@ -4,6 +4,25 @@ import compilador.controller.SemanticError;
 import compilador.controller.Token;
 
 public enum  BooleanActions implements SemanticAction {
+    OPERATOR(9) {
+        @Override
+        public void execute(SemanticParser parser, Token token) throws SemanticError {
+            parser.setRelational(RelationalTypes.get(token.getLexeme()));
+        }
+    },
+    OPERTATION(10) {
+        @Override
+        public void execute(SemanticParser parser, Token token) throws SemanticError {
+            SemanticTypes t1 = parser.popStack();
+            SemanticTypes t2 = parser.popStack();
+            if (t1.equals(t2)) {
+                parser.pushStack(SemanticTypes.bool);
+            } else {
+                throw new SemanticError("Não é possível comparar tipos distintos", token.getPosition());
+            }
+            parser.addCode(parser.getRelational().name());
+        }
+    },
     TRUE(11) {
         @Override
         public void execute(SemanticParser parser, Token token) {
