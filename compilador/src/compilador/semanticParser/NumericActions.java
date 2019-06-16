@@ -39,13 +39,26 @@ public enum NumericActions implements SemanticAction {
             }
             parser.addCode("mul");
         }
-    }, DIV(3) {
+    }, DIV(4) {
         @Override
         public void execute(SemanticParser parser, Token token) {
             SemanticTypes t1 = parser.popStack();
             SemanticTypes t2 = parser.popStack();
             parser.pushStack(SemanticTypes.float64);
             parser.addCode("div");
+        }
+    }, INT_CONST(5) {
+        @Override
+        public void execute(SemanticParser parser, Token token) {
+            parser.pushStack(SemanticTypes.int64);
+            parser.addCode("ldc.i8 " + token.getLexeme());
+            parser.addCode("conv.r8");
+        }
+    }, FLOAT_CONST(6) {
+        @Override
+        public void execute(SemanticParser parser, Token token) {
+            parser.pushStack(SemanticTypes.float64);
+            parser.addCode("ldc.r8 " + token.getLexeme());
         }
     };
 
