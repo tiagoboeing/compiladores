@@ -52,5 +52,6 @@ public interface Constants extends ScannerConstants, ParserConstants
     int t_TOKEN_48 = 48; //"+="
     int t_TOKEN_49 = 49; //"-="
     int t_TOKEN_50 = 50; //"^"
+    int t_TOKEN_51 = 51; //":="
 
 }
