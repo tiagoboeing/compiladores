@@ -20,7 +20,7 @@ public enum  BooleanActions implements SemanticAction {
             } else {
                 throw new SemanticError("Não é possível comparar tipos distintos", token.getPosition());
             }
-            parser.addCode(parser.getRelational().name());
+            parser.addCode(parser.getRelational().getCode());
         }
     },
     TRUE(11) {
