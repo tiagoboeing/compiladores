@@ -40,10 +40,10 @@ const_literal: {questao_d}
 const_caracter: {questao_e}
 
 // comentario de linha
-comentario_linha: !{questao_f}
+:!{questao_f}
 
 // comentario de bloco
-comentario_bloco: !{questao_g}
+:!{questao_g}
 
 
 // palavras reservadas
@@ -91,7 +91,6 @@ write = id: "write"
 "+="
 "-="
 "^"
-":="
 
 // caracteres de formata√Æ√Æo
 :[\s\n\t]
@@ -186,16 +185,16 @@ write = id: "write"
 
 <lista_de_comandos> ::= <comando> "." <lista_de_comandos1> ;
 <lista_de_comandos1> ::= <lista_de_comandos> | Ó ;
-<comando> ::= <atribuicao> | <entrada> | <saida> | "(" <expressao> ")" <comando1> | <retorno> ;
+<comando> ::= <atribuicao> | <entrada> | <saida> | #37 "(" <expressao> ")" <comando1> | <retorno> ;
 <comando1> ::= <selecao> | <repeticao> ;
 
-<selecao> ::= ifTrueDo <lista_de_comandos> <else> end ;
-<else> ::= ifFalseDo <lista_de_comandos> | Ó ;
+<selecao> ::= ifTrueDo #38 <lista_de_comandos> <else> end #39;
+<else> ::= #40 ifFalseDo <lista_de_comandos> | Ó ;
 
-<repeticao> ::= whileTrueDo <lista_de_comandos> end | whileFalseDo <lista_de_comandos> end ;
+<repeticao> ::= whileTrueDo #41 <lista_de_comandos> end #42 | whileFalseDo #41 <lista_de_comandos> end #42;
 
-<atribuicao> ::= id #32 <operador_de_atribuicao> <expressao> #34;
-<operador_de_atribuicao> ::= ":=" | "+=" | "-=" ;
+<atribuicao> ::= id #32 <operador_de_atribuicao> #36 <expressao> #34;
+<operador_de_atribuicao> ::= "=" | "+=" | "-=" ;
 
 <entrada> ::= read "(" <lista_de_identificadores> #35 ")" ;
 
@@ -217,7 +216,7 @@ write = id: "write"
 <aritmetica1> ::= "+" <termo> #1 <aritmetica1> | "-" <termo> #2 <aritmetica1> | Ó ;
 <termo> ::=  <fator> <termo1> ;
 <termo1> ::= "*" <fator> #3 <termo1> | "/" <fator> #4 <termo1> | Ó;
-<fator> ::= id <fator1> |
+<fator> ::= id #33 <fator1> |
             const_inteira #5 |
             const_real #6 |
             const_caracter #20 |

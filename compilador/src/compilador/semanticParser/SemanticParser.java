@@ -30,7 +30,7 @@ public class SemanticParser extends Semantico {
         return actionList.stream().filter(x -> x.getNumber() == actionId).findFirst().get();
     }
 
-    private void executeAcion(SemanticAction action, Token token) throws SemanticError {
+    private void executeAction(SemanticAction action, Token token) throws SemanticError {
         action.execute(this, token);
     }
 
@@ -40,16 +40,12 @@ public class SemanticParser extends Semantico {
         SemanticAction semanticAction = getAction(action);
 
         if (semanticAction != null) {
-            executeAcion(semanticAction, token);
+            executeAction(semanticAction, token);
             return;
         }
 
         throw new SemanticError("Ação " + action + " não implementada", token.getPosition());
 
-    }
-
-    public void resultado(){
-        System.out.println(this.stack.toString());
     }
 
     public String getCode() {
