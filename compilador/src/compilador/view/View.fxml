@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#keyShortcuts" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compilador.view.ViewController">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyTyped="#keyShortcuts" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compilador.view.ViewController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
    </columnConstraints>
@@ -117,11 +117,12 @@
                               </Label>
                               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <TextArea fx:id="editor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="872.0" onKeyPressed="#rowCount" onKeyReleased="#rowCount" onKeyTyped="#rowCount" pickOnBounds="false" promptText="Seu código aqui" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <TextArea fx:id="editor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="872.0" onKeyPressed="#rowCount" onKeyReleased="#rowCount" onKeyTyped="#rowCount" pickOnBounds="false" prefWidth="872.0" promptText="Seu código aqui" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </TextArea>
+                                    <Button layoutX="751.0" layoutY="359.0" mnemonicParsing="false" onAction="#verCodigoGerado" text="Código gerado" />
                                  </children>
                               </AnchorPane>
                            </children>

@@ -10,7 +10,7 @@ ScannerTable = Compact
 Input = Stream
 Parser = LL
 #RegularDefinitions
-questao_a: ([a-z]|[A-Z][a-z0-9_])([a-z0-9_]|([A-Z][a-z0-9_]))*[A-Z]?|[A-Z]
+questao_a: ([a-z]|[A-Z][a-z0-9_])([a-z0-9_]|([A-Z][a-z0-9_]))*|[A-Z]
 
 questao_b: [1-9][0-9]*|0
 
@@ -20,6 +20,9 @@ questao_d: \"[^\"\n\\]*\"
 
 questao_e: \\[snt]
 
+questao_f: \-\-[^\n]*
+
+questao_g: #\|[^#\|](((\|[^#\|])?(#+[^#\|])?)[^\|#])*\|#
 #Tokens
 // identificador
 id: {questao_a}
@@ -35,6 +38,13 @@ const_literal: {questao_d}
 
 // const caracter
 const_caracter: {questao_e}
+
+// comentario de linha
+:!{questao_f}
+
+// comentario de bloco
+:!{questao_g}
+
 
 // palavras reservadas
 and = id : "and"
@@ -159,7 +169,7 @@ write = id: "write"
 <lista_parametro> ::= <parametro> <lista_parametro1> ;
 <lista_parametro1> ::= î | ";" <lista_parametro> ;
 
-<lista_de_identificadores> ::= id <lista_de_identificadores1> ;
+<lista_de_identificadores> ::= id #32 <lista_de_identificadores1>;
 <lista_de_identificadores1> ::= î | "," <lista_de_identificadores> ;
 
 <parametro> ::= <tipo> ":" <lista_de_identificadores> ;
@@ -169,24 +179,24 @@ write = id: "write"
 <corpo> ::= <declaracao_de_variaveis> <lista_de_comandos> ;
 
 <declaracao_de_variaveis> ::= î | <lista_de_variaveis> ;
-<lista_de_variaveis> ::= <variavel><lista_de_variaveis1> ;
+<lista_de_variaveis> ::= <variavel> <lista_de_variaveis1> ;
 <lista_de_variaveis1> ::= î | <lista_de_variaveis> ;
-<variavel> ::= <tipo> ":" <lista_de_identificadores> "." ;
+<variavel> ::= <tipo> #30 ":" <lista_de_identificadores> "." #31;
 
 <lista_de_comandos> ::= <comando> "." <lista_de_comandos1> ;
 <lista_de_comandos1> ::= <lista_de_comandos> | î ;
-<comando> ::= <atribuicao> | <entrada> | <saida> | "(" <expressao> ")" <comando1> | <retorno> ;
+<comando> ::= <atribuicao> | <entrada> | <saida> | #37 "(" <expressao> ")" <comando1> | <retorno> ;
 <comando1> ::= <selecao> | <repeticao> ;
 
-<selecao> ::= ifTrueDo <lista_de_comandos> <else> end ;
-<else> ::= ifFalseDo <lista_de_comandos> | î ;
+<selecao> ::= ifTrueDo #38 <lista_de_comandos> <else> end #39;
+<else> ::= #40 ifFalseDo <lista_de_comandos> | î ;
 
-<repeticao> ::= whileTrueDo <lista_de_comandos> end | whileFalseDo <lista_de_comandos> end ;
+<repeticao> ::= whileTrueDo #41 <lista_de_comandos> end #42 | whileFalseDo #41 <lista_de_comandos> end #42;
 
-<atribuicao> ::= id <operador_de_atribuicao> <expressao> ;
+<atribuicao> ::= id #32 <operador_de_atribuicao> #36 <expressao> #34;
 <operador_de_atribuicao> ::= "=" | "+=" | "-=" ;
 
-<entrada> ::= read "(" <lista_de_identificadores> ")" ;
+<entrada> ::= read "(" <lista_de_identificadores> #35 ")" ;
 
 <saida> ::= write "(" <lista_de_expressoes> ")" ;
 <lista_de_expressoes> ::= <expressao> #14 <lista_de_expressoes1> ;
@@ -195,7 +205,7 @@ write = id: "write"
 <retorno> ::= "^" <expressao> ;
 
 
-// questîo 8 - trabalho 3;
+// questao 8 - trabalho 3;
 <expressao> ::=  <elemento> <expressao1> ;
 <expressao1> ::= and <elemento> #18 <expressao1> | or <elemento> #19 <expressao1> | î ;
 <elemento> ::= <relacional> | true #11 | false #12 | not <elemento> #13 ;
@@ -206,7 +216,7 @@ write = id: "write"
 <aritmetica1> ::= "+" <termo> #1 <aritmetica1> | "-" <termo> #2 <aritmetica1> | î ;
 <termo> ::=  <fator> <termo1> ;
 <termo1> ::= "*" <fator> #3 <termo1> | "/" <fator> #4 <termo1> | î;
-<fator> ::= id <fator1> |
+<fator> ::= id #33 <fator1> |
             const_inteira #5 |
             const_real #6 |
             const_caracter #20 |

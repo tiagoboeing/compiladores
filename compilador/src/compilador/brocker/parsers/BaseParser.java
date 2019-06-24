@@ -33,6 +33,12 @@ public class BaseParser implements Parser {
         } catch (SemanticError se) {
             throw getException(se.getPosition(), se.getMessage());
         }
+
+        System.out.println(this.semantico.getCode());
+    }
+
+    public String getCode(){
+        return this.semantico.getCode();
     }
 
     private ParseException getException(int absPos, String msg) {

@@ -6,9 +6,17 @@ import compilador.brocker.factorys.FileParserFactory;
 import compilador.brocker.factorys.TextParserFactory;
 import compilador.brocker.parsers.ParseException;
 import compilador.utils.Files;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.*;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -28,14 +36,16 @@ public class ViewController {
      */
 
     // shortcuts
-    public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
-    public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
-    public static final KeyCombination keySalvar = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_ANY);
-    public static final KeyCombination keyCopiar = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_ANY);
-    public static final KeyCombination keyColar = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_ANY);
-    public static final KeyCombination keyRecortar = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_ANY);
+    public static final KeyCombination keyNovo = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_DOWN);
+    public static final KeyCombination keyAbrir = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN);
+    public static final KeyCombination keySalvar = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN);
+    public static final KeyCombination keyCopiar = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_DOWN);
+    public static final KeyCombination keyColar = new KeyCodeCombination(KeyCode.V, KeyCombination.CONTROL_DOWN);
+    public static final KeyCombination keyRecortar = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_DOWN);
     public static final KeyCombination keyCompilar = new KeyCodeCombination(KeyCode.F9);
     public static final KeyCombination keyEquipe = new KeyCodeCombination(KeyCode.F1);
+
+    static final String ilasm = "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\ilasm.exe";
 
     /* Extensões que o usuário pode selecionar
      * Ex.:  {"*.JSON", "*.json", "*.txt", "*.TXT", "*.java"}
@@ -47,6 +57,9 @@ public class ViewController {
     // verifica se botão novo foi pressionado
     static boolean arquivoSalvo = false;
     static String caminhoArquivoSalvo;
+
+    // guarda código gerado
+    static String codigoGerado;
 
     @FXML private Button novo;
     @FXML private Button abrir;
@@ -64,6 +77,10 @@ public class ViewController {
     @FXML private Label barraStatus;
 
     @FXML private ScrollPane scroll;
+
+    public void ViewController() {
+        this.editor.setScrollLeft(2.0);
+    }
 
     @FXML
     private void rowCount(){
@@ -113,6 +130,8 @@ public class ViewController {
                 parser = FileParserFactory.get(Paths.get(caminhoArquivoSalvo).toFile()).getParser();
 
                 parser.parse();
+
+                codigoGerado = parser.getCode();
             } else {
                 throw new ViewException("Nenhum programa para compilar na área reservada para mensagens");
             }
@@ -224,6 +243,7 @@ public class ViewController {
         clipboard.setContent(content);
     }
 
+
     @FXML
     private void colar(){
         Clipboard clipboard = Clipboard.getSystemClipboard();
@@ -272,6 +292,28 @@ public class ViewController {
 
     private void conteudoEditor(String texto){
         this.editor.setText(texto);
+    }
+
+    @FXML
+    public void verCodigoGerado(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CodigoGerado.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Código gerado");
+            stage.initStyle(StageStyle.UTILITY);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+            stage.setResizable(true);
+            stage.show();
+
+            CodigoGeradoController gerado = loader.getController();
+            gerado.clear();
+            gerado.setConteudo(codigoGerado);
+        } catch(Exception e) {
+            System.out.println("Problema ao abrir a janela");
+        }
     }
 
 }
