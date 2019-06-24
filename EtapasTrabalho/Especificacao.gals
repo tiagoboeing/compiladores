@@ -172,7 +172,7 @@ write = id: "write"
 <lista_de_identificadores> ::= id #32 <lista_de_identificadores1>;
 <lista_de_identificadores1> ::= î | "," <lista_de_identificadores> ;
 
-<parametro> ::= <tipo> ":" <lista_de_identificadores> #31;
+<parametro> ::= <tipo> ":" <lista_de_identificadores> ;
 
 <forma_geral> ::= module id begin <corpo> end ;
 
@@ -224,6 +224,6 @@ write = id: "write"
             "(" <expressao> ")" |
             "+" <fator> #7 |
             "-" <fator> #8 ;
-<fator1> ::= î #33 | "(" <fator2> ;
+<fator1> ::= î | "(" <fator2> ;
 <fator2> ::= ")" | <lista_de_expressoes> ")" ;
 
