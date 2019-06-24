@@ -42,9 +42,7 @@ public enum VariableActions implements SemanticAction {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             String lexeme = token.getLexeme();
-            if (!parser.idMapContains(lexeme)) {
-                throw new SemanticError("Variável " + lexeme + " não declarada", token.getPosition());
-            }
+            VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
             SemanticTypes t1 = parser.idMapGet(lexeme);
             parser.pushStack(t1);
             parser.addCode("ldloc "+lexeme);
@@ -57,9 +55,7 @@ public enum VariableActions implements SemanticAction {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             String lexeme = parser.idListPop();
-            if (!parser.idMapContains(lexeme)) {
-                throw new SemanticError("Variável " + lexeme + " não declarada", token.getPosition());
-            }
+            VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
             SemanticTypes t1 = parser.idMapGet(lexeme);
             SemanticTypes t2 = parser.popStack();
             if (!t1.equals(t2)) {
@@ -77,9 +73,7 @@ public enum VariableActions implements SemanticAction {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             for (String lexeme : parser.idListIterable()) {
-                if (!parser.idMapContains(lexeme)) {
-                    throw new SemanticError("Variável " + lexeme + " não declarada", token.getPosition());
-                }
+                VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
                 SemanticTypes t1 = parser.idMapGet(lexeme);
                 parser.addCode("call string [mscorlib]System.Console::ReadLine()");
                 parser.addCode("call " + t1.name() + " [mscorlib]System." + t1.getInputType() + "::Parse(string)");
@@ -87,7 +81,13 @@ public enum VariableActions implements SemanticAction {
             }
             parser.clearIdList();
         }
-    };
+    },
+    SET_OPERATOR(36) {
+        @Override
+        public void execute(SemanticParser parser, Token token) throws SemanticError {
+            //TODO
+        }
+    },;
 
     private int id;
 
@@ -98,5 +98,10 @@ public enum VariableActions implements SemanticAction {
     @Override
     public int getNumber() {
         return id;
+    }
+
+    private static void validateIdentifier(SemanticParser parser, String lexeme, int pos) throws SemanticError {
+        if (!parser.idMapContains(lexeme))
+            throw new SemanticError(lexeme + " não declarado", pos);
     }
 }
