@@ -10,7 +10,7 @@ ScannerTable = Compact
 Input = Stream
 Parser = LL
 #RegularDefinitions
-questao_a: ([a-z]|[A-Z][a-z0-9_])([a-z0-9_]|([A-Z][a-z0-9_]))*|[A-Z]
+questao_a: ([a-z]|[A-Z][a-z0-9_])([a-z0-9_]|([A-Z][a-z0-9_]))*[A-Z]?|[A-Z]
 
 questao_b: [1-9][0-9]*|0
 
