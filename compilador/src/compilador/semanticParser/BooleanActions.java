@@ -15,13 +15,13 @@ public enum  BooleanActions implements SemanticAction {
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             SemanticTypes t1 = parser.popStack();
             SemanticTypes t2 = parser.popStack();
-            if (t1.equals(t2)) {
-                parser.pushStack(SemanticTypes.bool);
-            } else {
-                throw new SemanticError("Não é possível comparar tipos distintos", token.getPosition());
-            }
+
+            BooleanActions.validateComparaionTypes(t1, t2, token.getPosition());
+
+            parser.pushStack(SemanticTypes.bool);
             parser.addCode(parser.getRelational().getCode());
         }
+
     },
     TRUE(11) {
         @Override
@@ -40,14 +40,30 @@ public enum  BooleanActions implements SemanticAction {
     NOT(13) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t = parser.peekStack();
-            if (!t.equals(SemanticTypes.bool)) {
-                throw new SemanticError("Não é possivel utilizar a negação em um valor do tipo " + t.name(), token.getPosition());
-            }
+            SemanticTypes t1 = parser.peekStack();
+            BooleanActions.validateOperationTypes(t1, token.getPosition());
             parser.addCode("ldc.i4.1");
             parser.addCode("xor");
         }
-    };
+    },
+    AND(18) {
+        @Override
+        public void execute(SemanticParser parser, Token token) throws SemanticError {
+            SemanticTypes t1 = parser.popStack();
+            SemanticTypes t2 = parser.peekStack();
+            BooleanActions.validateOperationTypes(t1, t2, token.getPosition());
+            parser.addCode("and");
+        }
+    },
+    OR(19) {
+        @Override
+        public void execute(SemanticParser parser, Token token) throws SemanticError {
+            SemanticTypes t1 = parser.popStack();
+            SemanticTypes t2 = parser.peekStack();
+            BooleanActions.validateOperationTypes(t1, t2, token.getPosition());
+            parser.addCode("or");
+        }
+    },;
 
     private int id;
 
@@ -58,5 +74,25 @@ public enum  BooleanActions implements SemanticAction {
     @Override
     public int getNumber() {
         return id;
+    }
+
+    private static void validateComparaionTypes(SemanticTypes t1, SemanticTypes t2, int pos) throws SemanticError {
+        if (t1.equals(t2))
+            return;
+
+        if (SemanticTypes.isNumeric(t1) && SemanticTypes.isNumeric(t2))
+            return;
+
+        throw new SemanticError("Tipos incompatíveis em expressão aritmética", pos);
+    }
+
+    private static void validateOperationTypes(SemanticTypes t1, SemanticTypes t2, int pos) {
+
+    }
+
+    private static void validateOperationTypes(SemanticTypes t1, int pos) throws SemanticError {
+        if (!t1.equals(SemanticTypes.bool)) {
+            throw new SemanticError("Tipos incompatíveis em expressão lógica", pos);
+        }
     }
 }
