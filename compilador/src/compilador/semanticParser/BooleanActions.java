@@ -13,12 +13,12 @@ public enum  BooleanActions implements SemanticAction {
     OPERTATION(10) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t1 = parser.popStack();
-            SemanticTypes t2 = parser.popStack();
+            SemanticTypes t1 = parser.popType();
+            SemanticTypes t2 = parser.popType();
 
             BooleanActions.validateComparaionTypes(t1, t2, token.getPosition());
 
-            parser.pushStack(SemanticTypes.bool);
+            parser.pushType(SemanticTypes.bool);
             parser.addCode(parser.getRelational().getCode());
         }
 
@@ -26,21 +26,21 @@ public enum  BooleanActions implements SemanticAction {
     TRUE(11) {
         @Override
         public void execute(SemanticParser parser, Token token) {
-            parser.pushStack(SemanticTypes.bool);
+            parser.pushType(SemanticTypes.bool);
             parser.addCode("ldc.i4.1");
         }
     },
     FALSE(12) {
         @Override
         public void execute(SemanticParser parser, Token token) {
-            parser.pushStack(SemanticTypes.bool);
+            parser.pushType(SemanticTypes.bool);
             parser.addCode("ldc.i4.0");
         }
     },
     NOT(13) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t1 = parser.peekStack();
+            SemanticTypes t1 = parser.peekType();
             BooleanActions.validateOperationTypes(t1, token.getPosition());
             parser.addCode("ldc.i4.1");
             parser.addCode("xor");
@@ -49,8 +49,8 @@ public enum  BooleanActions implements SemanticAction {
     AND(18) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t1 = parser.popStack();
-            SemanticTypes t2 = parser.peekStack();
+            SemanticTypes t1 = parser.popType();
+            SemanticTypes t2 = parser.peekType();
             BooleanActions.validateOperationTypes(t1, t2, token.getPosition());
             parser.addCode("and");
         }
@@ -58,8 +58,8 @@ public enum  BooleanActions implements SemanticAction {
     OR(19) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t1 = parser.popStack();
-            SemanticTypes t2 = parser.peekStack();
+            SemanticTypes t1 = parser.popType();
+            SemanticTypes t2 = parser.peekType();
             BooleanActions.validateOperationTypes(t1, t2, token.getPosition());
             parser.addCode("or");
         }

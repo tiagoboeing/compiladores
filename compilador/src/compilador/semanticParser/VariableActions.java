@@ -24,7 +24,7 @@ public enum VariableActions implements SemanticAction {
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             for (String lexeme : parser.idListIterable()) {
                 if (parser.idMapContains(lexeme)) {
-                    throw new SemanticError("Variável " + lexeme + " já declarada", token.getPosition());
+                    throw new SemanticError("Identificador " + lexeme + " já declarado", token.getPosition());
                 }
                 parser.idMapPut(lexeme, parser.getVariable());
                 parser.addCode(".locals(" + parser.getVariable().name() + " " + lexeme + ")");
@@ -43,8 +43,8 @@ public enum VariableActions implements SemanticAction {
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             String lexeme = token.getLexeme();
             VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
-            SemanticTypes t1 = parser.idMapGet(lexeme);
-            parser.pushStack(t1);
+            SemanticTypes t1 = parser.idMapGetType(lexeme);
+            parser.pushType(t1);
             parser.addCode("ldloc "+lexeme);
             if (SemanticTypes.int64.equals(t1)) {
                 parser.addCode("conv.r8");
@@ -56,17 +56,7 @@ public enum VariableActions implements SemanticAction {
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             String lexeme = parser.idListPop();
             VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
-            SemanticTypes t1 = parser.idMapGet(lexeme);
-            SemanticTypes t2 = parser.popStack();
-            if (!t1.equals(t2)) {
-                throw new SemanticError("Tipos incompatíveis: " + t1.name() + " e " + t2.name(), token.getPosition());
-            }
-
-            if (SemanticTypes.int64.equals(t1)) {
-                parser.addCode("conv.i8");
-            }
-
-            parser.addCode("stloc " + lexeme);
+            parser.getAtribuicao().execute(parser, lexeme);
         }
     },
     READ(35) {
@@ -74,7 +64,7 @@ public enum VariableActions implements SemanticAction {
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             for (String lexeme : parser.idListIterable()) {
                 VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
-                SemanticTypes t1 = parser.idMapGet(lexeme);
+                SemanticTypes t1 = parser.idMapGetType(lexeme);
                 parser.addCode("call string [mscorlib]System.Console::ReadLine()");
                 parser.addCode("call " + t1.name() + " [mscorlib]System." + t1.getInputType() + "::Parse(string)");
                 parser.addCode("stloc " + lexeme);
@@ -85,7 +75,11 @@ public enum VariableActions implements SemanticAction {
     SET_OPERATOR(36) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            //TODO
+            final OperadorAtribuicao ATR = OperadorAtribuicao.get(token.getLexeme());
+            final String LEX = parser.idListPeek();
+            parser.setAtribuicao(ATR);
+            ATR.load(parser, LEX);
+            VariableActions.validateIdentifier(parser, LEX, token.getPosition());
         }
     },;
 

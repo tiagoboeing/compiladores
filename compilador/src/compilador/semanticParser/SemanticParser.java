@@ -9,10 +9,11 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class SemanticParser extends Semantico {
 
-    private Stack<SemanticTypes> stack = new Stack();
+    private Stack<SemanticTypes> typeStack = new Stack();
     private StringJoiner code = new StringJoiner("\n");
     private AtomicReference<RelationalTypes> relational = new AtomicReference<>();
     private AtomicReference<SemanticTypes> variableType = new AtomicReference<>();
+    private AtomicReference<OperadorAtribuicao> atribuicao;
     private List<String> idList = new ArrayList<>();
     private Map<String, SemanticTypes> idMap = new HashMap<>();
 
@@ -56,16 +57,16 @@ public class SemanticParser extends Semantico {
         return code.add(charSequence);
     }
 
-    public SemanticTypes pushStack(SemanticTypes semanticTypes) {
-        return stack.push(semanticTypes);
+    public SemanticTypes pushType(SemanticTypes semanticTypes) {
+        return typeStack.push(semanticTypes);
     }
 
-    public SemanticTypes popStack() {
-        return stack.pop();
+    public SemanticTypes popType() {
+        return typeStack.pop();
     }
 
-    public SemanticTypes peekStack() {
-        return stack.peek();
+    public SemanticTypes peekType() {
+        return typeStack.peek();
     }
 
     public RelationalTypes getRelational() {
@@ -100,15 +101,27 @@ public class SemanticParser extends Semantico {
         return idList.remove(0);
     }
 
+    public String idListPeek() {
+        return idList.get(0);
+    }
+
     public boolean idMapContains(String id) {
         return idMap.containsKey(id);
     }
 
-    public SemanticTypes idMapGet(String id) {
+    public SemanticTypes idMapGetType(String id) {
         return idMap.get(id);
     }
 
     public SemanticTypes idMapPut(String s, SemanticTypes semanticTypes) {
         return idMap.put(s, semanticTypes);
+    }
+
+    public OperadorAtribuicao getAtribuicao() {
+        return atribuicao.get();
+    }
+
+    public void setAtribuicao(OperadorAtribuicao operadorAtribuicao) {
+        atribuicao.set(operadorAtribuicao);
     }
 }

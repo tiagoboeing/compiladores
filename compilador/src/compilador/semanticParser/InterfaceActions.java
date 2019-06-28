@@ -6,7 +6,7 @@ public enum InterfaceActions implements SemanticAction {
     WRITE(14) {
         @Override
         public void execute(SemanticParser parser, Token token) {
-            SemanticTypes t2 = parser.popStack();
+            SemanticTypes t2 = parser.popType();
             if (t2.equals(SemanticTypes.int64)) {
                 parser.addCode("conv.i8");
             }
