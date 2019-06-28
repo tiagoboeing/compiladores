@@ -6,7 +6,8 @@ import java.util.Set;
 public enum  SemanticTypes {
     bool(null),
     int64("Int64"),
-    float64("Double");
+    float64("Double"),
+    string("string"),;
 
     String inputType;
 
