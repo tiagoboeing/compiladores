@@ -10,10 +10,13 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SemanticParser extends Semantico {
 
     private Stack<SemanticTypes> typeStack = new Stack();
+
     private StringJoiner code = new StringJoiner("\n");
+
     private AtomicReference<RelationalTypes> relational = new AtomicReference<>();
     private AtomicReference<SemanticTypes> variableType = new AtomicReference<>();
-    private AtomicReference<OperadorAtribuicao> atribuicao;
+    private AtomicReference<OperadorAtribuicao> atribuicao = new AtomicReference<>();
+
     private List<String> idList = new ArrayList<>();
     private Map<String, SemanticTypes> idMap = new HashMap<>();
 
@@ -28,7 +31,7 @@ public class SemanticParser extends Semantico {
     }
 
     private static SemanticAction getAction(int actionId) {
-        return actionList.stream().filter(x -> x.getNumber() == actionId).findFirst().get();
+        return actionList.stream().filter(x -> x.getNumber() == actionId).findFirst().orElse(null);
     }
 
     private void executeAction(SemanticAction action, Token token) throws SemanticError {
