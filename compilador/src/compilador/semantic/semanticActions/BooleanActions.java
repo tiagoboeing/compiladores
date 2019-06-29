@@ -86,14 +86,14 @@ public enum  BooleanActions implements SemanticAction {
         if (SemanticTypes.isNumeric(t1) && SemanticTypes.isNumeric(t2))
             return;
 
-        throw new SemanticError("Tipos incompatíveis em expressão aritmética", pos);
+        throw new SemanticError("Tipos incompatíveis em expressão lógica", pos);
     }
 
     private static void validateOperationTypes(SemanticTypes t1, SemanticTypes t2, int pos) throws SemanticError {
         if (t1.equals(t2) && t1.equals(SemanticTypes.bool))
             return;
 
-        throw new SemanticError("Tipos incompatíveis em expressão aritmética", pos);
+        throw new SemanticError("Tipos incompatíveis em expressão lógica", pos);
     }
 
     private static void validateOperationTypes(SemanticTypes t1, int pos) throws SemanticError {
