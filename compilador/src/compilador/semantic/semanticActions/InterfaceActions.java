@@ -1,6 +1,8 @@
-package compilador.semanticParser;
+package compilador.semantic.semanticActions;
 
 import compilador.controller.Token;
+import compilador.semantic.parser.SemanticParser;
+import compilador.semantic.Constants.SemanticTypes;
 
 public enum InterfaceActions implements SemanticAction {
     WRITE(14) {

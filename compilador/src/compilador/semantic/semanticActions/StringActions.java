@@ -1,7 +1,9 @@
-package compilador.semanticParser;
+package compilador.semantic.semanticActions;
 
 import compilador.controller.SemanticError;
 import compilador.controller.Token;
+import compilador.semantic.parser.SemanticParser;
+import compilador.semantic.Constants.SemanticTypes;
 
 public enum StringActions implements SemanticAction {
     CTE_STR(21) {

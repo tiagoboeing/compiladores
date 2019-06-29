@@ -1,4 +1,4 @@
-package compilador.semanticParser;
+package compilador.semantic.Constants;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,7 +1,10 @@
-package compilador.semanticParser;
+package compilador.semantic.semanticActions;
 
 import compilador.controller.SemanticError;
 import compilador.controller.Token;
+import compilador.semantic.Constants.RelationalTypes;
+import compilador.semantic.parser.SemanticParser;
+import compilador.semantic.Constants.SemanticTypes;
 
 public enum  BooleanActions implements SemanticAction {
     OPERATOR(9) {

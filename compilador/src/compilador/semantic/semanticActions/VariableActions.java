@@ -1,7 +1,10 @@
-package compilador.semanticParser;
+package compilador.semantic.semanticActions;
 
 import compilador.controller.SemanticError;
 import compilador.controller.Token;
+import compilador.semantic.Constants.OperadorAtribuicao;
+import compilador.semantic.parser.SemanticParser;
+import compilador.semantic.Constants.SemanticTypes;
 
 public enum VariableActions implements SemanticAction {
     DECLARE_TYPE(30) {
@@ -22,20 +25,20 @@ public enum VariableActions implements SemanticAction {
     BIND(31) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            for (String lexeme : parser.idListIterable()) {
-                if (parser.idMapContains(lexeme)) {
+            for (String lexeme : parser.identificadorIterable()) {
+                if (parser.identifierMapContains(lexeme)) {
                     throw new SemanticError("Identificador " + lexeme + " já declarado", token.getPosition());
                 }
-                parser.idMapPut(lexeme, parser.getVariable());
-                parser.addCode(".locals(" + parser.getVariable().name() + " " + lexeme + ")");
+                parser.identifierMapPut(lexeme, parser.getVariableType());
+                parser.addCode(".locals(" + parser.getVariableType().name() + " " + lexeme + ")");
             }
-            parser.clearIdList();
+            parser.clearIdentificador();
         }
     },
     DECLARE_NAME(32) {
         @Override
         public void execute(SemanticParser parser, Token token) {
-            parser.addIdList(token.getLexeme());
+            parser.pushIdentificagor(token.getLexeme());
         }
     },
     GET(33) {
@@ -43,7 +46,7 @@ public enum VariableActions implements SemanticAction {
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             String lexeme = token.getLexeme();
             VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
-            SemanticTypes t1 = parser.idMapGetType(lexeme);
+            SemanticTypes t1 = parser.identifierMapGetType(lexeme);
             parser.pushType(t1);
             parser.addCode("ldloc "+lexeme);
             if (SemanticTypes.int64.equals(t1)) {
@@ -54,30 +57,30 @@ public enum VariableActions implements SemanticAction {
     SET(34) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            String lexeme = parser.idListPop();
+            String lexeme = parser.popIdentificador();
             VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
-            parser.getAtribuicao().execute(parser, lexeme);
+            parser.getAtribution().execute(parser, lexeme);
         }
     },
     READ(35) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            for (String lexeme : parser.idListIterable()) {
+            for (String lexeme : parser.identificadorIterable()) {
                 VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
-                SemanticTypes t1 = parser.idMapGetType(lexeme);
+                SemanticTypes t1 = parser.identifierMapGetType(lexeme);
                 parser.addCode("call string [mscorlib]System.Console::ReadLine()");
                 parser.addCode("call " + t1.name() + " [mscorlib]System." + t1.getInputType() + "::Parse(string)");
                 parser.addCode("stloc " + lexeme);
             }
-            parser.clearIdList();
+            parser.clearIdentificador();
         }
     },
     SET_OPERATOR(36) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             final OperadorAtribuicao ATR = OperadorAtribuicao.get(token.getLexeme());
-            final String LEX = parser.idListPeek();
-            parser.setAtribuicao(ATR);
+            final String LEX = parser.peekIdentificador();
+            parser.setAtribution(ATR);
             ATR.load(parser, LEX);
             VariableActions.validateIdentifier(parser, LEX, token.getPosition());
         }
@@ -95,7 +98,7 @@ public enum VariableActions implements SemanticAction {
     }
 
     private static void validateIdentifier(SemanticParser parser, String lexeme, int pos) throws SemanticError {
-        if (!parser.idMapContains(lexeme))
+        if (!parser.identifierMapContains(lexeme))
             throw new SemanticError(lexeme + " não declarado", pos);
     }
 }

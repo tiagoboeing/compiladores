@@ -1,4 +1,6 @@
-package compilador.semanticParser;
+package compilador.semantic.Constants;
+
+import compilador.semantic.parser.SemanticParser;
 
 import java.util.Arrays;
 
@@ -29,7 +31,7 @@ public enum OperadorAtribuicao {
     }
 
     public void execute(SemanticParser parser, String lexeme) {
-        SemanticTypes t1 = parser.idMapGetType(lexeme);
+        SemanticTypes t1 = parser.identifierMapGetType(lexeme);
         if (SemanticTypes.int64.equals(t1))
             parser.addCode("conv.i8");
 
@@ -38,7 +40,7 @@ public enum OperadorAtribuicao {
 
     public void load(SemanticParser parser, String lexeme) {
         if (this.loc) {
-            SemanticTypes t1 = parser.idMapGetType(lexeme);
+            SemanticTypes t1 = parser.identifierMapGetType(lexeme);
             parser.addCode("stloc " + lexeme); //TODO - Validate
             if (SemanticTypes.int64.equals(t1))
                 parser.addCode("conv.r8");
