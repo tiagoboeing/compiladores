@@ -10,14 +10,14 @@ public enum OperadorAtribuicao {
     PEQ("+=", true) {
         @Override
         public void execute(SemanticParser parser, String lexeme) {
-            parser.addCode("sum");
+            parser.addCode("add");
             super.execute(parser, lexeme);
         }
     },
     SEQ("-=", true) {
         @Override
         public void execute(SemanticParser parser, String lexeme) {
-            parser.addCode("sum");
+            parser.addCode("sub");
             super.execute(parser, lexeme);
         }
     },;
