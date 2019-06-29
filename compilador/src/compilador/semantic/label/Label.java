@@ -48,4 +48,8 @@ public class Label {
     public String brFalse() {
         return "brfalse " + this.getName();
     }
+
+    public String brTrue() {
+        return "brtrue " + this.getName();
+    }
 }

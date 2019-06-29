@@ -10,7 +10,7 @@ public enum FluxControlActions implements SemanticAction {
     EXP(37) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            Label l1 = new Label();
+            Label l1 = new Label();//inicializa marcador da condição.
             parser.pushLabel(l1);
             parser.addCode(l1.mark());
         }
@@ -18,7 +18,7 @@ public enum FluxControlActions implements SemanticAction {
     IF(38){
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            parser.popLabel();//if não precisa verificar novamente
+            parser.popLabel();//if não precisa verificar a condição novamente
 
             Label l1 = new Label();
             parser.pushLabel(l1);
@@ -42,6 +42,35 @@ public enum FluxControlActions implements SemanticAction {
             parser.addCode(parser.popLabel().mark());//fim do bloco anterior
 
             parser.pushLabel(l1);
+        }
+    },
+    WHILE(41) {
+        @Override
+        public void execute(SemanticParser parser, Token token) throws SemanticError {
+            Label l1 = new Label();
+            parser.addCode(this.getCode(l1, token));//se não satisfizer a condição, sai do loop
+            parser.pushLabel(l1);
+        }
+
+        private boolean isNegative(Token token) {
+            String lexeme = token.getLexeme();
+            return lexeme.toUpperCase().contains("FALSE");
+        }
+
+        private String getCode(Label l1, Token token) {
+            if (this.isNegative(token))
+                return l1.brTrue();
+            return l1.brFalse();
+        }
+    },
+    ENDWHILE(42) {
+        @Override
+        public void execute(SemanticParser parser, Token token) throws SemanticError {
+            Label l2 = parser.popLabel();
+            Label l1 = parser.popLabel();
+
+            parser.addCode(l1.br());//no final do bloco do loop, pula para a verificação
+            parser.addCode(l2.mark());//label após o bloco.
         }
     },;
 
