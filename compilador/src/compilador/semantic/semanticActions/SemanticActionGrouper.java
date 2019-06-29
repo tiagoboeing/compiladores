@@ -14,6 +14,7 @@ public class SemanticActionGrouper {
         actionList.addAll(Arrays.asList(NumericActions.values()));
         actionList.addAll(Arrays.asList(VariableActions.values()));
         actionList.addAll(Arrays.asList(StringActions.values()));
+        actionList.addAll(Arrays.asList(FluxControlActions.values()));
         actions = actionList;
     }
 

@@ -89,8 +89,11 @@ public enum  BooleanActions implements SemanticAction {
         throw new SemanticError("Tipos incompatíveis em expressão aritmética", pos);
     }
 
-    private static void validateOperationTypes(SemanticTypes t1, SemanticTypes t2, int pos) {
+    private static void validateOperationTypes(SemanticTypes t1, SemanticTypes t2, int pos) throws SemanticError {
+        if (t1.equals(t2) && t1.equals(SemanticTypes.bool))
+            return;
 
+        throw new SemanticError("Tipos incompatíveis em expressão aritmética", pos);
     }
 
     private static void validateOperationTypes(SemanticTypes t1, int pos) throws SemanticError {

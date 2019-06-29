@@ -5,6 +5,7 @@ import compilador.controller.Semantico;
 import compilador.controller.Token;
 import compilador.semantic.Constants.OperadorAtribuicao;
 import compilador.semantic.Constants.RelationalTypes;
+import compilador.semantic.label.Label;
 import compilador.semantic.Constants.SemanticTypes;
 import compilador.semantic.semanticActions.*;
 
@@ -13,15 +14,16 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class SemanticParser extends Semantico {
 
-    private Stack<SemanticTypes> typeStack = new Stack();
-
     private StringJoiner code = new StringJoiner("\n");
 
     private AtomicReference<RelationalTypes> relational = new AtomicReference<>();
     private AtomicReference<SemanticTypes> variableType = new AtomicReference<>();
     private AtomicReference<OperadorAtribuicao> atribuicao = new AtomicReference<>();
 
-    private Stack<String> identifierStack = new Stack<>();
+    private Stack<String> identifierStack = new Stack();
+    private Stack<SemanticTypes> typeStack = new Stack();
+    private Stack<Label> labelStack = new Stack();
+
     private Map<String, SemanticTypes> idMap = new HashMap<>();
 
     private void executeAction(SemanticAction action, Token token) throws SemanticError {
@@ -48,8 +50,8 @@ public class SemanticParser extends Semantico {
         return code.toString();
     }
 
-    public StringJoiner addCode(CharSequence charSequence) {
-        return code.add(charSequence);
+    public void addCode(CharSequence charSequence) {
+        code.add(charSequence);
     }
 
     //
@@ -130,5 +132,19 @@ public class SemanticParser extends Semantico {
 
     public SemanticTypes peekType() {
         return typeStack.peek();
+    }
+
+    //
+
+    public Label pushLabel(Label semanticTypes) {
+        return labelStack.push(semanticTypes);
+    }
+
+    public Label popLabel() {
+        return labelStack.pop();
+    }
+
+    public Label peekLabel() {
+        return labelStack.peek();
     }
 }
