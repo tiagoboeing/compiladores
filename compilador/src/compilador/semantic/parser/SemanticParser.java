@@ -50,8 +50,9 @@ public class SemanticParser extends Semantico {
         return code.toString();
     }
 
-    public void addCode(CharSequence charSequence) {
-        code.add(charSequence);
+    public void addCode(String code) {
+        CharSequence indented = code + new IndentStr(this.labelStack.size() * 4);
+        this.code.add(indented);
     }
 
     //
@@ -142,9 +143,5 @@ public class SemanticParser extends Semantico {
 
     public Label popLabel() {
         return labelStack.pop();
-    }
-
-    public Label peekLabel() {
-        return labelStack.peek();
     }
 }

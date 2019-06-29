@@ -1,9 +1,9 @@
 package compilador.semantic.parser;
 
-public class indentStr implements CharSequence {
+public class IndentStr implements CharSequence {
     int length;
 
-    public indentStr(int length) {
+    public IndentStr(int length) {
         this.length = length;
     }
 
@@ -19,6 +19,6 @@ public class indentStr implements CharSequence {
 
     @Override
     public CharSequence subSequence(int i, int i1) {
-        return new indentStr(i1-i);
+        return new IndentStr(i1-i);
     }
 }
