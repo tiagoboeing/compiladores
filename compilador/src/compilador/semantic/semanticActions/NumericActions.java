@@ -72,7 +72,7 @@ public enum NumericActions implements SemanticAction {
     }
 
     private static void validate(SemanticTypes t1, int pos) throws SemanticError {
-        if (SemanticTypes.isNumeric(t1)) {
+        if (!SemanticTypes.isNumeric(t1)) {
             throw new SemanticError("Tipos incompatíveis em expressão aritmética", pos);
         }
     }
