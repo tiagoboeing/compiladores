@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public enum  SemanticTypes {
     int64("Int64", "int"),
     float64("Double", "float"),
-    bool("Int64", "bool"),
+    bool("bool", "bool"),
     character("string", "char"),
     string("string", "string"),;
 
