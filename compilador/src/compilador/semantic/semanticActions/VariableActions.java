@@ -64,7 +64,10 @@ public enum VariableActions implements SemanticAction {
                 VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
                 SemanticTypes t1 = parser.identifierMapGetType(lexeme);
                 parser.addCode("call string [mscorlib]System.Console::ReadLine()");
-                parser.addCode("call " + t1.name() + " [mscorlib]System." + t1.getInputType() + "::Parse(string)");
+
+                if (t1.needConversion())
+                    parser.addCode("call " + t1.name() + " [mscorlib]System." + t1.getInputType() + "::Parse(string)");
+
                 parser.addCode("stloc " + lexeme);
             }
             parser.clearIdentificador();

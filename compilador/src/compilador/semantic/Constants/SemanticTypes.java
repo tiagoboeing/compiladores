@@ -43,4 +43,12 @@ public enum  SemanticTypes {
         return Arrays.asList(SemanticTypes.values()).stream().filter(x -> x.getSyntax().equals(syntax)).findFirst().orElse(null);
     }
 
+    public static boolean needConversion(SemanticTypes t1) {
+        return string.equals(t1);
+    }
+
+    public boolean needConversion() {
+        return SemanticTypes.needConversion(this);
+    }
+
 }
