@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Label {
 
-    private final static AtomicInteger COUNTER = new AtomicInteger();
+    private final static AtomicInteger COUNTER = new AtomicInteger(1);
 
     private Integer number;
 
@@ -42,7 +42,7 @@ public class Label {
     }
 
     private String getName() {
-        return "laber" + this.getNumber();
+        return "label" + this.getNumber();
     }
 
     public String brFalse() {
