@@ -41,7 +41,7 @@ public enum OperadorAtribuicao {
     public void load(SemanticParser parser, String lexeme) {
         if (this.loc) {
             SemanticTypes t1 = parser.identifierMapGetType(lexeme);
-            parser.addCode("stloc " + lexeme); //TODO - Validate
+            parser.addCode("ldloc " + lexeme); //TODO - Validate
             if (SemanticTypes.int64.equals(t1))
                 parser.addCode("conv.r8");
         }
