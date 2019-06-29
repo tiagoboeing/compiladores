@@ -9,17 +9,11 @@ import compilador.semantic.Constants.SemanticTypes;
 public enum VariableActions implements SemanticAction {
     DECLARE_TYPE(30) {
 
-        private static final String INT = "int";
-        private static final String REAL = "float";
-
         @Override
         public void execute(SemanticParser parser, Token token) {
             String lexeme = token.getLexeme();
-            if (INT.equals(lexeme)) {
-                parser.setVariableType(SemanticTypes.int64);
-            } else if (REAL.equals(lexeme)) {
-                parser.setVariableType(SemanticTypes.float64);
-            }
+            SemanticTypes t1 = SemanticTypes.getBySyntax(lexeme);
+            parser.setVariableType(t1);
         }
     },
     BIND(31) {
@@ -57,6 +51,7 @@ public enum VariableActions implements SemanticAction {
     SET(34) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
+            parser.popType();
             String lexeme = parser.popIdentificador();
             VariableActions.validateIdentifier(parser, lexeme, token.getPosition());
             parser.getAtribution().execute(parser, lexeme);
