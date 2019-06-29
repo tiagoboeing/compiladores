@@ -44,7 +44,7 @@ public enum  SemanticTypes {
     }
 
     public static boolean needConversion(SemanticTypes t1) {
-        return string.equals(t1);
+        return !string.equals(t1);
     }
 
     public boolean needConversion() {
