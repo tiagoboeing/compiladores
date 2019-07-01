@@ -51,8 +51,8 @@ public class SemanticParser extends Semantico {
     }
 
     public void addCode(String code) {
-        CharSequence indented = code + new IndentStr(this.labelStack.size() * 4);
-        this.code.add(indented);
+//        CharSequence indented = code + new IndentStr(this.labelStack.size() * 4);
+        this.code.add(code);
     }
 
     //
