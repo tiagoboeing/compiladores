@@ -153,6 +153,9 @@ public class ViewController {
         } finally {
             if(this.mensagens.getText().isEmpty()) {
                 this.mensagens.setText(COMPILADO);
+                // salvar arquivo .il na mesma pasta
+                System.out.println(caminhoArquivoSalvo);
+                //Files.saveFile(codigoGerado, caminhoArquivoSalvo);
             }
         }
     }
