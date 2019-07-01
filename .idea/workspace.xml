@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/semantic/parser/SemanticParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/semantic/parser/SemanticParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/BooleanActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/BooleanActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/NumericActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/NumericActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/VariableActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/VariableActions.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,56 +20,111 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/compiladores$Compiladores.ic" NAME="Compiladores Coverage Results" MODIFIED="1555373892143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/label/Label.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="95" />
+            <state relative-caret-position="-520">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/VariableActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="1878" column="11" lean-forward="true" selection-start-line="1878" selection-start-column="11" selection-end-line="1878" selection-end-column="11" />
+            <state relative-caret-position="184">
+              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EtapasTrabalho/Especificacao.gals">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/StringActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="44" column="13" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="13" />
+            <state relative-caret-position="104">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ParserConstants.java">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/SemanticActionGrouper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6708">
-              <caret line="258" column="70" selection-start-line="258" selection-start-column="70" selection-end-line="258" selection-end-column="70" />
+            <state relative-caret-position="-208">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/parser/SemanticParser.java">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/SemanticAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-              <folding>
-                <element signature="e#2544#2545#0" expanded="true" />
-                <element signature="e#2583#2584#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="104">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/NumericActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-87">
+              <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/InterfaceActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/HeadersActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-489">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/FluxControlActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1685">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/BooleanActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="98" column="68" selection-start-line="98" selection-start-column="68" selection-end-line="98" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -103,9 +157,12 @@
       <find>programa</find>
       <find>declarac</find>
       <find>lista_declara</find>
-      <find>addCode</find>
-      <find>string</find>
       <find>comentario</find>
+      <find>addCode</find>
+      <find>declarado</find>
+      <find>string</find>
+      <find>compilado</find>
+      <find>COMPILADO</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,6 +186,9 @@
         <option value="$PROJECT_DIR$/compilador/src/compilador/controller/AnalysisError.java" />
         <option value="$PROJECT_DIR$/compilador/src/compilador/semantic/parser/SemanticParser.java" />
         <option value="$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java" />
+        <option value="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/VariableActions.java" />
+        <option value="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/NumericActions.java" />
+        <option value="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/BooleanActions.java" />
       </list>
     </option>
   </component>
@@ -176,7 +236,24 @@
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="compilador" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="semantic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiladores" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="semantic" type="462c0819:PsiDirectoryNode" />
+              <item name="semanticActions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiladores" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compilador" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="compiladores" type="b2602c69:ProjectViewProjectNode" />
@@ -295,13 +372,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77478000" />
+    <option name="totallyTimeSpent" value="78574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -309,7 +386,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.1382353" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1985294" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21470588" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40841866" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -356,9 +433,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/jre/lib/rt.jar!/sun/nio/fs/WindowsException.class" />
-    <entry file="file://$PROJECT_DIR$/compilador/src/teste.2019" />
-    <entry file="file://$PROJECT_DIR$/_config.yml" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/System.java" />
     <entry file="file://$PROJECT_DIR$/compilador/compilador.iml">
@@ -457,24 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/parser/SemanticParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-          <folding>
-            <element signature="e#2544#2545#0" expanded="true" />
-            <element signature="e#2583#2584#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EtapasTrabalho/Especificacao.gals">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
@@ -484,15 +540,162 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ParserConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6708">
-          <caret line="258" column="70" selection-start-line="258" selection-start-column="70" selection-end-line="258" selection-end-column="70" />
+        <state relative-caret-position="130">
+          <caret line="53" column="97" lean-forward="true" selection-start-line="53" selection-start-column="97" selection-end-line="53" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/ScannerConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="-352">
           <caret line="1878" column="11" lean-forward="true" selection-start-line="1878" selection-start-column="11" selection-end-line="1878" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/controller/SemanticError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/brocker/ParserFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/brocker/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/brocker/parsers/BaseParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-908">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/brocker/parsers/ParseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1128">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/parser/IndentStr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/parser/SemanticParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1792">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="117" column="77" selection-start-line="117" selection-start-column="68" selection-end-line="117" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/Constants/OperadorAtribuicao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/Constants/RelationalTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/Constants/SemanticTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/label/Label.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/BooleanActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="98" column="68" selection-start-line="98" selection-start-column="68" selection-end-line="98" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/FluxControlActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1685">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/HeadersActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-489">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/InterfaceActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/NumericActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/SemanticAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/SemanticActionGrouper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/StringActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/VariableActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
         </state>
       </provider>
     </entry>

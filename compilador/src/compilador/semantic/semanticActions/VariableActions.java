@@ -21,7 +21,7 @@ public enum VariableActions implements SemanticAction {
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             for (String lexeme : parser.identificadorIterable()) {
                 if (parser.identifierMapContains(lexeme)) {
-                    throw new SemanticError("Identificador " + lexeme + " já declarado", token.getPosition());
+                    throw new SemanticError("Erro na linha %d - Identificador " + lexeme + " já declarado", token.getPosition());
                 }
                 parser.identifierMapPut(lexeme, parser.getVariableType());
                 parser.addCode(".locals(" + parser.getVariableType().name() + " " + lexeme + ")");
@@ -97,6 +97,6 @@ public enum VariableActions implements SemanticAction {
 
     private static void validateIdentifier(SemanticParser parser, String lexeme, int pos) throws SemanticError {
         if (!parser.identifierMapContains(lexeme))
-            throw new SemanticError(lexeme + " não declarado", pos);
+            throw new SemanticError("Erro na linha %d - " + lexeme + " não declarado", pos);
     }
 }
