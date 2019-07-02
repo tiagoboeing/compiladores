@@ -1,12 +1,14 @@
-package compilador.semanticParser;
+package compilador.semantic.semanticActions;
 
 import compilador.controller.Token;
+import compilador.semantic.parser.SemanticParser;
+import compilador.semantic.Constants.SemanticTypes;
 
 public enum InterfaceActions implements SemanticAction {
     WRITE(14) {
         @Override
         public void execute(SemanticParser parser, Token token) {
-            SemanticTypes t2 = parser.popStack();
+            SemanticTypes t2 = parser.popType();
             if (t2.equals(SemanticTypes.int64)) {
                 parser.addCode("conv.i8");
             }

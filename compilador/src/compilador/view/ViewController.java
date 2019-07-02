@@ -17,7 +17,6 @@ import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -57,6 +56,7 @@ public class ViewController {
     // verifica se botão novo foi pressionado
     static boolean arquivoSalvo = false;
     static String caminhoArquivoSalvo;
+    static String nomeArquivo;
 
     // guarda código gerado
     static String codigoGerado;
@@ -151,8 +151,14 @@ public class ViewController {
                             map(StackTraceElement::toString).
                             collect(Collectors.joining("\n")));
         } finally {
+            // caso não ocorrer erros - SUCESSO
             if(this.mensagens.getText().isEmpty()) {
                 this.mensagens.setText(COMPILADO);
+
+                // salvar arquivo .il na mesma pasta
+                String filename = Files.getOnlyFilename(Paths.get(caminhoArquivoSalvo).toFile());
+                String location = Paths.get(caminhoArquivoSalvo).toFile().getParent();
+                Files.saveFile(codigoGerado, location + "\\" + filename + ".il");
             }
         }
     }
@@ -168,6 +174,8 @@ public class ViewController {
             this.conteudoEditor(conteudoArquivo);
 
             caminhoArquivoSalvo = arquivo.getAbsolutePath();
+            nomeArquivo = Files.getOnlyFilename(arquivo);
+
             arquivoSalvo = true;
         } else {
             if(this.barraStatus.getText() != caminhoArquivoSalvo) {
@@ -203,6 +211,7 @@ public class ViewController {
                 String path = Files.selectPath("*.txt");
                 if(path != null){
                     caminhoArquivoSalvo = path;
+                    nomeArquivo = Files.getOnlyFilename(new File(path));
                 } else {
                     return;
                 }

@@ -1,10 +1,9 @@
-package compilador.semanticParser;
+package compilador.semantic.semanticActions;
 
 import compilador.controller.SemanticError;
 import compilador.controller.Token;
-
-import java.util.HashSet;
-import java.util.Set;
+import compilador.semantic.parser.SemanticParser;
+import compilador.semantic.Constants.SemanticTypes;
 
 public enum NumericActions implements SemanticAction {
     SUM(1) {
@@ -29,38 +28,38 @@ public enum NumericActions implements SemanticAction {
     }, DIV(4) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t1 = parser.popStack();
-            SemanticTypes t2 = parser.popStack();
+            SemanticTypes t1 = parser.popType();
+            SemanticTypes t2 = parser.popType();
 
             NumericActions.validate(t1, t2, token.getPosition());
 
-            parser.pushStack(SemanticTypes.float64);
+            parser.pushType(SemanticTypes.float64);
 
             parser.addCode("div");
         }
     }, INT_CONST(5) {
         @Override
         public void execute(SemanticParser parser, Token token) {
-            parser.pushStack(SemanticTypes.int64);
+            parser.pushType(SemanticTypes.int64);
             parser.addCode("ldc.i8 " + token.getLexeme());
             parser.addCode("conv.r8");
         }
     }, FLOAT_CONST(6) {
         @Override
         public void execute(SemanticParser parser, Token token) {
-            parser.pushStack(SemanticTypes.float64);
+            parser.pushType(SemanticTypes.float64);
             parser.addCode("ldc.r8 " + token.getLexeme());
         }
     }, POSITOVE(7) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t1 = parser.peekStack();
+            SemanticTypes t1 = parser.peekType();
             NumericActions.validate(t1, token.getPosition());
         }
     }, NEGATIVE(8) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
-            SemanticTypes t1 = parser.peekStack();
+            SemanticTypes t1 = parser.peekType();
             NumericActions.validate(t1, token.getPosition());
             parser.addCode("ldc.r8 -1");
             parser.addCode("mul");
@@ -73,8 +72,8 @@ public enum NumericActions implements SemanticAction {
     }
 
     private static void validate(SemanticTypes t1, int pos) throws SemanticError {
-        if (SemanticTypes.isNumeric(t1)) {
-            throw new SemanticError("Tipos incompatíveis em expressão aritmética", pos);
+        if (!SemanticTypes.isNumeric(t1)) {
+            throw new SemanticError("Erro na linha %d - Tipos incompatíveis em expressão aritmética", pos);
         }
     }
 
@@ -88,13 +87,13 @@ public enum NumericActions implements SemanticAction {
 
     private static void treatBinaryOperatorType(SemanticParser parser, int pos) throws SemanticError {
 
-        SemanticTypes t1 = parser.popStack();
-        SemanticTypes t2 = parser.popStack();
+        SemanticTypes t1 = parser.popType();
+        SemanticTypes t2 = parser.popType();
 
         NumericActions.validate(t1, t2, pos);
 
         SemanticTypes result = NumericActions.getByPriority(t1, t2);
-        parser.pushStack(result);
+        parser.pushType(result);
 
     }
 

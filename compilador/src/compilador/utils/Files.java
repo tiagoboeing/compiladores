@@ -102,4 +102,11 @@ public class Files {
             return null;
         }
     }
+
+    public static String getOnlyFilename(File file){
+        String fileName = file.getName();
+        if (fileName.indexOf(".") > 0)
+            fileName = fileName.substring(0, fileName.lastIndexOf("."));
+        return fileName;
+    }
 }

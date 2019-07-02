@@ -8,7 +8,7 @@ import compilador.brocker.parsers.ParseException;
 import compilador.controller.Lexico;
 import compilador.controller.Semantico;
 import compilador.controller.Sintatico;
-import compilador.semanticParser.SemanticParser;
+import compilador.semantic.parser.SemanticParser;
 
 import java.io.Reader;
 import java.util.List;

@@ -1,4 +1,4 @@
-package compilador.semanticParser;
+package compilador.semantic.Constants;
 
 import java.util.Arrays;
 import java.util.StringJoiner;
