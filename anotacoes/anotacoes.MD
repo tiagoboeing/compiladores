@@ -1,4 +1,0 @@
-- Letra minúscula: terminal
-  - ou " "
-- Letra maiúscula: não-terminal
-  - ou < >

@@ -6,17 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/ArquivosTestes/exemplo-1-erro-lexico.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosTestes/exemplo-1-erro-lexico.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/ArquivosTestes/exemplo-2-erro-sintatico.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosTestes/exemplo-2-erro-sintatico.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/ArquivosTestes/exemplo-3-sem-erros.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosTestes/exemplo-3-sem-erros.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/VariableActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/semantic/semanticActions/VariableActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/utils/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/utils/Files.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/view/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/view/View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java" afterDir="false" />
-    </list>
+    <list default="true" id="86da4c64-7a98-457b-9d78-47ec4cdea2b8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
-              <caret line="310" column="38" lean-forward="true" selection-start-line="310" selection-start-column="38" selection-end-line="310" selection-end-column="38" />
+              <caret line="310" column="38" selection-start-line="310" selection-start-column="38" selection-end-line="310" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/compilador/src/compilador/utils/Files.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="672">
-              <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+              <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
               <folding>
                 <element signature="method#chooseFile#0;class#Files#0" />
                 <element signature="method#selectPath#0;class#Files#0" />
@@ -316,7 +306,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84582000" />
+    <option name="totallyTimeSpent" value="85783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -648,7 +638,7 @@
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/utils/Files.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
-          <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
           <folding>
             <element signature="method#chooseFile#0;class#Files#0" />
             <element signature="method#selectPath#0;class#Files#0" />
@@ -691,7 +681,7 @@
     <entry file="file://$PROJECT_DIR$/compilador/src/compilador/view/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
-          <caret line="310" column="38" lean-forward="true" selection-start-line="310" selection-start-column="38" selection-end-line="310" selection-end-column="38" />
+          <caret line="310" column="38" selection-start-line="310" selection-start-column="38" selection-end-line="310" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
