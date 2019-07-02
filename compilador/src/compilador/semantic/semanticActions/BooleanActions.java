@@ -13,13 +13,13 @@ public enum  BooleanActions implements SemanticAction {
             parser.setRelational(RelationalTypes.get(token.getLexeme()));
         }
     },
-    OPERTATION(10) {
+    OPERATION(10) {
         @Override
         public void execute(SemanticParser parser, Token token) throws SemanticError {
             SemanticTypes t1 = parser.popType();
             SemanticTypes t2 = parser.popType();
 
-            BooleanActions.validateComparaionTypes(t1, t2, token.getPosition());
+            BooleanActions.validateComparationTypes(t1, t2, token.getPosition());
 
             parser.pushType(SemanticTypes.bool);
             parser.addCode(parser.getRelational().getCode());
@@ -79,7 +79,7 @@ public enum  BooleanActions implements SemanticAction {
         return id;
     }
 
-    private static void validateComparaionTypes(SemanticTypes t1, SemanticTypes t2, int pos) throws SemanticError {
+    private static void validateComparationTypes(SemanticTypes t1, SemanticTypes t2, int pos) throws SemanticError {
         if (t1.equals(t2))
             return;
 
