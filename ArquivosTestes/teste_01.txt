@@ -1,0 +1,3 @@
+main begin
+	write(1, \s, 2.5, \t, "teste - comando write", \n).
+end
