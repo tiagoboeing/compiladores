@@ -53,3 +53,50 @@ end
 `-- exemplo de comentário de linha`
 
 `#| exemplo de comentário de bloco |#` 
+
+## Loops
+
+### whileTrueDo
+
+```
+main begin
+    int: valor.
+    read(valor).
+    (valor < 0) whileTrueDo     
+        read(valor).    
+    end.
+    (valor == 0) whileFalseDo   
+        write(valor, \n).
+        valor -= 1.
+    end.
+end
+```
+
+## if
+
+```
+main begin
+    float: valor.
+    read(valor).
+
+    (valor > 0.0) ifTrueDo 
+        write("maior").
+    ifFalseDo
+        write("menor ou igual"). 
+    end.
+end
+```
+
+```
+main begin
+    int: lado, area.
+    read(lado).
+    area = 0.
+    
+    (lado > 0) ifTrueDo 
+        area = lado * lado. 
+    end.
+    
+    write(area).
+end
+```
