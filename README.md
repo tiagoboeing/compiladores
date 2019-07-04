@@ -1,6 +1,8 @@
 # Compilador 2019/1
 FURB - Blumenau/SC - Compiladores 2019/1
 
+### [Download](https://github.com/tiagoboeing/compiladores/releases/tag/4.0.0)
+
 # Material disponível
 - Consulte a [Wiki](https://github.com/tiagoboeing/compiladores/wiki) para visualizar os materiais
 # Interface
